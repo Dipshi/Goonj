@@ -1,4 +1,3 @@
-{{--  @extends('layouts.navbar')  --}}
-@extends('layouts.slider')
-@section('slider')
-@stop
+@include('layouts.header') 
+ @include('layouts.slider')
+@yield('slider') 

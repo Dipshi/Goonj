@@ -1,7 +1,8 @@
-{{--  @extends('layouts.header')  --}}
-@extends('layouts.navbar')
-@section('slider')
-{{--  <section id="slider"><!--slider-->
+@extends('layouts.header')  
+{{-- @extends('layouts.navbar') --}}
+
+@section('body')
+ <section id="slider"><!--slider-->
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -64,5 +65,5 @@
             </div>
         </div>
     </div>
-</section><!--/slider-->  --}}
-hello
+</section><!--/slider--> 
+@stop

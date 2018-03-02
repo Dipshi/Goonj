@@ -11,7 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
+// Route::get('/', function () {
+//     return view('in');
+// });
+Route::group(['prefix'=>'eshopper'], function() {
+ Route::get('/','PagesController@index' );
+ Route::get('/product-details','ProductDetails@product' );
+ Route::get('/login','LoginController@index' );
+ Route::get('/checkout','CheckoutController@index' );
+ Route::get('/cart','CartController@index' );
+ Route::get('/contact-us', function () {
+     return view('contact-us');
+ });
+ Route::get('/shop','ShopController@index' );
 });
-Route::get('/index','PagesController@index' );
