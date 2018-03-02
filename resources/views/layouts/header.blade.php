@@ -11,7 +11,7 @@
     <link href="{{URL::to('css/prettyPhoto.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/price-range.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/animate.css') }}" rel="stylesheet">
-	<link href="{{URL::to('css/main.css') }}" rel="stylesheet">
+	<link href="{{URL::to('css/main1.css') }}" rel="stylesheet">
 	<link href="{{URL::to('css/responsive.css') }}" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>

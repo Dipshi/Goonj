@@ -52,7 +52,7 @@ a#scrollUp {
   bottom: 0px;
   right: 10px;
   padding: 5px 10px;
-  background: #FE980F;
+  background: darkcyan;
   color: #FFF;
   -webkit-animation: bounce 2s ease infinite;
   animation: bounce 2s ease infinite;
@@ -320,7 +320,7 @@ ul.sub-menu {
 }
 
 .navbar-nav li ul.sub-menu li a:hover{
-    color: #FDB45E;
+    color:darkcyan;
 }
 
 .fa-angle-down{
@@ -1025,7 +1025,7 @@ h2.title {
   -moz-border-left-colors: none;
   -moz-border-right-colors: none;
   -moz-border-top-colors: none;
-  background-color: #FE980F;
+  background-color: darkcyan;
   border:0px;
   color: #FFFFFF;
   cursor: default;
@@ -1840,7 +1840,7 @@ h2.title {
 }
 
 .checkout-options .nav li a {
-  color: #FE980F;
+  color:darkcyan;
   font-size: 18px;
   font-weight: normal;
   padding: 0
@@ -1854,7 +1854,7 @@ h2.title {
   margin-right: 10px;
   border-radius: 50%;
   padding: 5px;
-  background: #FE980F;
+  background: darkcyan;
   color:#fff;
   font-size: 14px;
   padding: 2px 3px;
