@@ -118,7 +118,6 @@
     </div><!--/header-bottom-->
 </header><!--/header-->
 <div>
-
 @yield('body')
 </div>
 @stop

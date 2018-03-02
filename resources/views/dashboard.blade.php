@@ -1,4 +1,4 @@
-{{--  @extends('layouts.navbar')  --}}
-@extends('layouts.slider')
+@extends('layouts.navbar')
+{{--  @extends('layouts.slider')  --}}
 @section('slider')
-@stop
+{{--  @stop  --}}

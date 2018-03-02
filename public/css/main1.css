@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background:;
+  /* background:; */
   position: relative;
   font-weight:400px;
 }
@@ -327,7 +327,7 @@ ul.sub-menu {
   padding-left: 5px; 
 }
 
-@-webkit-keyframes fadeInUp {
+@keyframes fadeInUp {
   0% {
     opacity: 0;
     -webkit-transform: translateY(20px);
@@ -518,7 +518,7 @@ ul.sub-menu {
 
 
 .searchform button {
-  background: #FE980F;
+  background:darkcyan;
   border: medium none;
   border-radius: 0;
   margin-left: -5px;
@@ -533,7 +533,7 @@ ul.sub-menu {
 
 .searchform  button:hover, 
 .searchform  button:focus{
-	background-color:#FE980F;
+	background-color:rgb(192, 191, 190);
 }
 
 .searchform p {
@@ -577,7 +577,7 @@ ul.sub-menu {
 }
 
 .carousel-indicators li.active {
-	  background: #FE980F;
+	  background: darkcyan;
 }
 
 .item {
@@ -635,7 +635,7 @@ ul.sub-menu {
 
 
 .item button:hover {
-  background: #FE980F;
+  background: rgb(165, 163, 161);
 }
 
 .control-carousel {
@@ -646,7 +646,7 @@ ul.sub-menu {
 }
 
 .control-carousel:hover{
-  color: #FE980F ;
+  color: darkcyan ;
 }
 
 .right {
@@ -891,7 +891,7 @@ h2.title {
 }
 
 .product-overlay {
-  background:#FE980F;
+  background:darkcyan;
   top: 0;
   display: none;
   height: 0;
@@ -899,7 +899,7 @@ h2.title {
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-  opacity:;
+  /* opacity:; */
 }
 
 .single-products:hover .product-overlay {
@@ -1064,8 +1064,8 @@ h2.title {
   background: #ccccc6;
 }
 
-.recommended_items  h2 {
-}
+/* .recommended_items  h2 {
+} */
 
 .our_partners{
   overflow:hidden;
@@ -1373,7 +1373,7 @@ h2.title {
 }
 
 #reviews button {
-  background: #FE980F;
+  background: darkcyan;
   border: 0 none;
   border-radius: 0;
   color: #FFFFFF;
@@ -1432,13 +1432,13 @@ h2.title {
   overflow: hidden;
 }
 
-.login-form {
+/* .login-form {
 
 }
 
 .signup-form {
 
-}
+} */
 
 .login-form h2, .signup-form h2 {
   color: #696763;
@@ -1489,9 +1489,9 @@ h2.title {
   padding: 6px 25px;
 }
 
-.login-form label{
+/* .login-form label{
 
-}
+} */
 
 
 .login-form label input {
@@ -1621,7 +1621,7 @@ h2.title {
 
 
 #cart_items .cart_info .cart_total_price {
-  color: #FE980F;
+  color: darkcyan;
   font-size: 24px;
 }
 
@@ -1639,7 +1639,7 @@ h2.title {
   overflow: hidden;
   text-align: center;
   width: 35px;
-  float: left;
+  /* float: left; */
 }
 
 
@@ -1750,8 +1750,8 @@ h2.title {
   margin-right: 10px
 }
 
-.user_info > li > span {
-}
+/* .user_info > li > span {
+} */
 
 .user_info input, select, textarea {
   background: #F0F0E9;
@@ -1885,7 +1885,7 @@ h2.title {
 
 
 .shopper-info .btn-primary {
-  background: #FE980F;
+  background:darkcyan;
   border: 0 none;
   border-radius: 0;
   margin-right: 15px;
@@ -2000,8 +2000,8 @@ h2.title {
   margin-bottom: 17px;
 }
 
-.single-blog-post > a {
-}
+/* .single-blog-post > a {
+} */
 
 .blog-post-area 
 .single-blog-post a img {
@@ -2080,7 +2080,7 @@ h2.title {
 .blog-post-area  
 .single-blog-post 
 .btn-primary {
-  background:#FE980F;
+  background:darkcyan;
   border: medium none;
   border-radius: 0;
   color: #FFFFFF;
@@ -2268,7 +2268,7 @@ h2.title {
 
 .media-list .btn-primary, 
 .commnets .btn-primary {
-  background:#FC9A11;
+  background:darkcyan;
   border: 0 none;
   border-radius: 0;
   color: #FFFFFF;
@@ -2392,7 +2392,7 @@ h2.title {
 }
 
 .btn.btn-primary {
-  background:#FE980F;
+  background:darkcyan;
   border: 0 none;
   border-radius: 0;
   margin-top: 16px;

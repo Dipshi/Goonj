@@ -1,5 +1,5 @@
 {{--  @extends('layouts.header')  --}}
-@extends('layouts.navbar')
+{{--  @extends('layouts.navbar')  --}}
 @section('slider')
 {{--  <section id="slider"><!--slider-->
     <div class="container">
