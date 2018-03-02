@@ -119,4 +119,4 @@
 </header><!--/header-->
 
 @yield('body')
-@stop
+{{--  @stop  --}}

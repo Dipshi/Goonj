@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-toggle {
-  background-color: #000;
+  background-color: rgb(184, 176, 176);
 }
 
 a#scrollUp {
@@ -215,7 +215,7 @@ a#scrollUp i{
 
 
 .shop-menu ul li a:hover {
-	color:#fe980f;
+	color:darkcyan;
 	background:#fff;
 }
 
