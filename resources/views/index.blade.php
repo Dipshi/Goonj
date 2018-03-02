@@ -9,16 +9,16 @@
 
         <div class="row">
             <div class="col-sm-12">
-					{{--  <section  id="banner" style="background-image:url({{URL::to('images/home/thread.jpg')}})">
-						<div class="inner">
-							<header>
-								<h1>This is Urban</h1>
-								<p>Aliquam libero augue varius non odio nec faucibus congue<br />felis quisque a diam rutrum tempus massa accumsan faucibus purus.</p>
-							</header>
-							<a href="#main" class="button big scrolly">Learn More</a>
-						</div>
-					</section>  --}}
-		
+			{{--  <section  id="banner" style="background-image:url({{URL::to('images/home/thread.jpg')}})">
+				<div class="inner">
+					<header>
+						<h1>This is Urban</h1>
+						<p>Aliquam libero augue varius non odio nec faucibus congue<br />felis quisque a diam rutrum tempus massa accumsan faucibus purus.</p>
+					</header>
+					<a href="#main" class="button big scrolly">Learn More</a>
+				</div>
+			</section>  --}}
+
                 <div id="slider-carousel" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
@@ -35,7 +35,7 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="images/home/thread.jpg" class="girl img-responsive" alt="" />
+                                <img src="images/home/girl1.jpg" class="girl img-responsive" alt="" />
                                 <img src="images/home/pricing.png"  class="pricing" alt="" />
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                                 <h1><span>E</span>-SHOPPER</h1>
                                 <h2>Free Ecommerce Template</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn  get">Get it now</button>
+                                <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
                                 <img src="images/home/girl3.jpg" class="girl img-responsive" alt="" />

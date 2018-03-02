@@ -13,7 +13,7 @@
     <link href="{{URL::to('css/animate.css') }}" rel="stylesheet">
 	<link href="{{URL::to('css/main1.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/responsive.css') }}" rel="stylesheet">
-    {{--  <link href="{{URL::to('css/style1.css') }}" rel="stylesheet">  --}}
+    <link href="{{URL::to('css/style1.css') }}" rel="stylesheet">
 
   </head><!--/head-->
 <body>
