@@ -1,85 +1,73 @@
  @extends('layouts.navbar')
 @section('body') 
 {{--  @section('slider')  --}}
-<section id="slider"><!--slider-->
-    <div class="container">
-		<!-- Banner -->
-	<script src="{{URL::to('js/main1.js') }}"></script>
 
-
-        <div class="row">
-            <div class="col-sm-12">
-			{{--  <section  id="banner" style="background-image:url({{URL::to('images/home/thread.jpg')}})">
-				<div class="inner">
-					<header>
-						<h1>This is Urban</h1>
-						<p>Aliquam libero augue varius non odio nec faucibus congue<br />felis quisque a diam rutrum tempus massa accumsan faucibus purus.</p>
-					</header>
-					<a href="#main" class="button big scrolly">Learn More</a>
+	<div id="content slider">
+		<div id="banner" >
+		<div class="container">
+			<div class="col-md-12">
+				<div id="main-slider">
+					<div class="item">
+						<img  src="{{URL::to('images/home/bag.jpg') }}" style="size:cover"alt="" class="img-responsive">
+					</div>
+					<div class="item">
+						<img class="img-responsive" src="{{URL::to('images/home/thread.jpg') }}" alt="">
+					</div>
+					<div class="item">
+						<img class="img-responsive"  src="{{URL::to('images/home/girl1.jpg') }}" alt="">
+					</div>
+					<div class="item">
+						<img class="img-responsive"  src="{{URL::to('images/home/girl1.jpg') }}" alt="">
+					</div>
 				</div>
-			</section>  --}}
+				<!-- /#main-slider -->
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+<div id="advantages">
 
-                <div id="slider-carousel" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#slider-carousel" data-slide-to="1"></li>
-                        <li data-target="#slider-carousel" data-slide-to="2"></li>
-                    </ol>
-                    
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>Free E-Commerce Template</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <img src="images/home/girl1.jpg" class="girl img-responsive" alt="" />
-                                <img src="images/home/pricing.png"  class="pricing" alt="" />
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>100% Responsive Design</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <img src="images/home/girl2.jpg" class="girl img-responsive" alt="" />
-                                <img src="images/home/pricing.png"  class="pricing" alt="" />
-                            </div>
-                        </div>
-                        
-                        <div class="item">
-                            <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>Free Ecommerce Template</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <img src="images/home/girl3.jpg" class="girl img-responsive" alt="" />
-                                <img src="images/home/pricing.png" class="pricing" alt="" />
-                            </div>
-                        </div>
-                        
-                    </div>
-                    
-                    <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</section>
-	<section>
+		<div class="container">
+			<div class="same-height-row">
+				<div class="col-sm-4">
+					<div class="box same-height clickable">
+						<div class="icon"><i class="fa fa-heart"></i>
+						</div>
+
+						<h3><a href="#">We love our customers</a></h3>
+						<p>We are known to provide best possible service ever</p>
+					</div>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="box same-height clickable">
+						<div class="icon"><i class="fa fa-tags"></i>
+						</div>
+
+						<h3><a href="#">Best prices</a></h3>
+						<p>You can check that the height of the boxes adjust when longer text like this one is used in one of them.</p>
+					</div>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="box same-height clickable">
+						<div class="icon"><i class="fa fa-thumbs-up"></i>
+						</div>
+
+						<h3><a href="#">100% satisfaction guaranteed</a></h3>
+						<p>Free returns on everything for 3 months.</p>
+					</div>
+				</div>
+			</div>
+			<!-- /.row -->
+
+		</div>
+		<!-- /.container -->
+
+	</div>
+</div>
+		<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-3">

@@ -862,7 +862,7 @@ h2.title {
 }
 
 .productinfo h2{
-	color: #FE980F;
+	color:darkcyan;
 	font-family: 'Roboto', sans-serif;
 	font-size: 24px;
 	font-weight: 700;
@@ -920,7 +920,7 @@ h2.title {
   background:#fff;
   border: 0 none;
   border-radius: 0;
-  color: #FE980F;
+  color:darkcyan;
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
   margin-bottom: 25px;
@@ -928,7 +928,7 @@ h2.title {
 
 .product-overlay .add-to-cart:hover {
   background:#fff;
-  color: #FE980F;
+  color: darkcyan;
 }
 
 
@@ -1548,7 +1548,7 @@ h2.title {
   width: auto;
   border-width: 8px;
   border-style: solid;
-  border-color:transparent transparent transparent #FE980F;
+  border-color:transparent transparent transparent darkcyan;
   position: absolute;
   top: 11px;
   left:48px;
