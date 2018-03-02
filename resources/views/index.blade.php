@@ -877,5 +877,5 @@
 	</section>
 	@stop
 	{{--  <footer id="footer"><!--Footer-->  --}}
-		@yield('footer')
+		{{--  @yield('footer')  --}}
 	{{--  </footer>  --}}

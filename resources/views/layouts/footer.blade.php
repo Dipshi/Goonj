@@ -1,5 +1,5 @@
 {{--  @extends('layouts.header')  --}}
-@section('footer')
+{{--  @section('footer')  --}}
 <footer id="footer"><!--Footer-->
     <div class="footer-top">
         <div class="container">
