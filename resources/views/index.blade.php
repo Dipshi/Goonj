@@ -4,20 +4,56 @@
 
 	<div id="content slider">
 		<div id="banner" >
-		<div class="container">
+		<div class="container slider-carousel">
 			<div class="col-md-12">
-				<div id="main-slider">
-					<div class="item">
-						<img  src="{{URL::to('images/home/bag.jpg') }}" alt="" class="img-responsive">
+				<div id="main-slider"  >
+					
+					<div class="item carousel-inner ">
+							<div class="col-sm-6">
+									<h1><span>Artifacts</span>-SHOPPER</h1>
+									<h2>Free E-Commerce Template</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<button type="button" class="btn">Get it now</button>
+								</div>
+								<div class="col-sm-6">
+									<img src="{{URL::to('images/home/flower.jpg') }}" class="girl img-responsive" alt="" />
+									{{--  <img src="images/home/pricing.png"  class="pricing" alt="" />  --}}
+								</div>
 					</div>
-					<div class="item">
-						<img class="img-responsive" src="{{URL::to('images/home/thread.jpg') }}" alt="">
+					<div class="item carousel-inner" style="background-color: rgba(244, 244, 244, 0.885);" >
+							<div class="col-sm-6">
+									<h1><span>Toys</span>-SHOPPER</h1>
+									<h2>Free E-Commerce Template</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<button type="button" class="btn">Get it now</button>
+								</div>
+								<div class="col-sm-6">
+									<img src="{{URL::to('images/home/toy.jpg') }}"  class="girl img-responsive" alt="" />
+									{{--  <img src="images/home/pricing.png"  class="pricing" alt="" />  --}}
+								</div>					</div>
+					<div class="item carousel-inner">
+							<div class="col-sm-6">
+									<h1><span>E</span>-SHOPPER</h1>
+									<h2>Free E-Commerce Template</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<button type="button" class="btn">Get it now</button>
+								</div>
+								<div class="col-sm-6">
+									<img src="{{URL::to('images/home/flower.jpg') }}"  class="girl img-responsive" alt="" />
+									{{--  <img src="images/home/pricing.png"  class="pricing" alt="" />  --}}
+								</div>	
 					</div>
-					<div class="item">
-						<img class="img-responsive"  src="{{URL::to('images/home/girl1.jpg') }}" alt="">
-					</div>
-					<div class="item">
-						<img class="img-responsive"  src="{{URL::to('images/home/girl1.jpg') }}" alt="">
+					<div class="item carousel-inner">
+							<div class="col-sm-6">
+									<h1><span>E</span>-SHOPPER</h1>
+									<h2>Free E-Commerce Template</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<button type="button" class="btn">Get it now</button>
+								</div>
+								<div class="col-sm-6">
+									<img src="{{URL::to('images/home/socks.jpg') }}"  class="girl img-responsive" alt="" />
+									{{--  <img src="images/home/pricing.png"  class="pricing" alt="" />  --}}
+								</div>
 					</div>
 				</div>
 				<!-- /#main-slider -->

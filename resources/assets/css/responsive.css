@@ -526,8 +526,9 @@ ul.sub-menu{
 
 }
 @media (max-width: 767px) {
-	#banner 
+	#main-slider >img
 	{
-		
+		min-height: 20%;
+		min-width: 10%;
 	}
 }

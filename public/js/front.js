@@ -160,7 +160,9 @@ function carousels() {
 	autoPlay: true,
 	stopOnHover: true,
 	singleItem: true,
-	afterInit: ''
+	// afterInit: '';
+	// autoWidth:true,
+	
     });
 
 }

@@ -38,6 +38,10 @@
 <script src="{{URL::to('js/jquery.cookie.js') }}"></script>
 <script src="{{URL::to('js/waypoints.min.js') }}"></script>
 <script src="{{URL::to('js/modernizr.js') }}"></script>
-<script src="{{URL::to('js/bootstrap-hover-dropdown.js') }}"></script>
+{{--  <script src="{{URL::to('js/bootstrap-hover-dropdown.js') }}"></script>  --}}
 <script src="{{URL::to('js/owl.carousel.min.js') }}"></script>
 <script src="{{URL::to('js/front.js') }}"></script>
+{{--  <script src="{{URL::to('js/jquery.flexslider.js') }}"></script>  --}}
+{{--  <script src="{{URL::to('js/jquery.flexslider.min.js') }}"></script>  --}}
+
+

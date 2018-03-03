@@ -1196,7 +1196,7 @@ h2.title {
 
 #similar-product .carousel-inner .item img {
   display: inline-block;
-  margin-left: 15px;
+  /* margin-left: 15px; */
 }
 
 .item-control {
