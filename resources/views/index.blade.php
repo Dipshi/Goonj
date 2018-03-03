@@ -8,7 +8,7 @@
 			<div class="col-md-12">
 				<div id="main-slider">
 					<div class="item">
-						<img  src="{{URL::to('images/home/bag.jpg') }}" style="size:cover"alt="" class="img-responsive">
+						<img  src="{{URL::to('images/home/bag.jpg') }}" alt="" class="img-responsive">
 					</div>
 					<div class="item">
 						<img class="img-responsive" src="{{URL::to('images/home/thread.jpg') }}" alt="">
