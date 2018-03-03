@@ -1,5 +1,6 @@
 @extends('layouts.header')
 @section('body') 
+<<<<<<< HEAD
 {{-- @yield('layouts.slider') --}}
 	
 	<section>
@@ -68,6 +69,76 @@
     </div>
 </section><!--/slider--> 
 
+=======
+{{--  @section('slider')  --}}
+
+	<div id="content slider">
+		<div id="banner" >
+		<div class="container">
+			<div class="col-md-12">
+				<div id="main-slider">
+					<div class="item">
+						<img  src="{{URL::to('images/home/bag.jpg') }}" style="size:cover"alt="" class="img-responsive">
+					</div>
+					<div class="item">
+						<img class="img-responsive" src="{{URL::to('images/home/thread.jpg') }}" alt="">
+					</div>
+					<div class="item">
+						<img class="img-responsive"  src="{{URL::to('images/home/girl1.jpg') }}" alt="">
+					</div>
+					<div class="item">
+						<img class="img-responsive"  src="{{URL::to('images/home/girl1.jpg') }}" alt="">
+					</div>
+				</div>
+				<!-- /#main-slider -->
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+<div id="advantages">
+
+		<div class="container">
+			<div class="same-height-row">
+				<div class="col-sm-4">
+					<div class="box same-height clickable">
+						<div class="icon"><i class="fa fa-heart"></i>
+						</div>
+
+						<h3><a href="#">We love our customers</a></h3>
+						<p>We are known to provide best possible service ever</p>
+					</div>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="box same-height clickable">
+						<div class="icon"><i class="fa fa-tags"></i>
+						</div>
+
+						<h3><a href="#">Best prices</a></h3>
+						<p>You can check that the height of the boxes adjust when longer text like this one is used in one of them.</p>
+					</div>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="box same-height clickable">
+						<div class="icon"><i class="fa fa-thumbs-up"></i>
+						</div>
+
+						<h3><a href="#">100% satisfaction guaranteed</a></h3>
+						<p>Free returns on everything for 3 months.</p>
+					</div>
+				</div>
+			</div>
+			<!-- /.row -->
+
+		</div>
+		<!-- /.container -->
+
+	</div>
+</div>
+		<section>
+>>>>>>> master
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-3">

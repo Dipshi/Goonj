@@ -117,6 +117,7 @@
         </div>
     </div><!--/header-bottom-->
 </header><!--/header-->
-
+<div>
 @yield('body')
-{{--  @stop  --}}
+</div>
+@stop

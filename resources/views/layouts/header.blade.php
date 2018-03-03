@@ -12,6 +12,7 @@
     <link href="{{URL::to('css/price-range.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/animate.css') }}" rel="stylesheet">
 	<link href="{{URL::to('css/main1.css') }}" rel="stylesheet">
+<<<<<<< HEAD
 	<link href="{{URL::to('css/responsive.css') }}" rel="stylesheet">
     <script src="{{URL::to('js/jquery.js') }}"></script>
     <script src="{{URL::to('js/bootstrap.min.js') }}"></script>
@@ -210,3 +211,34 @@
 
 </body>
 </html>
+=======
+    <link href="{{URL::to('css/responsive.css') }}" rel="stylesheet">
+    <link href="{{URL::to('css/style1.css') }}" rel="stylesheet">
+    <link href="{{URL::to('css/owl.carousel.css') }}" rel="stylesheet">
+    <link href="{{URL::to('css/owl.theme.css') }}" rel="stylesheet">
+
+    <link href="{{URL::to('css/owl.transition.css') }}" rel="stylesheet">
+
+
+
+  </head><!--/head-->
+<body>
+    @yield('nav')
+</body>
+</html>
+<script src="{{URL::to('js/jquery.js') }}"></script>
+<script src="{{URL::to('js/bootstrap.min.js') }}"></script>
+<script src="{{URL::to('js/jquery.scrollUp.min.js') }}"></script>
+<script src="{{URL::to('js/price-range.js') }}"></script>
+<script src="{{URL::to('js/jquery.prettyPhoto.js') }}"></script>
+<script src="{{URL::to('js/main.js') }}"></script>
+<script src="{{URL::to('js/main1.js') }}"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- <script src="js/bootstrap.min.js"></script> -->
+<script src="{{URL::to('js/jquery.cookie.js') }}"></script>
+<script src="{{URL::to('js/waypoints.min.js') }}"></script>
+<script src="{{URL::to('js/modernizr.js') }}"></script>
+<script src="{{URL::to('js/bootstrap-hover-dropdown.js') }}"></script>
+<script src="{{URL::to('js/owl.carousel.min.js') }}"></script>
+<script src="{{URL::to('js/front.js') }}"></script>
+>>>>>>> master
