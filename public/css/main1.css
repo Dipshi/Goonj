@@ -1537,8 +1537,8 @@ h2.title {
 }
 
 .breadcrumbs .breadcrumb li a {
-  background:#FE980F;
-  color: #FFFFFF;
+  /* background:rgb(182, 179, 174); */
+  color:rgb(182, 179, 174);
   padding: 3px 7px;
 }
 
@@ -2107,7 +2107,7 @@ h2.title {
 .pagination li a:hover,
 .pagination-area 
 .pagination li .active {
-  background:#FE980F;
+  background:darkcyan;
   color: #fff
 }
 

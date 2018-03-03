@@ -2,7 +2,7 @@
 @section('body')
 	<section id="cart_items">
 		<div class="container">
-			<div class="breadcrumbs">
+			<div class="breadcrumb">
 				<ol class="breadcrumb">
 				  <li><a href="{{url ('eshopper/')}}">Home</a></li>
 				  <li class="active">Check out</li>

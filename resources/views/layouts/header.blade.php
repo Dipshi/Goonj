@@ -12,14 +12,16 @@
     <link href="{{URL::to('css/price-range.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/animate.css') }}" rel="stylesheet">
 	<link href="{{URL::to('css/main1.css') }}" rel="stylesheet">
-<<<<<<< HEAD
 	<link href="{{URL::to('css/responsive.css') }}" rel="stylesheet">
-    <script src="{{URL::to('js/jquery.js') }}"></script>
-    <script src="{{URL::to('js/bootstrap.min.js') }}"></script>
-    <script src="{{URL::to('js/jquery.scrollUp.min.js') }}"></script>
-    <script src="{{URL::to('js/price-range.js') }}"></script>
-    <script src="{{URL::to('js/jquery.prettyPhoto.js') }}"></script>
-    <script src="{{URL::to('js/main.js') }}"></script>
+  
+    <link href="{{URL::to('css/style1.css') }}" rel="stylesheet">
+    <link href="{{URL::to('css/owl.carousel.css') }}" rel="stylesheet">
+    <link href="{{URL::to('css/owl.theme.css') }}" rel="stylesheet">
+
+    <link href="{{URL::to('css/owl.transition.css') }}" rel="stylesheet">
+
+
+
  
 </head><!--/head-->
 <body>
@@ -97,12 +99,17 @@
                                      
                                 </ul>
                             </li> 
-                            {{-- <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                <ul role="menu" class="sub-menu">
-                                    <li><a href="blog.html">Blog List</a></li>
-                                    <li><a href="blog-single.html">Blog Single</a></li>
+                            <li class="dropdown"><a href="#">Bags<i class="fa fa-angle-down"></i></a>
+                                <ul role="menu" class="dropdown-menu sub-menu">
+                                    <li class="dropdown"><a href="#">Mens</a></li>
+                                    <ul class=" sub-menu" >
+                                        <li  role="menu" class="dropdown" ><a href="#">Laptop bags</li>
+
+                                    </ul>
+                                    
+                                    <li><a href="#">Women</a></li>
                                 </ul>
-                            </li>  --}}
+                            </li>
                             {{-- <li><a href="404.html">404</a></li> --}}
                             <li><a href="{{url ('eshopper/contact-us') }}">Contact</a></li>
                         </ul>
@@ -202,21 +209,7 @@
 
 </body>
 </html>
-=======
-    <link href="{{URL::to('css/responsive.css') }}" rel="stylesheet">
-    <link href="{{URL::to('css/style1.css') }}" rel="stylesheet">
-    <link href="{{URL::to('css/owl.carousel.css') }}" rel="stylesheet">
-    <link href="{{URL::to('css/owl.theme.css') }}" rel="stylesheet">
-
-    <link href="{{URL::to('css/owl.transition.css') }}" rel="stylesheet">
-
-
-
-  </head><!--/head-->
-<body>
-    @yield('nav')
-</body>
-</html>
+   
 <script src="{{URL::to('js/jquery.js') }}"></script>
 <script src="{{URL::to('js/bootstrap.min.js') }}"></script>
 <script src="{{URL::to('js/jquery.scrollUp.min.js') }}"></script>

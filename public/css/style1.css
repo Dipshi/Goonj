@@ -597,7 +597,7 @@ hr {
   color: #cccccc;
 }
 .breadcrumb > .active {
-  color: #999999;
+  color: rgb(123, 128, 128);
 }
 @media (max-width: 991px) {
   .breadcrumb {
@@ -616,8 +616,8 @@ hr {
 }
 .btn-primary {
   color: #ffffff;
-  background-color: #4fbfa8;
-  border-color: #41b39c;
+  background-color: darkcyan;
+  border-color: darkcyan;
 }
 .btn-primary:hover,
 .btn-primary:focus,
