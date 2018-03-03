@@ -367,7 +367,7 @@ ul.sub-menu {
 }
 
 .companyinfo h2  span{
-  color:#FE980F;
+  color:darkcyan;
 }
 
 .companyinfo p {
@@ -660,7 +660,7 @@ ul.sub-menu {
   padding-top: 15px;
 }
 .left-sidebar h2, .brands_products h2 {
-  color: #FE980F;
+  color: darkcyan;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 700;

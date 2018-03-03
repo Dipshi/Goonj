@@ -17,7 +17,7 @@
   clear: both;
 }
 #hot .product-slider .item {
-  margin: 0 25px;
+  /* margin: 0 25px; */
   visibility: hidden;
 }
 #hot .product-slider .owl-controls {
@@ -898,4 +898,10 @@ address {
 .panel-primary .panel-title a:hover {
   color: #fff;
   text-decoration: none;
+}
+.btn-click
+{
+  border:5px;
+  margin-bottom: 10px;
+  background-color: darkcyan;
 }
