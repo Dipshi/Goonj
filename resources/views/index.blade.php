@@ -1,4 +1,4 @@
- @extends('layouts.navbar')
+@extends('layouts.header')
 @section('body') 
 {{--  @section('slider')  --}}
 
@@ -793,6 +793,7 @@
 			</div>
 		</div>
 	</section>
+	
 		<footer id="footer"><!--Footer-->  
 		@yield('footer')
 		</footer>

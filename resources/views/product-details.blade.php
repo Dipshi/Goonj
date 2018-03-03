@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+@extends('layouts.header')
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -142,7 +143,9 @@
 			</div>
 		</div><!--/header-bottom-->
 	</header><!--/header-->
-	
+	 --}}
+{{--This is product -detail page--}}
+@section('body')
 	<section>
 		<div class="container">
 			<div class="row">
@@ -634,7 +637,7 @@
 		</div>
 	</section>
 	
-	<footer id="footer"><!--Footer-->
+	{{-- <footer id="footer"><!--Footer-->
 		<div class="footer-top">
 			<div class="container">
 				<div class="row">
@@ -791,7 +794,7 @@
 		</div>
 		
 	</footer><!--/Footer-->
-	
+	 --}}
 
   
     <script src="js/jquery.js"></script>
@@ -800,5 +803,6 @@
 	<script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/main.js"></script>
-</body>
-</html>
+@stop
+{{-- </body>
+</html> --}}

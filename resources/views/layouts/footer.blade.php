@@ -1,5 +1,5 @@
-{{--  @extends('layouts.header')  --}}
-{{--  @section('footer')  --}}
+{{-- @extends('layouts.header')   --}}
+@section('footer')  
 <footer id="footer"><!--Footer-->
     <div class="footer-top">
         <div class="container">
@@ -166,3 +166,4 @@
 <script src="{{URL::to('js/price-range.js') }}"></script>
 <script src="{{URL::to('js/jquery.prettyPhoto.js') }}"></script>
 <script src="{{URL::to('js/main.js') }}"></script>
+@stop
