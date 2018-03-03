@@ -12,7 +12,6 @@
     <link href="{{URL::to('css/price-range.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/animate.css') }}" rel="stylesheet">
 	<link href="{{URL::to('css/main1.css') }}" rel="stylesheet">
-<<<<<<< HEAD
 	<link href="{{URL::to('css/responsive.css') }}" rel="stylesheet">
     <script src="{{URL::to('js/jquery.js') }}"></script>
     <script src="{{URL::to('js/bootstrap.min.js') }}"></script>
@@ -20,52 +19,15 @@
     <script src="{{URL::to('js/price-range.js') }}"></script>
     <script src="{{URL::to('js/jquery.prettyPhoto.js') }}"></script>
     <script src="{{URL::to('js/main.js') }}"></script>
-
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->       
-    {{--  <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{URL::to('images/ico/apple-touch-icon-144-precomposed.png') }}">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{URL::to('images/ico/apple-touch-icon-114-precomposed.png') }}">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{URL::to('images/ico/apple-touch-icon-72-precomposed.png') }}">
-    <link rel="apple-touch-icon-precomposed" href="{{URL::to('images/ico/apple-touch-icon-57-precomposed.png') }}">  --}}
 </head><!--/head-->
 <body>
-    {{--  @yield('body')  --}}
-    <header id="header"><!--header-->
-    {{--  <div class="header_top"><!--header_top-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="contactinfo">
-                        <ul class="nav nav-pills">
-                            <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="social-icons pull-right">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/header_top-->  --}}
     
     <div class="header-middle"><!--header-middle-->
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="{{url ('eshopper/') }}"><img src="images/home/logo1.png" alt="" /></a>
+                        <a href="{{url ('eshopper/') }}"><img src="{{URL::to('images/home/logo1.png') }}" alt="" /></a>
                     </div>
                 </div>
                 <div class="col-sm-8">
@@ -211,7 +173,6 @@
 
 </body>
 </html>
-=======
     <link href="{{URL::to('css/responsive.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/style1.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/owl.carousel.css') }}" rel="stylesheet">
@@ -241,4 +202,3 @@
 <script src="{{URL::to('js/bootstrap-hover-dropdown.js') }}"></script>
 <script src="{{URL::to('js/owl.carousel.min.js') }}"></script>
 <script src="{{URL::to('js/front.js') }}"></script>
->>>>>>> master
