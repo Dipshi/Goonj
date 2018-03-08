@@ -34,5 +34,10 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'google' => [
+    'client_id' => '103986267863-st5tnndr3rtlmh74tm937kjq37mg5jjl.apps.googleusercontent.com',
+    'client_secret' => 'XvOz4bpG6uDVHTaBv5gNEk6H',
+    'redirect' => 'http://localhost/eshopper/auth/google/callback',
+],
 
 ];

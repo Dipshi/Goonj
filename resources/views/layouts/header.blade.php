@@ -25,40 +25,13 @@
  
 </head><!--/head-->
 <body>
-    {{--  @yield('body')  --}}
-    <header id="header"><!--header-->
-    {{--  <div class="header_top"><!--header_top-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="contactinfo">
-                        <ul class="nav nav-pills">
-                            <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="social-icons pull-right">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/header_top-->  --}}
     
     <div class="header-middle"><!--header-middle-->
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="{{url ('eshopper/') }}"><img src="{{URL::to('images/home/logo1.png')}}" alt="" /></a>
+                        <a href="{{url ('eshopper/') }}"><img src="{{URL::to('images/home/logo1.png') }}" alt="" /></a>
                     </div>
                 </div>
                 <div class="col-sm-8">
@@ -67,7 +40,7 @@
                             <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
                             <li><a href="{{url ('eshopper/checkout') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                             <li><a href="{{url ('eshopper/cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                            <li><a href="{{url ('eshopper/login') }}"><i class="fa fa-lock"></i> Login</a></li>
+                            <li><a href="{{url ('eshopper/auth/google') }}"><i class="fa fa-lock"></i> Login</a></li>
                         </ul>
                     </div>
                 </div>
@@ -209,7 +182,20 @@
 
 </body>
 </html>
-   
+    <link href="{{URL::to('css/responsive.css') }}" rel="stylesheet">
+    <link href="{{URL::to('css/style1.css') }}" rel="stylesheet">
+    <link href="{{URL::to('css/owl.carousel.css') }}" rel="stylesheet">
+    <link href="{{URL::to('css/owl.theme.css') }}" rel="stylesheet">
+
+    <link href="{{URL::to('css/owl.transition.css') }}" rel="stylesheet">
+
+
+
+  </head><!--/head-->
+<body>
+    @yield('nav')
+</body>
+</html>
 <script src="{{URL::to('js/jquery.js') }}"></script>
 <script src="{{URL::to('js/bootstrap.min.js') }}"></script>
 <script src="{{URL::to('js/jquery.scrollUp.min.js') }}"></script>
