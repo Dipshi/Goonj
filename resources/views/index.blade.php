@@ -106,8 +106,8 @@
 		<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3">
-					<div class="left-sidebar">
+				{{--  <div class="col-sm-3">  --}}
+					{{--  <div class="left-sidebar">
 						<h2>Category</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<div class="panel panel-default">
@@ -115,18 +115,27 @@
 									<h4 class="panel-title">
 										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Sportswear
+											Bags
 										</a>
 									</h4>
 								</div>
 								<div id="sportswear" class="panel-collapse collapse">
 									<div class="panel-body">
+										<h5>Mens</h5><hr>
 										<ul>
-											<li><a href="#">Nike </a></li>
-											<li><a href="#">Under Armour </a></li>
-											<li><a href="#">Adidas </a></li>
+											<li><a href="#">Wallets </a></li>
+											<li><a href="#">Laptop Bags </a></li>
+											{{--  <li><a href="#"></a></li>
 											<li><a href="#">Puma</a></li>
-											<li><a href="#">ASICS </a></li>
+											<li><a href="#">ASICS </a></li>  
+										</ul>
+										<h5>Women</h5><hr>
+										<ul>
+											<li><a href="#">Purses</a></li>
+											<li><a href="#">Laptop bags </a></li>
+											<li><a href="#">Handbags</a></li>
+											{{--  <li><a href="#">Puma</a></li>
+											<li><a href="#">ASICS </a></li>  
 										</ul>
 									</div>
 								</div>
@@ -136,7 +145,7 @@
 									<h4 class="panel-title">
 										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Mens
+											Toys
 										</a>
 									</h4>
 								</div>
@@ -163,7 +172,7 @@
 									<h4 class="panel-title">
 										<a data-toggle="collapse" data-parent="#accordian" href="#womens">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Womens
+											Artifacts
 										</a>
 									</h4>
 								</div>
@@ -239,9 +248,9 @@
 							</div>
 						</div><!--/price-range-->
 					</div>
-				</div>
+				</div>  --}}
 				
-				<div class="col-sm-9 padding-right">
+				<div class="col-sm-12 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
 						<div class="col-sm-4">
