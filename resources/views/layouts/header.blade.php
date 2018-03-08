@@ -19,6 +19,7 @@
     <script src="{{URL::to('js/price-range.js') }}"></script>
     <script src="{{URL::to('js/jquery.prettyPhoto.js') }}"></script>
     <script src="{{URL::to('js/main.js') }}"></script>
+ 
 </head><!--/head-->
 <body>
     
@@ -199,6 +200,6 @@
 <script src="{{URL::to('js/jquery.cookie.js') }}"></script>
 <script src="{{URL::to('js/waypoints.min.js') }}"></script>
 <script src="{{URL::to('js/modernizr.js') }}"></script>
-<script src="{{URL::to('js/bootstrap-hover-dropdown.js') }}"></script>
+{{--  <script src="{{URL::to('js/bootstrap-hover-dropdown.js') }}"></script>  --}}
 <script src="{{URL::to('js/owl.carousel.min.js') }}"></script>
 <script src="{{URL::to('js/front.js') }}"></script>

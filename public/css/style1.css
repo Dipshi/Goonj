@@ -17,7 +17,7 @@
   clear: both;
 }
 #hot .product-slider .item {
-  margin: 0 25px;
+  /* margin: 0 25px; */
   visibility: hidden;
 }
 #hot .product-slider .owl-controls {
@@ -899,8 +899,9 @@ address {
   color: #fff;
   text-decoration: none;
 }
-#slider > .main-slider > .item >img
+.btn-click
 {
-	width:100%;
-	height: 100%;
+  border:5px;
+  margin-bottom: 10px;
+  background-color: darkcyan;
 }
