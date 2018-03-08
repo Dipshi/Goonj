@@ -13,7 +13,7 @@
 									<h1><span>Artifacts</span>-SHOPPER</h1>
 									<h2>Free E-Commerce Template</h2>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-click">Get it now</button>
+									{{-- <button type="button" class="btn btn-click" style="background-color:darkcyan">Get it now</button> --}}
 								</div>
 								<div class="col-sm-6">
 									<img src="{{URL::to('images/home/flower.jpg') }}" class="girl img-responsive" alt="" />
@@ -25,7 +25,7 @@
 									<h1><span>Toys</span>-SHOPPER</h1>
 									<h2>Free E-Commerce Template</h2>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-click">Get it now</button>
+									{{-- <button type="button" class="btn btn-click" style="background-color:darkcyan">Get it now</button> --}}
 								</div>
 								<div class="col-sm-6">
 									<img src="{{URL::to('images/home/toy.jpg') }}"  class="girl img-responsive" alt="" />
@@ -36,7 +36,7 @@
 									<h1><span>E</span>-SHOPPER</h1>
 									<h2>Free E-Commerce Template</h2>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-click">Get it now</button>
+									{{-- <button type="button" class="btn btn-click" style="background-color:darkcyan">Get it now</button> --}}
 								</div>
 								<div class="col-sm-6">
 									<img src="{{URL::to('images/home/flower.jpg') }}"  class="girl img-responsive" alt="" />
@@ -48,7 +48,7 @@
 									<h1><span>E</span>-SHOPPER</h1>
 									<h2>Free E-Commerce Template</h2>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-click">Get it now</button>
+									{{-- <button type="button" class="btn btn-click">Get it now</button> --}}
 								</div>
 								<div class="col-sm-6">
 									<img src="{{URL::to('images/home/socks.jpg') }}"  class="girl img-responsive" alt="" />
