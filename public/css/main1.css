@@ -892,12 +892,14 @@ h2.title {
 }
 
 .product-overlay {
-  background:darkcyan;
+
+  background:rgba(0, 139, 139, 0.624);
   top: 0;
   display: none;
   height: 0;
   position: absolute;
-  transition: height 500ms ease 0s;
+  transition: height 500ms ease 0s ;
+
   width: 100%;
   display: block;
   /* opacity:; */
@@ -930,6 +932,7 @@ h2.title {
 .product-overlay .add-to-cart:hover {
   background:#fff;
   color: darkcyan;
+  opacity:1px;
 }
 
 
@@ -973,11 +976,11 @@ h2.title {
 }
 
 .choose {
-  border-top: 1px solid #F7F7F0;
+  border-top: 1px solid rgb(131, 131, 126);
 }
 
 .choose ul li a {
-  color: #B3AFA8;
+  color: rgb(152, 150, 148);
   font-family: 'Roboto', sans-serif;
   font-size: 13px;
   padding-left: 0;
