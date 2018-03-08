@@ -557,7 +557,7 @@ ul.sub-menu {
 }
 
 .footer-bottom p span a {
-  color: #FE980F;
+  color:darkcyan;
   font-style: italic;
   text-decoration: underline;
 }
@@ -807,7 +807,7 @@ h2.title:before{
 
 
 .tooltip-inner {
-  background-color: #FE980F;
+  background-color: darkcyan;
   border-radius: 4px;
   color: #FFFFFF;
   max-width: 200px;
@@ -830,12 +830,13 @@ h2.title:before{
 }
 
 .features_items{
-	overflow:hidden;
+  overflow:hidden;
+  color:darkcyan;
 }
 
 
 h2.title {
-  color: #FE980F;
+  color: darkcyan;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -1113,8 +1114,8 @@ h2.title {
 }
 
 .pagination  .active  a, .pagination  .active  span, .pagination  .active  a:hover, .pagination  .active  span:hover, .pagination  .active  a:focus, .pagination  .active  span:focus {
-  background-color: #FE980F;
-  border-color: #FE980F;
+  background-color:darkcyan;
+  border-color: darkcyan;
   color: #FFFFFF;
   cursor: default;
   z-index: 2;
@@ -1134,7 +1135,7 @@ h2.title {
 }
 
 .pagination  li  a:hover{
-	background:#FE980F;
+	background:darkcyan;
 	color:#fff;
 }
 
@@ -1249,7 +1250,7 @@ h2.title {
 }
 
 .product-information span span {
-  color: #FE980F;
+  color:darkcyan;
   float: left;
   font-family: 'Roboto', sans-serif;
   font-size: 30px;
@@ -1668,7 +1669,7 @@ h2.title {
 }
 
 .cart_delete a:hover {
-  background:#FE980F
+  background:darkcyan
 }
 
 
@@ -2055,7 +2056,7 @@ h2.title {
   position: absolute;
   width: auto;
   height: auto;
-  border-color:transparent transparent transparent #FE980F;
+  border-color:transparent transparent transparent darkcyan;
   border-width:4px;
   border-style: solid;
   top:6px;
@@ -2065,7 +2066,7 @@ h2.title {
 .blog-post-area 
 .post-meta ul span {
   float: right;
-  color: #FE980F
+  color: darkcyan
 }
 
 .post-meta span{
@@ -2073,7 +2074,7 @@ h2.title {
 }
 
 .post-meta span i{
-  color: #FE980F
+  color: darkcyan
 }
 
 
@@ -2362,7 +2363,7 @@ h2.title {
 }
 
 .replay-box span {
-  color: #FE980F;
+  color: darkcyan;
   float: right;
   font-weight: 700;
   margin-top: 21px;

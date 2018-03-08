@@ -58,7 +58,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="{{url ('eshopper/') }}"><img src="images/home/logo1.png" alt="" /></a>
+                        <a href="{{url ('eshopper/') }}"><img src="{{URL::to('images/home/logo1.png')}}" alt="" /></a>
                     </div>
                 </div>
                 <div class="col-sm-8">
