@@ -37,7 +37,7 @@
                             <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
                             <li><a href="{{url ('eshopper/checkout') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                             <li><a href="{{url ('eshopper/cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                            <li><a href="{{url ('eshopper/login') }}"><i class="fa fa-lock"></i> Login</a></li>
+                            <li><a href="{{url ('eshopper/auth/google') }}"><i class="fa fa-lock"></i> Login</a></li>
                         </ul>
                     </div>
                 </div>
