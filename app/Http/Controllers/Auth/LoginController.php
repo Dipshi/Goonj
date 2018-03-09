@@ -56,8 +56,6 @@ class LoginController extends Controller
         }
         //dd($user);
         $userEmail=$user->email;
-        // $authUser=$this->createUser($user);
-        // 
        //$staff = Customer::where('email', '=', $userEmail)->first();
        //Auth::login($authUser,true);
        //if(isset($staff))

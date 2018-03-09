@@ -1,11 +1,4 @@
-/*!
- * Slider for Bootstrap
- *
- * Copyright 2012 Stefan Petre
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- */
+
 .slider {
   display: inline-block;
   vertical-align: middle;
@@ -97,8 +90,8 @@
 }
 
 .slider-selection {
-  -moz-box-sizing: border-box;
-  background: none repeat scroll 0 0 #FE980F;
+  /* -moz-box-sizing : border-box; */
+  background: none repeat scroll 0 0 darkcyan;
   border-radius: 15px;
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15) inset;
   position: absolute;
@@ -120,4 +113,8 @@
 }
 .slider-handle.triangle {
   background: transparent none;
+}
+.price-range
+{
+  color:darkcyan;
 }

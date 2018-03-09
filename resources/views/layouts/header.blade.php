@@ -37,12 +37,12 @@
                             <li><a href="{{url ('checkout') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                             <li><a href="{{url ('cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                            
-                            @if(isset(session('email')))
+                            {{-- @if(isset(session('email'))) --}}
                                 <li><a class="btn btn-primary" onclick='document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://cms.dev/logout";'>
                                 <i class="fa fa-sign-out fa-fw"></i>Logout</a></li>
-                            @else
+                            {{-- @else --}}
                                 <li><a href="{{url ('auth/google') }}"><i class="fa fa-lock"></i> Login</a></li>
-                            @endif
+                            {{-- @endif --}}
                         </ul>
                     </div>
                 </div>
