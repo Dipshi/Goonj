@@ -49,9 +49,25 @@ class LoginController extends Controller
      */
     public function handleProviderCallback()
     {
+        try{
         $user = Socialite::driver('google')->stateless()->user();
-      return redirect('/');
-
-        //return $user->token;
+        }catch(Exception $e){      
+            return redirect('auth/google');
+        }
+        //dd($user);
+        $userEmail=$user->email;
+        $userName=$user->name;
+       //$staff = Customer::where('email', '=', $userEmail)->first();
+       //if(isset($staff))
+          session(['email' => $userEmail]);
+          return redirect('/')->with('success','Login Successfull !');
+       // return $user->token;
+    //    else {
+    //         $auth_url = $client->createAuthUrl();
+    //         return redirect($auth_url);
+    //     }
     }
+    
+
+
 }

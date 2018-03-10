@@ -301,8 +301,8 @@
 								  <!-- Wrapper for slides -->
 								    <div class="carousel-inner">
 										<div class="item active">
-										  <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-										  <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
+												<a href=""><img src="{{URL::to('images/home/toy.jpg')}}" alt=""></a>
+										  <!--<a href=""><img src="{{URL::to('images/home/toy.jpg')}}" alt=""></a>-->
 										  <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
 										</div>
 										<div class="item">
@@ -331,7 +331,7 @@
 						<div class="col-sm-7">
 							<div class="product-information"><!--/product-information-->
 								<img src="images/product-details/new.jpg" class="newarrival" alt="" />
-								<h2>Anne Klein Sleeveless Colorblock Scuba</h2>
+								<h2>Woollen Doll</h2>
 								<p>Web ID: 1089772</p>
 								<img src="images/product-details/rating.png" alt="" />
 								<span>

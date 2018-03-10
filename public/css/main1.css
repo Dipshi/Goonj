@@ -557,7 +557,11 @@ ul.sub-menu {
 }
 
 .footer-bottom p span a {
+<<<<<<< HEAD
+  color: darkcyan;
+=======
   color:darkcyan;
+>>>>>>> origin/master
   font-style: italic;
   text-decoration: underline;
 }
@@ -971,7 +975,11 @@ h2.title {
 }
 
 .add-to-cart:hover {
+<<<<<<< HEAD
+  background: darkcyan;
+=======
   background:darkcyan;
+>>>>>>> origin/master
   color: #FFFFFF;
 }
 
@@ -1117,7 +1125,11 @@ h2.title {
 }
 
 .pagination  .active  a, .pagination  .active  span, .pagination  .active  a:hover, .pagination  .active  span:hover, .pagination  .active  a:focus, .pagination  .active  span:focus {
+<<<<<<< HEAD
+  background-color: darkcyan;
+=======
   background-color:darkcyan;
+>>>>>>> origin/master
   border-color: darkcyan;
   color: #FFFFFF;
   cursor: default;
@@ -1182,7 +1194,7 @@ h2.title {
 }
 
 .view-product h3 {
-  background: #FE980F;
+  background: darkcyan;
   bottom: 0;
   color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
@@ -1253,7 +1265,11 @@ h2.title {
 }
 
 .product-information span span {
+<<<<<<< HEAD
+  color: darkcyan;
+=======
   color:darkcyan;
+>>>>>>> origin/master
   float: left;
   font-family: 'Roboto', sans-serif;
   font-size: 30px;
@@ -1777,7 +1793,11 @@ h2.title {
 }
 
 .update, .check_out {
+<<<<<<< HEAD
+  background:darkcyan;
+=======
   background: darkcyan;
+>>>>>>> origin/master
   border-radius: 0;
   color: #FFFFFF;
   margin-top: 18px;

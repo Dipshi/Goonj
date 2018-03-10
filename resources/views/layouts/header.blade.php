@@ -25,7 +25,7 @@
  
 </head><!--/head-->
 <body>
-    
+    {{-- @include('layouts.validation'); --}}
     <div class="header-middle"><!--header-middle-->
         <div class="container">
             <div class="row">
@@ -37,10 +37,15 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-                            <li><a href="{{url ('eshopper/checkout') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                            <li><a href="{{url ('eshopper/cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                            <li><a href="{{url ('eshopper/auth/google') }}"><i class="fa fa-lock"></i> Login</a></li>
+                            <li><a href="{{url ('checkout') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                            <li><a href="{{url ('cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                           
+                            {{-- @if(isset(session('email'))) --}}
+                                <li><a onclick='document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost";'>
+                                <i class="fa fa-sign-out fa-fw"></i>Logout</a></li>
+                            {{-- @else --}}
+                                <li><a href="{{url ('auth/google') }}"><i class="fa fa-lock"></i> Login</a></li>
+                            {{-- @endif --}}
                         </ul>
                     </div>
                 </div>
@@ -65,10 +70,12 @@
                             <li><a href="{{url ('eshopper/') }}" class="active">Home</a></li>
                             <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="{{url ('eshopper/shop') }}">Products</a></li>
-                                    <li><a href="{{url ('eshopper/product-details') }}">Product Details</a></li> 
-                                    <li><a href="{{url ('eshopper/checkout') }}">Checkout</a></li> 
-                                    <li><a href="{{url ('eshopper/cart') }}">Cart</a></li> 
+                                    <li><a href="{{url ('eshopper/shop') }}" id="bags">Bags</a></li>
+                                    <li><a href="{{url ('eshopper/shop') }}" id="toys">Toys</a></li>
+                                    <li><a href="{{url ('eshopper/shop') }}">Mats</a></li>
+                                    {{-- <li><a href="{{url ('eshopper/product-details') }}">Product Details</a></li>  --}}
+                                    {{-- <li><a href="{{url ('eshopper/checkout') }}">Checkout</a></li>  --}}
+                                    {{-- <li><a href="{{url ('eshopper/cart') }}">Cart</a></li>  --}}
                                      
                                 </ul>
                             </li> 
