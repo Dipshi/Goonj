@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Socialite\Facades\Socialite;
-use App\Customer;
+use App\Comment;
+use DB;
 
 class LoginController extends Controller
 {
@@ -58,16 +59,11 @@ class LoginController extends Controller
         //dd($user);
         $userEmail=$user->email;
         $userName=$user->name;
-       //$staff = Customer::where('email', '=', $userEmail)->first();
-       //if(isset($staff))
-          session(['email' => $userEmail]);
-          return redirect('/')->with('success','Login Successfull !');
-       // return $user->token;
-    //    else {
-    //         $auth_url = $client->createAuthUrl();
-    //         return redirect($auth_url);
-    //     }
+        session(['email' => $userEmail]);
+        return redirect('/')->with('success','Login Successfull !');
+      
     }
+    
     
 
 

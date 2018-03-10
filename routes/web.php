@@ -14,7 +14,7 @@
 // Route::get('/', function () {
 //     return view('in');
 // });
- //Route::group(['prefix'=>'eshopper'], function() {
+ 
  Route::get('/','PagesController@index' );
  Route::get('/product-details','ProductDetails@product' );
  Route::get('/login','LoginController@index' );
@@ -28,5 +28,5 @@
 });
  Route::get('/shop','ShopController@index' );
  Route::get('auth/google', 'Auth\LoginController@redirectToProvider');
- Route::get('auth/google/callback', 'Auth\LoginController@handleProviderCallback');
-//});
+ Route::get('auth/google/callback', 'LoginController1@handleProviderCallback');
+ Route::get('/logout','SessionController@logout' );

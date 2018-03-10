@@ -41,8 +41,7 @@
                             <li><a href="{{url ('cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                            
                             @if(!empty(session('email')))
-                                <li><a onclick='document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost";'>
-                                <i class="fa fa-sign-out fa-fw"></i>Logout</a></li>
+                                <li><a href="/logout" onclick='document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost";'> <i class="fa fa-sign-out fa-fw"></i> Logout </a></li>
                                 {{-- <li><p>WELCOME {{session('email')}}</p><li> --}}
                              @else 
                                 <li><a href="{{url ('auth/google') }}"><i class="fa fa-lock"></i> Login</a></li>
