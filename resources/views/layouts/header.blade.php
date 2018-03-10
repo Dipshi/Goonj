@@ -13,16 +13,19 @@
     <link href="{{URL::to('css/animate.css') }}" rel="stylesheet">
 	<link href="{{URL::to('css/main1.css') }}" rel="stylesheet">
 	<link href="{{URL::to('css/responsive.css') }}" rel="stylesheet">
-    <script src="{{URL::to('js/jquery.js') }}"></script>
-    <script src="{{URL::to('js/bootstrap.min.js') }}"></script>
-    <script src="{{URL::to('js/jquery.scrollUp.min.js') }}"></script>
-    <script src="{{URL::to('js/price-range.js') }}"></script>
-    <script src="{{URL::to('js/jquery.prettyPhoto.js') }}"></script>
-    <script src="{{URL::to('js/main.js') }}"></script>
+  
+    <link href="{{URL::to('css/style1.css') }}" rel="stylesheet">
+    <link href="{{URL::to('css/owl.carousel.css') }}" rel="stylesheet">
+    <link href="{{URL::to('css/owl.theme.css') }}" rel="stylesheet">
+
+    <link href="{{URL::to('css/owl.transition.css') }}" rel="stylesheet">
+
+
+
  
 </head><!--/head-->
 <body>
-    
+    {{-- @include('layouts.validation'); --}}
     <div class="header-middle"><!--header-middle-->
         <div class="container">
             <div class="row">
@@ -38,7 +41,7 @@
                             <li><a href="{{url ('cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                            
                             {{-- @if(isset(session('email'))) --}}
-                                <li><a class="btn btn-primary" onclick='document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://cms.dev/logout";'>
+                                <li><a onclick='document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost";'>
                                 <i class="fa fa-sign-out fa-fw"></i>Logout</a></li>
                             {{-- @else --}}
                                 <li><a href="{{url ('auth/google') }}"><i class="fa fa-lock"></i> Login</a></li>
@@ -76,6 +79,18 @@
                                      
                                 </ul>
                             </li> 
+                            <li class="dropdown"><a href="#">Bags<i class="fa fa-angle-down"></i></a>
+                                <ul role="menu" class="dropdown-menu sub-menu">
+                                    <li class="dropdown"><a href="#">Mens</a></li>
+                                    <ul class=" sub-menu" >
+                                        <li  role="menu" class="dropdown" ><a href="#">Laptop bags</li>
+
+                                    </ul>
+                                    
+                                    <li><a href="#">Women</a></li>
+                                </ul>
+                            </li>
+                            {{-- <li><a href="404.html">404</a></li> --}}
                             <li><a href="{{url ('eshopper/contact-us') }}">Contact</a></li>
                         </ul>
                     </div>

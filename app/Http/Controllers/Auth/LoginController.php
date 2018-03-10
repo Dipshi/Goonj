@@ -56,8 +56,8 @@ class LoginController extends Controller
         }
         //dd($user);
         $userEmail=$user->email;
+        $userName=$user->name;
        //$staff = Customer::where('email', '=', $userEmail)->first();
-       //Auth::login($authUser,true);
        //if(isset($staff))
           session(['email' => $userEmail]);
           return redirect('/')->with('success','Login Successfull !');
