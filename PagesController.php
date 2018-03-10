@@ -11,4 +11,10 @@ class PagesController extends Controller
     {
         return view('index');
     }
+    public function returnitems()
+    {
+        // $users = DB::select('select * from item ');
+        $item = DB::table('item')->get();
+        return view('index', compact('items'));
+    }
 }

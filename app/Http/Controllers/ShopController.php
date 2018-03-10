@@ -16,8 +16,8 @@ class ShopController extends Controller
 
     public function returnitems()
     {
-        // $users = DB::select('select * from item ');
-        $users = DB::table('item')->get();
-        return view('index', ['items' => $items]);
-    }
+        $item = item::all();
+        echo $item;
+        return View::make('index')->with('item', $item);   
+    }          
 }

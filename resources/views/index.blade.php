@@ -253,7 +253,7 @@
 				<div class="col-sm-12 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
-						@foreach ($items as $items)
+						@foreach ($item as $item)
 						<div class="col-sm-3">
 							<div class="product-image-wrapper">
 								<div class="single-products">
