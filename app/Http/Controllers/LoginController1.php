@@ -31,10 +31,10 @@ class LoginController1 extends Controller
             return redirect('auth/google');
         }
         //dd($user);
-        $userEmail=$user->email;
-        $userName=$user->name;
+       $userEmail=$user->email;
+       $userName=$user->name;
        $firstchar="cu".''.$this->handle();
-       $pieces = explode(" ", $userName);
+       $pieces = explode(" ", $userName);   //retrieve first name and last name
        $first=$pieces[0];
        $last=$pieces[1];
        $cust=DB::table('customer')->insert(['first_name' => $first,'last_name' => $last,'cid' => $firstchar,'email' => $userEmail]);
@@ -49,7 +49,7 @@ class LoginController1 extends Controller
     public function handle(){
         $data=collect(DB::select( "SELECT cid FROM customer order by cid desc limit 1"));
         $cidCust=$data[0]->cid;
-        $val= intval(substr($cidCust,2));
+        $val= intval(substr($cidCust,2));   //primary key generation
         return $val+1;
     }
     
