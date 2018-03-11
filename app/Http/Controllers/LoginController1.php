@@ -37,6 +37,8 @@ class LoginController1 extends Controller
        $pieces = explode(" ", $userName);   //retrieve first name and last name
        $first=$pieces[0];
        $last=$pieces[1];
+       $data=DB::select( 'SELECT email FROM customer where email<>"'.$email.'"');
+       //if()
        $cust=DB::table('customer')->insert(['first_name' => $first,'last_name' => $last,'cid' => $firstchar,'email' => $userEmail]);
        if($cust==true){
           session(['email' => $userEmail]);

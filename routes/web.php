@@ -16,7 +16,8 @@
 // });
  
  Route::get('/','PagesController@index' );
- Route::get('/product-details','ProductDetails@product' );
+ Route::get('/product-details','ProductDetailsController@product' );
+ Route::get('/addToCart/{id}','ProductDetailsController@addToCart' );
  Route::get('/login','LoginController@index' );
  Route::get('/checkout','CheckoutController@index' );
  Route::get('/cart','CartController@index' );
