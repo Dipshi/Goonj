@@ -15,7 +15,7 @@
 //     return view('in');
 // });
  //Route::group(['prefix'=>'eshopper'], function() {
- Route::get('/','PagesController@index' );
+ Route::get('/','ShopController@returnitems' );
  Route::get('/product-details','ProductDetails@product' );
  Route::get('/login','LoginController@index' );
  Route::get('/checkout','CheckoutController@index' );
