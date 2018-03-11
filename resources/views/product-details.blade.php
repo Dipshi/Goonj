@@ -155,7 +155,7 @@
 							{{--  <div id="similar-product" class="carousel slide" data-ride="carousel">
 								
 								  <!-- Wrapper for slides -->
-								    <div class="carousel-inner">
+								    {{-- <div class="carousel-inner">
 										<div class="item active">
 												<a href=""><img src="{{asset('images/product_details/'.$details[0]->images)}}" alt=""></a>
 												<a href=""><img src="{{asset('images/product_details/'.$details[0]->images)}}" alt=""></a>
@@ -172,16 +172,16 @@
 										  <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
 										</div>
 										
-									</div>
+									</div> --}}
 
 								  <!-- Controls -->
-								  <a class="left item-control" href="#similar-product" data-slide="prev">
+								  {{--  <a class="left item-control" href="#similar-product" data-slide="prev">
 									<i class="fa fa-angle-left"></i>
 								  </a>
 								  <a class="right item-control" href="#similar-product" data-slide="next">
 									<i class="fa fa-angle-right"></i>
 								  </a>
-							</div>  --}}
+							</div>  --}} 
 
 						</div>
 						<div class="col-sm-7">
@@ -189,14 +189,13 @@
 								<img src="images/product-details/new.jpg" class="newarrival" alt="" />
 								<h2>{{$details[0]->item_name}}</h2>
 								{{--  <p></p>  --}}
-							<img src="images/product-details/{{$details[0]->images}}" alt="" />
+								<img src="images/product-details/{{$details[0]->images}}" alt="" />
 								<span>
 								<span>Rs. {{$details[0]->price}}</span>
 									<label>Quantity:</label>
 									<input type="text" value="1" />
-									<button type="button" class="btn btn-fefault cart">
-										<i class="fa fa-shopping-cart"></i>
-										Add to cart
+									<button type="button" class="btn btn-fefault cart" id=" {{$details[0]->item_id}}">
+											<a href="{{url ('/addToCart/'. $details[0]->item_id) }}" style="color:#ffffff"><i class="fa fa-shopping-cart" style="color:#ffffff"></i>Add to Cart</a></li>
 									</button>
 								</span>
 								<p><b>Availability:</b>
@@ -206,11 +205,9 @@
 								In Stock
 								@endif
 								</p>
-								{{--  <p><b>Condition:</b> New</p>
-								<p><b>Brand:</b> E-SHOPPER</p>  --}}
-								<a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
-							</div><!--/product-information-->
-						</div>
+								<p><b>Category :</b>{{$details[0]->category}}</p>  
+							</div>
+						</div>	
 					</div><!--/product-details-->
 					
 					<div class="category-tab shop-details-tab"><!--category-tab-->
@@ -231,9 +228,8 @@
 								<div class="col-sm-3">
 								</div>	
 							</div>
-							
-							<div class="tab-pane fade active in" id="reviews" >
-								@if($review)
+							<div class="tab-pane fade " id="reviews" >
+								@if($details)
 								<div class="col-sm-12">
 									<ul>
 										<li><a href=""><i class="fa fa-user"></i>EUGEN</a></li>

@@ -20,12 +20,20 @@ class ProductDetails extends Controller
         // return $details;
         return view('product-details')->with('details',$details);
     }
-    public function get_reviews($item_id)
+
+    public function reviews($item_id)
     {
         $review=review::select('*')->where('item_id',$item_id)->get();
         // $item = DB::table('item')->get();
-        // return $review;
-        return view('product-details')->with('review',$review);
+        return $review;
+        // return view('product-details')->with('review',$review);
     }
+    public function count_reviews($item_id)
+    {
+        $count=review::select('count(*)')->where('item_id',$item_id)->get();
+        return $count;
+
+    }
+
     
 }

@@ -37,14 +37,15 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
+                             @if(!empty(session('email')))
                             <li><a href="{{url ('checkout') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                             <li><a href="{{url ('cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                           
-                            @if(!empty(session('email')))
-                                <li><a href="/logout" onclick='document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost";'> <i class="fa fa-sign-out fa-fw"></i> Logout </a></li>
+                            <li><a href="/logout" onclick='document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost";'> <i class="fa fa-sign-out fa-fw"></i> Logout </a></li>
                                 {{-- <li><p>WELCOME {{session('email')}}</p><li> --}}
                              @else 
-                                <li><a href="{{url ('auth/google') }}"><i class="fa fa-lock"></i> Login</a></li>
+                             <li><a href="{{url ('auth/google') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                             <li><a href="{{url ('auth/google') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                             <li><a href="{{url ('auth/google') }}"><i class="fa fa-lock"></i> Login</a></li>
                             @endif
                         </ul>
                     </div>
@@ -67,13 +68,13 @@
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="{{url ('eshopper/') }}" class="active">Home</a></li>
+                            <li><a href="{{url ('/') }}" class="active">Home</a></li>
                             <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="{{url ('eshopper/shop') }}" id="bags">Bags</a></li>
-                                    <li><a href="{{url ('eshopper/shop') }}" id="toys">Toys</a></li>
-                                    <li><a href="{{url ('eshopper/shop') }}">Mats</a></li>
-                                    {{-- <li><a href="{{url ('eshopper/product-details') }}">Product Details</a></li>  --}}
+                                    <li><a href="{{url ('/shop') }}" id="bags">Bags</a></li>
+                                    <li><a href="{{url ('/shop') }}" id="toys">Toys</a></li>
+                                    <li><a href="{{url ('/shop') }}">Mats</a></li>
+                                    <li><a href="{{url ('/product-details') }}">Product Details</a></li> 
                                     {{-- <li><a href="{{url ('eshopper/checkout') }}">Checkout</a></li>  --}}
                                     {{-- <li><a href="{{url ('eshopper/cart') }}">Cart</a></li>  --}}
                                      
@@ -91,7 +92,7 @@
                                 </ul>
                             </li>
                             {{-- <li><a href="404.html">404</a></li> --}}
-                            <li><a href="{{url ('eshopper/contact-us') }}">Contact</a></li>
+                            <li><a href="{{url ('/contact-us') }}">Contact</a></li>
                         </ul>
                     </div>
                 </div>
