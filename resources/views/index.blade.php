@@ -116,7 +116,7 @@
 								<div class="single-products">
 										<div class="productinfo text-center">
 										<img style="height:200px" src="images/Products/{{$item->images}}" alt="" />
-											<h2>{{$item->price}}</h2>
+											<h2>RS. {{$item->price}}</h2>
 										<p>{{$item->item_name}}</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>

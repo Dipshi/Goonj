@@ -14,8 +14,10 @@
 // Route::get('/', function () {
 //     return view('in');
 // });
+ //Route::group(['prefix'=>'eshopper'], function() {
+ Route::get('/','ShopController@returnitems' );
  
- Route::get('/','PagesController@index' );
+//  Route::get('/','PagesController@index' );
  Route::get('/product-details','ProductDetails@product' );
  Route::get('/login','LoginController@index' );
  Route::get('/checkout','CheckoutController@index' );
