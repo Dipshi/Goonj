@@ -18,7 +18,9 @@
  Route::get('/','ShopController@returnitems' );
  
 //  Route::get('/','PagesController@index' );
- Route::get('/product-details','ProductDetails@product' );
+Route::resource('/product-details', 'ProductDetails', ['only' => ['product', 'show',' get_reviews']]);
+
+//  Route::get('/product-details','ProductDetails@product' );
  Route::get('/login','LoginController@index' );
  Route::get('/checkout','CheckoutController@index' );
  Route::get('/cart','CartController@index' );

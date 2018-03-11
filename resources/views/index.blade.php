@@ -117,13 +117,13 @@
 										<div class="productinfo text-center">
 										<img style="height:200px" src="images/Products/{{$item->images}}" alt="" />
 											<h2>RS. {{$item->price}}</h2>
-										<p>{{$item->item_name}}</p>
+										<a href="#"><p>{{$item->item_name}}</p><a>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
-												<h2>{{$item->price}}</h2>
-												<p>{{$item->item_name}}</p>
+												<h2>RS. {{$item->price}}</h2>
+												<p><a href="{{url('product-details', [$item->item_id]) }}" style="color:white">{{$item->item_name}}</a></p>
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
 										</div>
