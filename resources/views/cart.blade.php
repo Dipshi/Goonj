@@ -21,82 +21,49 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td class="cart_product">
-								<a href=""><img src="images/cart/one.png" alt=""></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">Colorblock Scuba</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_price">
-								<p>$59</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
-									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
-								</div>
-							</td>
+						
+							@if(!empty(session('email')))
+							 @if(!empty($data))
+								@foreach($data as $d)
+								<tr>
+								<td class="cart_total">
+									<p class="cart_total_price"></p>
+								</td>
+								<td class="cart_description">
+									<h4><a href="">{{$d->item_name}}</a></h4>
+									<p>Web ID: {{$d->item_id}}</p>
+								</td>
+								<td class="cart_price">
+									<p>Rs. {{$d->cost}}</p>
+								</td>
+								<td class="cart_quantity">
+									<div class="cart_quantity_button">
+										<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+										{{-- <a class="cart_quantity_down" href=""> - </a> --}}
+									</div>
+								</td>
+								<td class="cart_total">
+									<p class="cart_total_price">Rs. 67</p>
+								</td>
+								<td>
+									{{-- <a class="cart_quantity_delete"  href="{{URL('cart/destroy/.$d->item_id')}}" align="center"><i class="fa fa-times"></i></a> --}}
+									<button type="button" class="btn btn-fefault cart" id=" {{$d->item_id}}">
+										<a href="{{url ('cart/destroy/'. $d->item_id) }}" style="color:#ffffff">Delete</a></li>
+									</button>
+								</td>
+							  </tr>
+						    @endforeach
+							@else
 							<td class="cart_total">
-								<p class="cart_total_price">$59</p>
-							</td>
-							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-							</td>
-						</tr>
-
-						<tr>
-							<td class="cart_product">
-								<a href=""><img src="images/cart/two.png" alt=""></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">Colorblock Scuba</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_price">
-								<p>$59</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
-									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">$59</p>
-							</td>
-							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-							</td>
-						</tr>
-						<tr>
-							<td class="cart_product">
-								<a href=""><img src="images/cart/three.png" alt=""></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">Colorblock Scuba</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_price">
-								<p>$59</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
-									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">$59</p>
-							</td>
-							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-							</td>
-						</tr>
+									<p class="cart_total_price">Nothing to show</p>
+								</td>
+								@endif
+						@else
+						       <td class="cart_total">
+									<p class="cart_total_price">Nothing to show</p>
+								</td>
+						@endif
+					 
 					</tbody>
 				</table>
 			</div>

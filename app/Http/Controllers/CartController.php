@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use App\Cart;
 
 class CartController extends Controller
 {
@@ -11,9 +13,19 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('cart');
+        $email=session('email');
+        $query=collect(DB::select( 'SELECT cid FROM customer where email= "'.$email.'" limit 1'));
+        $cid=$query[0]->cid;
+        $data=collect(DB::select('SELECT count(i.item_id) as value,i.item_id FROM cart as c,item as i Where i.item_id=c.item_id and cid="'.$cid.'" group by i.item_id'));
+        $val=$data[0]->value;
+        foreach($data as $d){
+          $dataFinal=collect(DB::select('SELECT * from item Where item_id="'.$d->item_id.'"'));
+        }
+      //  $itemAmt=($dataFinal[0]->cost)*$val;
+        //dd($itemcount);
+        return view('cart',array('data'=>$dataFinal));
     }
 
     /**
@@ -79,6 +91,7 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $song =  Cart::where('item_id', $id)->delete();
+       return view('cart')->with('success', 'Remark Deleted Successfully');
     }
 }

@@ -17,10 +17,10 @@
  
  Route::get('/','PagesController@index' );
  Route::get('/product-details','ProductDetailsController@product' );
- Route::get('/addToCart/{id}','ProductDetailsController@addToCart' );
- Route::get('/login','LoginController@index' );
- Route::get('/checkout','CheckoutController@index' );
+ Route::get('/product-details/addToCart/{id}','ProductDetailsController@addToCart' );
  Route::get('/cart','CartController@index' );
+ Route::get('/cart/destroy/{id}','CartController@destroy' );
+ Route::get('/checkout','CheckoutController@index' );
  Route::get('/contact-us', function () {
      return view('contact-us');
  });

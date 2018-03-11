@@ -44,7 +44,7 @@
                                 {{-- <li><p>WELCOME {{session('email')}}</p><li> --}}
                              @else 
                              <li><a href="{{url ('auth/google') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                             <li><a href="{{url ('auth/google') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                             <li><a href="{{url ('cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                              <li><a href="{{url ('auth/google') }}"><i class="fa fa-lock"></i> Login</a></li>
                             @endif
                         </ul>

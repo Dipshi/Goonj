@@ -4,8 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CustShop extends Model
+class Customer extends Model
 {
+
     protected $table = "customer";
     protected $primaryKey = "cid";
 }

@@ -20,12 +20,12 @@ class ProductDetailsController extends Controller
         $query=collect(DB::select( 'SELECT cid FROM customer where email= "'.$email.'" limit 1'));
         $cid=$query[0]->cid;
         $cust=DB::table('cart')->insert(['cid' => $cid,'item_id' => $id]);
-        if($cust==true)
-         return view('cart');
-        else
-          return redirect('/product-details')->with('error','Something went wrong !');
+        $data= $this->show_cart($id,$cid);
+        return view('product-details')->with('success','Added successfully to cart');// array ( 'data' => $data));
+       
     }
-    public function show_cart(){
-        
+    public function show_cart($id,$cid){
+        $query=collect(DB::select('SELECT * FROM cart as c,item as i Where i.item_id=c.item_id and cid="'.$cid.'"'));
+        return $query;
     }
 }

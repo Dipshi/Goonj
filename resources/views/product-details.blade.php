@@ -339,7 +339,7 @@
 									<label>Quantity:</label>
 									<input type="text" value="3" />
 									<button type="button" class="btn btn-fefault cart" id=" {{$query[0]->item_id}}">
-										<a href="{{url ('/addToCart/'. $query[0]->item_id) }}" style="color:#ffffff"><i class="fa fa-shopping-cart" style="color:#ffffff"></i>Add to Cart</a></li>
+										<a href="{{url ('product-details/addToCart/'. $query[0]->item_id) }}" style="color:#ffffff"><i class="fa fa-shopping-cart" style="color:#ffffff"></i>Add to Cart</a></li>
 									</button>
 								</span>
 								<p><b>Availability:</b> In Stock</p>
