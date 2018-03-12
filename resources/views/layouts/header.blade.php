@@ -11,14 +11,16 @@
     <link href="{{URL::to('css/prettyPhoto.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/price-range.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/animate.css') }}" rel="stylesheet">
-	<link href="{{URL::to('css/main1.css') }}" rel="stylesheet">
+    <link href="{{URL::to('css/main1.css') }}" rel="stylesheet">
+    <link href="{{URL::to('css/star.css') }}" rel="stylesheet">
+
 	<link href="{{URL::to('css/responsive.css') }}" rel="stylesheet">
   
-    <link href="{{URL::to('css/style1.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/owl.carousel.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/owl.theme.css') }}" rel="stylesheet">
 
     <link href="{{URL::to('css/owl.transition.css') }}" rel="stylesheet">
+
 
 
 
