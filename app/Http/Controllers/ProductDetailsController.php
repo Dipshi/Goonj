@@ -25,7 +25,8 @@ class ProductDetailsController extends Controller
         else
           return redirect('/product-details')->with('error','Something went wrong !');
     }
-    public function show_cart(){
+    public function show_cart()
+    {
         
     }
 }

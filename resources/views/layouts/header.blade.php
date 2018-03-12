@@ -80,18 +80,7 @@
                                      
                                 </ul>
                             </li> 
-                            {{--  <li class="dropdown"><a href="#">Bags<i class="fa fa-angle-down"></i></a>
-                                <ul role="menu" class="dropdown-menu sub-menu">
-                                    <li class="dropdown"><a href="#">Mens</a></li>
-                                    <ul class=" sub-menu" >
-                                        <li  role="menu" class="dropdown" ><a href="#">Laptop bags</li>
-
-                                    </ul>
-                                    
-                                    <li><a href="#">Women</a></li>
-                                </ul>
-                            </li>  --}}
-                            {{-- <li><a href="404.html">404</a></li> --}}
+                           
                             <li><a href="{{url ('/contact-us') }}">Contact</a></li>
                         </ul>
                     </div>
@@ -219,3 +208,5 @@
 {{--  <script src="{{URL::to('js/bootstrap-hover-dropdown.js') }}"></script>  --}}
 <script src="{{URL::to('js/owl.carousel.min.js') }}"></script>
 <script src="{{URL::to('js/front.js') }}"></script>
+<script>
+    

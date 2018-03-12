@@ -133,7 +133,7 @@
 						</div>
 						<div class="col-sm-7">
 							<div class="product-information"><!--/product-information-->
-								<img src="images/product-details/new.jpg" class="newarrival" alt="" />
+								{{--  <img src="images/product-details/new.jpg" class="newarrival" alt="" />  --}}
 								<h2>{{$details[0]->item_name}}</h2>
 								{{--  <p></p>  --}}
 								<img src="images/product-details/{{$details[0]->images}}" alt="" />
