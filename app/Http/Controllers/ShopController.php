@@ -22,10 +22,11 @@ class ShopController extends Controller
         
         return View::make('index')->with('item', $item);   
     }  
-    public function return_category($name)
+    public function return_category(Request $request,$category)
     {
-        $items=item::select('*')->where('category',$name)->get();
-        return View::make('shop')->with('items', $items);   
+        $items=item::select('*')->where('category',$category)->get();
+        // return $items;
+        return View::make('shop')->with('items', $items)->with('category',$category);   
 
 
     }        

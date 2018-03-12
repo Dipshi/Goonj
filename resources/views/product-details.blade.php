@@ -9,7 +9,7 @@
 					<div class="left-sidebar">
 						<h2>Category</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
-							<div class="panel panel-default">
+							{{--  <div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
 										<a data-toggle="collapse" data-parent="#accordian" href="#bags1">
@@ -21,11 +21,11 @@
 								<div id="bags1" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
-											<li><a href="">Laptopbags </a></li>
+										<li><a href="{{url('shop/laptop_bags')}}">Laptopbags </a></li>
 											<li><a href="">Leatherbag </a></li>
 											<li><a href="">handbag </a></li>
 											<li><a href="">Purse</a></li>
-											{{--  <li><a href="">ASICS </a></li>  --}}
+											{{--  <li><a href="">ASICS </a></li>  
 										</ul>
 									</div>
 								</div>
@@ -48,14 +48,24 @@
 											<li><a href="">Door Mats</a></li>
 											<li><a href="">Floor Mats</a></li>
 											<li><a href="">Blankets</a></li>
-											{{--  <li><a href="">Versace</a></li>  --}}
+											{{--  <li><a href="">Versace</a></li>  
 										</ul>
 									</div>
 								</div>
-							</div>  
+							</div>    --}}
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Toys</a></h4>
+									<h4 class="panel-title"><a href="{{url('shop/bags')}}">Bags</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="{{url('shop/mats')}}">Mats</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="{{url('shop/toys')}}">Toys</a></h4>
 								</div>
 							</div>
 						
