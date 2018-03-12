@@ -32,6 +32,9 @@ Route::get('/product-details/{id}', 'ProductDetails@show');//review and show
     return view('index_productdisplay');
 });
  Route::get('/shop/{name}','ShopController@return_category' );
+ Route::get('/shop/{name}/{range}', 'ShopController@range');//review and show
+
+ 
  Route::get('auth/google', 'Auth\LoginController@redirectToProvider');
  Route::get('auth/google/callback', 'LoginController1@handleProviderCallback');
  Route::get('/logout','SessionController@logout' );
