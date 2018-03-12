@@ -15,7 +15,12 @@ class PagesController extends Controller
     {
         return view('index');
     }
-
+    public function returnitems()
+    {
+        $item = item::all();
+        return item::all();
+        return View::make('index')->with('item', $item);   
+    }     
     /**
      * Show the form for creating a new resource.
      *

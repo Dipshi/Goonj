@@ -12,110 +12,56 @@
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+										<a data-toggle="collapse" data-parent="#accordian" href="#bags1">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Sportswear
+											Bags
 										</a>
 									</h4>
 								</div>
-								<div id="sportswear" class="panel-collapse collapse">
+								<div id="bags1" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
-											<li><a href="">Nike </a></li>
-											<li><a href="">Under Armour </a></li>
-											<li><a href="">Adidas </a></li>
-											<li><a href="">Puma</a></li>
-											<li><a href="">ASICS </a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Mens
-										</a>
-									</h4>
-								</div>
-								<div id="mens" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="">Fendi</a></li>
-											<li><a href="">Guess</a></li>
-											<li><a href="">Valentino</a></li>
-											<li><a href="">Dior</a></li>
-											<li><a href="">Versace</a></li>
-											<li><a href="">Armani</a></li>
-											<li><a href="">Prada</a></li>
-											<li><a href="">Dolce and Gabbana</a></li>
-											<li><a href="">Chanel</a></li>
-											<li><a href="">Gucci</a></li>
+											<li><a href="">Laptopbags </a></li>
+											<li><a href="">Leatherbag </a></li>
+											<li><a href="">handbag </a></li>
+											<li><a href="">Purse</a></li>
+											{{--  <li><a href="">ASICS </a></li>  --}}
 										</ul>
 									</div>
 								</div>
 							</div>
 							
+							
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#womens">
+										<a data-toggle="collapse" data-parent="#accordian" href="#mats">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Womens
+											Mats
 										</a>
 									</h4>
 								</div>
-								<div id="womens" class="panel-collapse collapse">
+								<div id="mats" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
-											<li><a href="">Fendi</a></li>
-											<li><a href="">Guess</a></li>
-											<li><a href="">Valentino</a></li>
-											<li><a href="">Dior</a></li>
-											<li><a href="">Versace</a></li>
+											<li><a href="">Yoga Mats</a></li>
+											<li><a href="">Door Mats</a></li>
+											<li><a href="">Floor Mats</a></li>
+											<li><a href="">Blankets</a></li>
+											{{--  <li><a href="">Versace</a></li>  --}}
 										</ul>
 									</div>
 								</div>
-							</div>
+							</div>  
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Kids</a></h4>
+									<h4 class="panel-title"><a href="#">Toys</a></h4>
 								</div>
 							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Fashion</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Households</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Interiors</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Clothing</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Bags</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Shoes</a></h4>
-								</div>
-							</div>
+						
 						</div><!--/category-products-->
 					
-						<div class="brands_products"><!--brands_products-->
+						{{--  <div class="brands_products"><!--brands_products-->
 							<h2>Brands</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
@@ -128,19 +74,16 @@
 									<li><a href=""> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
 								</ul>
 							</div>
-						</div><!--/brands_products-->
+						</div><!--/brands_products-->  --}}
 						
 						<div class="price-range"><!--price-range-->
 							<h2>Price Range</h2>
 							<div class="well">
 								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-								 <b>$ 0</b> <b class="pull-right">$ 600</b>
+								 <b>Rs 0</b> <b class="pull-right">$ 600</b>
 							</div>
 						</div><!--/price-range-->
 						
-						<div class="shipping text-center"><!--shipping-->
-							<img src="images/home/shipping.jpg" alt="" />
-						</div><!--/shipping-->
 						
 					</div>
 				</div>
@@ -213,14 +156,14 @@
 					<div class="category-tab shop-details-tab"><!--category-tab-->
 						<div class="col-sm-12">
 							<ul class="nav nav-tabs">
-								<li><a href="#details" data-toggle="tab">Details</a></li>
+								<li class="active"  ><a  href="#details" data-toggle="tab">Details</a></li>
 								<li><a href="#companyprofile" data-toggle="tab">NGO Profile</a></li>
 								{{--  <li><a href="#tag" data-toggle="tab">Tag</a></li>  --}}
-								<li class="active"><a href="#reviews" data-toggle="tab">Reviews (5)</a></li>
+								<li class=""><a href="#reviews" data-toggle="tab">Reviews ({{count($review)}})</a></li>
 							</ul>
 						</div>
 						<div class="tab-content">
-							<div class="tab-pane fade" id="details" style="margin-left:5px" >
+							<div class="tab-pane fade active in" id="details" style="margin-left:5px" >
 								<p>{{$details[0]->description}}</p>
 							</div>
 							
@@ -229,20 +172,21 @@
 								</div>	
 							</div>
 							<div class="tab-pane fade " id="reviews" >
-								@if($details)
+								@if(!count($review)==0)
+								@foreach($review as $review)
 								<div class="col-sm-12">
 									<ul>
-										<li><a href=""><i class="fa fa-user"></i>EUGEN</a></li>
-										<li><a href=""><i class="fa fa-clock-o"></i>12:41 PM</a></li>
-										<li><a href=""><i class="fa fa-calendar-o"></i>31 DEC 2014</a></li>
+									<li><a href=""><i class="fa fa-user"></i>{{$review->name}}</a></li>
+										{{--  <li><a href=""><i class="fa fa-clock-o"></i>12:41 PM</a></li>  --}}
+									<li><a href=""><i class="fa fa-calendar-o"></i>{{$review->date}}</a></li>
 									</ul>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+								<p>{{$review->review_name}}</p>
 									<p><b>Write Your Review</b></p>
-									
+									@endforeach
 									<form action="#">
 										<span>
 											<input type="text" placeholder="Your Name"/>
-											<input type="email" placeholder="Email Address"/>
+											{{--  <input type="email" placeholder="Email Address"/>  --}}
 										</span>
 										<textarea name="" ></textarea>
 										<b>Rating: </b> <img src="images/product-details/rating.png" alt="" />

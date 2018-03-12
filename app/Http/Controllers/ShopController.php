@@ -19,7 +19,14 @@ class ShopController extends Controller
     public function returnitems()
     {
         $item = item::all();
-        // echo $item;
+        
         return View::make('index')->with('item', $item);   
-    }          
+    }  
+    public function return_category($name)
+    {
+        $items=item::select('*')->where('category',$name)->get();
+        return View::make('shop')->with('items', $items);   
+
+
+    }        
 }

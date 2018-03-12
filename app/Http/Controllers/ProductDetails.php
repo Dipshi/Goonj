@@ -8,32 +8,18 @@ use App\review;
 
 class ProductDetails extends Controller
 {
-    //
-    public function product()
-    {
-        return view('product-details');
-    }
+   
     public function show($item_id)
     {
         $details=item::select('*')->where('item_id',$item_id)->get();
+        $review=review::select('*')->where('item_id',$item_id)->get();
+
         // $item = DB::table('item')->get();
         // return $details;
-        return view('product-details')->with('details',$details);
+        return view('product-details')->with('details',$details)->with('review',$review);
     }
 
-    public function reviews($item_id)
-    {
-        $review=review::select('*')->where('item_id',$item_id)->get();
-        // $item = DB::table('item')->get();
-        return $review;
-        // return view('product-details')->with('review',$review);
-    }
-    public function count_reviews($item_id)
-    {
-        $count=review::select('count(*)')->where('item_id',$item_id)->get();
-        return $count;
-
-    }
+   
 
     
 }

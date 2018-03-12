@@ -15,13 +15,11 @@
 //     return view('in');
 // });
  //Route::group(['prefix'=>'eshopper'], function() {
- Route::get('/','ShopController@returnitems' );
+ Route::get('/','ShopController@returnitems' );//returning items for first page display
  
-//  Route::get('/','PagesController@index' );
-Route::resource('/product-details', 'ProductDetails', ['except' => ['product']]);
+Route::get('/product-details/{id}', 'ProductDetails@show');//review and show
 
-//  Route::get('/product-details','ProductDetails@product' );
- Route::get('/','PagesController@index' );
+//  Route::get('/product-details','ProductDetails@reviews' );
 //  Route::get('/product-details','ProductDetailsController@product' );
  Route::get('/addToCart/{id}','ProductDetailsController@addToCart' );
  Route::get('/login','LoginController@index' );
