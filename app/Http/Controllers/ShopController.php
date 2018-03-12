@@ -18,8 +18,9 @@ class ShopController extends Controller
 
     public function returnitems()
     {
-        $item = item::all();
-        
+        // $item = item::all();
+        $item=collect(DB::select( 'SELECT * FROM item limit 10 '));
+
         return View::make('index')->with('item', $item);   
     }  
     public function return_category(Request $request,$category)
