@@ -24,8 +24,8 @@ class ProductDetailsController extends Controller
         return view('product-details')->with('success','Added successfully to cart');// array ( 'data' => $data));
        
     }
-    public function show_cart($id,$cid){
-        $query=collect(DB::select('SELECT * FROM cart as c,item as i Where i.item_id=c.item_id and cid="'.$cid.'"'));
-        return $query;
+    public function show_cart()
+    {
+        
     }
 }

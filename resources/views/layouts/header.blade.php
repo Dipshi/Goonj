@@ -11,14 +11,16 @@
     <link href="{{URL::to('css/prettyPhoto.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/price-range.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/animate.css') }}" rel="stylesheet">
-	<link href="{{URL::to('css/main1.css') }}" rel="stylesheet">
+    <link href="{{URL::to('css/main1.css') }}" rel="stylesheet">
+    <link href="{{URL::to('css/star.css') }}" rel="stylesheet">
+
 	<link href="{{URL::to('css/responsive.css') }}" rel="stylesheet">
   
-    <link href="{{URL::to('css/style1.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/owl.carousel.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/owl.theme.css') }}" rel="stylesheet">
 
     <link href="{{URL::to('css/owl.transition.css') }}" rel="stylesheet">
+
 
 
 
@@ -69,29 +71,18 @@
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
                             <li><a href="{{url ('/') }}" class="active">Home</a></li>
-                            <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+                            <li class="dropdown"><a >Shop<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="{{url ('/shop') }}" id="bags">Bags</a></li>
-                                    <li><a href="{{url ('/shop') }}" id="toys">Toys</a></li>
-                                    <li><a href="{{url ('/shop') }}">Mats</a></li>
-                                    <li><a href="{{url ('/product-details') }}">Product Details</a></li> 
+                                    <li><a href="{{url('shop/bags')}}" id="bags">Bags</a></li>
+                                    <li><a href="{{url('shop/toys')}}" id="toys">Toys</a></li>
+                                    <li><a href="{{url('shop/mats')}}">Mats</a></li>
+                                    {{--  <li><a href="{{url ('/product-details') }}">Product Details</a></li>   --}}
                                     {{-- <li><a href="{{url ('eshopper/checkout') }}">Checkout</a></li>  --}}
                                     {{-- <li><a href="{{url ('eshopper/cart') }}">Cart</a></li>  --}}
                                      
                                 </ul>
                             </li> 
-                            <li class="dropdown"><a href="#">Bags<i class="fa fa-angle-down"></i></a>
-                                <ul role="menu" class="dropdown-menu sub-menu">
-                                    <li class="dropdown"><a href="#">Mens</a></li>
-                                    <ul class=" sub-menu" >
-                                        <li  role="menu" class="dropdown" ><a href="#">Laptop bags</li>
-
-                                    </ul>
-                                    
-                                    <li><a href="#">Women</a></li>
-                                </ul>
-                            </li>
-                            {{-- <li><a href="404.html">404</a></li> --}}
+                           
                             <li><a href="{{url ('/contact-us') }}">Contact</a></li>
                         </ul>
                     </div>
@@ -219,3 +210,5 @@
 {{--  <script src="{{URL::to('js/bootstrap-hover-dropdown.js') }}"></script>  --}}
 <script src="{{URL::to('js/owl.carousel.min.js') }}"></script>
 <script src="{{URL::to('js/front.js') }}"></script>
+<script>
+    

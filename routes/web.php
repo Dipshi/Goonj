@@ -14,10 +14,16 @@
 // Route::get('/', function () {
 //     return view('in');
 // });
+ //Route::group(['prefix'=>'eshopper'], function() {
+ Route::get('/','ShopController@returnitems' );//returning items for first page display
  
- Route::get('/','PagesController@index' );
- Route::get('/product-details','ProductDetailsController@product' );
- Route::get('/product-details/addToCart/{id}','ProductDetailsController@addToCart' );
+Route::get('/product-details/{id}', 'ProductDetails@show');//review and show
+
+//  Route::get('/product-details','ProductDetails@reviews' );
+//  Route::get('/product-details','ProductDetailsController@product' );
+ Route::get('/addToCart/{id}','ProductDetailsController@addToCart' );
+ Route::get('/login','LoginController@index' );
+ Route::get('/checkout','CheckoutController@index' );
  Route::get('/cart','CartController@index' );
  Route::get('/cart/destroy/{id}','CartController@destroy' );
  Route::get('/checkout','CheckoutController@index' );
@@ -27,7 +33,10 @@
  Route::get('/tp', function () {//trial page
     return view('index_productdisplay');
 });
- Route::get('/shop','ShopController@index' );
+ Route::get('/shop/{name}','ShopController@return_category' );
+ Route::get('/shop/{name}/{range}', 'ShopController@range');//review and show
+
+ 
  Route::get('auth/google', 'Auth\LoginController@redirectToProvider');
  Route::get('auth/google/callback', 'LoginController1@handleProviderCallback');
  Route::get('/logout','SessionController@logout' );
