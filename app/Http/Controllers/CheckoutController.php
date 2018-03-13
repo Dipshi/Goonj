@@ -28,7 +28,7 @@ class CheckoutController extends Controller
             if(!empty($dataFinal))
                 return view('checkout',array('data'=>$data,'data1'=>$dataFinal));
             else
-                return view('checkout');
+                return view('checkout',array('data'=>$data));
         }
         else
               return view('checkout');
