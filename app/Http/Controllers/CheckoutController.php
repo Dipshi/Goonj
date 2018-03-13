@@ -41,10 +41,7 @@ class CheckoutController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -86,10 +83,10 @@ class CheckoutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
-    }
+              dd(request()->add) ;  
+     }
 
     /**
      * Remove the specified resource from storage.

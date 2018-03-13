@@ -30,15 +30,15 @@
 									<p class="cart_total_price"></p>
 								</td>
 								<td class="cart_description">
-									<h4><a href="">{{$d->item_name}}</a></h4>
-									<p>Web ID: {{$d->item_id}}</p>
+									<h4><a href="">{{$d['item_name']}}</a></h4>
+									{{-- <p>Web ID: {{$d[0]->item_id}}</p> --}}
 								</td>
 								<td class="cart_price">
-									<p>Rs. {{$d->cost}}</p>
+									{{-- <p>Rs. {{$d[0]->price}}</p> --}}
 								</td>
 								<td class="cart_quantity">
 									<div class="cart_quantity_button">
-										<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+										<input class="cart_quantity_input" type="text" name="quantity" value="" autocomplete="off" size="2">
 										{{-- <a class="cart_quantity_down" href=""> - </a> --}}
 									</div>
 								</td>

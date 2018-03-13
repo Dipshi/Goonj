@@ -20,9 +20,15 @@ class CartController extends Controller
             $query=collect(DB::select( 'SELECT cid FROM customer where email= "'.$email.'" limit 1'));
             $cid=$query[0]->cid;
             $data=collect(DB::select('SELECT count(i.item_id) as value,i.item_id FROM cart as c,item as i Where i.item_id=c.item_id and cid="'.$cid.'" group by i.item_id'));
+           // $val=$data[0]->value;
+            //dd($data);
             foreach($data as $d){
-                $dataFinal=collect(DB::select('SELECT * from item Where item_id="'.$d->item_id.'"'));
+              //  echo ($d->item_id);
+                $my_json=DB::select('SELECT * from item Where item_id="'.$d->item_id.'"');
+             //   $value_project=$dataFinal;
+             $dataFinal= json_decode($my_json, true);
            }
+          // dd($dataFinal);
             if(!empty($dataFinal))
                 return view('cart',array('data'=>$dataFinal));
             else

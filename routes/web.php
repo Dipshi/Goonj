@@ -27,6 +27,7 @@ Route::get('/product-details/{id}', 'ProductDetails@show');//review and show
  Route::get('/cart','CartController@index' );
  Route::get('/cart/destroy/{id}','CartController@destroy' );
  Route::get('/checkout','CheckoutController@index' );
+ Route::get('/checkout/update','CheckoutController@update' );
  Route::get('/contact-us', function () {
      return view('contact-us');
  });
