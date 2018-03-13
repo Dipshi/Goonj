@@ -4,7 +4,7 @@
 		<div class="container">
 			<div class="breadcrumb">
 				<ol class="breadcrumb">
-				  <li><a href="{{url ('eshopper/')}}">Home</a></li>
+				  <li><a href="{{url ('/')}}">Home</a></li>
 				  <li class="active">Check out</li>
 				</ol>
 			</div><!--/breadcrums-->
@@ -12,7 +12,7 @@
 			<div class="step-one">
 				<h2 class="heading">Step1</h2>
 			</div>
-			<div class="checkout-options">
+			{{-- <div class="checkout-options">
 				<h3>New User</h3>
 				<p>Checkout options</p>
 				<ul class="nav">
@@ -26,12 +26,12 @@
 						<a href=""><i class="fa fa-times"></i>Cancel</a>
 					</li>
 				</ul>
-			</div><!--/checkout-options-->
-
-			<div class="register-req">
-				<p>Please use Register And Checkout to easily get access to your order history, or use Checkout as Guest</p>
-			</div><!--/register-req-->
-
+			</div><!--/checkout-options--> --}}
+            @if(empty(session('email')))
+				<div class="register-req">
+					<p>Please Login</p>
+				</div><!--/register-req-->
+            @else
 			<div class="shopper-informations">
 				<div class="row">
 					<div class="col-sm-3">
@@ -52,14 +52,12 @@
 							<p>Bill To</p>
 							<div class="form-one">
 								<form>
-									<input type="text" placeholder="Company Name">
-									<input type="text" placeholder="Email*">
+									<input type="text" placeholder="Company Name" >
+									<input type="text" placeholder="Email*" value="{{$data[0]->email}}">
 									<input type="text" placeholder="Title">
-									<input type="text" placeholder="First Name *">
-									<input type="text" placeholder="Middle Name">
-									<input type="text" placeholder="Last Name *">
+									<input type="text" placeholder="First Name *" value="{{$data[0]->first_name}}">
+									<input type="text" placeholder="Last Name *" value="{{$data[0]->last_name}}">
 									<input type="text" placeholder="Address 1 *">
-									<input type="text" placeholder="Address 2">
 								</form>
 							</div>
 							<div class="form-two">
@@ -122,80 +120,41 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td class="cart_product">
-								<a href=""><img src="images/cart/one.png" alt=""></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">Colorblock Scuba</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_price">
-								<p>$59</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
-									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">$59</p>
-							</td>
-							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-							</td>
-						</tr>
-
-						<tr>
-							<td class="cart_product">
-								<a href=""><img src="images/cart/two.png" alt=""></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">Colorblock Scuba</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_price">
-								<p>$59</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
-									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">$59</p>
-							</td>
-							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-							</td>
-						</tr>
-						<tr>
-							<td class="cart_product">
-								<a href=""><img src="images/cart/three.png" alt=""></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">Colorblock Scuba</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_price">
-								<p>$59</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
-									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">$59</p>
-							</td>
-							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-							</td>
+							 @if(!empty($data1))
+							    	@foreach($data1 as $d)
+								<tr>
+								<td class="cart_total">
+									<p class="cart_total_price"></p>
+								</td>
+								<td class="cart_description">
+									<h4><a href="">{{$d->item_name}}</a></h4>
+									<p>Web ID: {{$d->item_id}}</p>
+								</td>
+								<td class="cart_price">
+									<p>Rs. {{$d->cost}}</p>
+								</td>
+								<td class="cart_quantity">
+									<div class="cart_quantity_button">
+										<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+										{{-- <a class="cart_quantity_down" href=""> - </a> --}}
+									</div>
+								</td>
+								<td class="cart_total">
+									<p class="cart_total_price">Rs. 67</p>
+								</td>
+								<td>
+									{{-- <a class="cart_quantity_delete"  href="{{URL('cart/destroy/.$d->item_id')}}" align="center"><i class="fa fa-times"></i></a> --}}
+									<button type="button" class="btn btn-fefault cart" id=" {{$d->item_id}}">
+										<a href="{{url ('cart/destroy/'. $d->item_id) }}" style="color:#ffffff">Delete</a></li>
+									</button>
+								</td>
+							  </tr>
+						            @endforeach
+							@else
+							    <td class="cart_total">
+									<p class="cart_total_price">Nothing to show</p>
+								</td>
+							@endif
 						</tr>
 						<tr>
 							<td colspan="4">&nbsp;</td>
@@ -236,7 +195,7 @@
 				</div>
 		</div>
 	</section> <!--/#cart_items-->
-
+@endif
 	
 
 

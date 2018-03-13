@@ -22,9 +22,9 @@
 					</thead>
 					<tbody>
 						
-							@if(!empty(session('email')))
-							 @if(!empty($data))
-								@foreach($data as $d)
+						@if(!empty(session('email')))
+							  @if(!empty($data))
+							    	@foreach($data as $d)
 								<tr>
 								<td class="cart_total">
 									<p class="cart_total_price"></p>
@@ -52,12 +52,12 @@
 									</button>
 								</td>
 							  </tr>
-						    @endforeach
+						            @endforeach
 							@else
-							<td class="cart_total">
+							    <td class="cart_total">
 									<p class="cart_total_price">Nothing to show</p>
 								</td>
-								@endif
+							@endif
 						@else
 						       <td class="cart_total">
 									<p class="cart_total_price">Nothing to show</p>

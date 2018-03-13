@@ -15,17 +15,21 @@ class CartController extends Controller
      */
     public function index(Request $request)
     {
-        $email=session('email');
-        $query=collect(DB::select( 'SELECT cid FROM customer where email= "'.$email.'" limit 1'));
-        $cid=$query[0]->cid;
-        $data=collect(DB::select('SELECT count(i.item_id) as value,i.item_id FROM cart as c,item as i Where i.item_id=c.item_id and cid="'.$cid.'" group by i.item_id'));
-        $val=$data[0]->value;
-        foreach($data as $d){
-          $dataFinal=collect(DB::select('SELECT * from item Where item_id="'.$d->item_id.'"'));
+        if(!empty(session('email'))){
+            $email=session('email');
+            $query=collect(DB::select( 'SELECT cid FROM customer where email= "'.$email.'" limit 1'));
+            $cid=$query[0]->cid;
+            $data=collect(DB::select('SELECT count(i.item_id) as value,i.item_id FROM cart as c,item as i Where i.item_id=c.item_id and cid="'.$cid.'" group by i.item_id'));
+            foreach($data as $d){
+                $dataFinal=collect(DB::select('SELECT * from item Where item_id="'.$d->item_id.'"'));
+           }
+            if(!empty($dataFinal))
+                return view('cart',array('data'=>$dataFinal));
+            else
+                return view('cart');
         }
-      //  $itemAmt=($dataFinal[0]->cost)*$val;
-        //dd($itemcount);
-        return view('cart',array('data'=>$dataFinal));
+        else
+          return view('cart');
     }
 
     /**
