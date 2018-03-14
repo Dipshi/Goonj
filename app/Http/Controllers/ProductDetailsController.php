@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Http\Controllers\Controller;
+use App\item;
+use App\review;
 
 class ProductDetailsController extends Controller
 {
@@ -21,7 +23,10 @@ class ProductDetailsController extends Controller
         $cid=$query[0]->cid;
         $cust=DB::table('cart')->insert(['cid' => $cid,'item_id' => $id]);
         $data= $this->show_cart($id,$cid);
-        return view('product-details')->with('success','Added successfully to cart');// array ( 'data' => $data));
+        $details=item::select('*')->where('item_id',$id)->get();
+        $review=review::select('*')->where('item_id',$id)->get();
+        session(['cart'=>session('cart')+1]);
+        return view('product-details')->with('success','Added successfully to cart')->with('details',$details)->with('review',$review);;// array ( 'data' => $data));
        
     }
     public function show_cart()

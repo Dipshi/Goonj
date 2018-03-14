@@ -41,7 +41,7 @@ class CartController extends Controller
      */
     public function call(){
             $email=session('email');
-            $query=collect(DB::select( 'SELECT cid FROM customer where email= "'.$email.'" limit 1'));
+            $query=collect(DB::select('SELECT cid FROM customer where email= "'.$email.'" limit 1'));
             $cid=$query[0]->cid;
             $data=collect(DB::select('SELECT i.item_id,item_name,price,qty FROM cart as c,item as i Where i.item_id=c.item_id and cid="'.$cid.'" order by item_id desc'));
             return $data;
@@ -111,8 +111,17 @@ class CartController extends Controller
                 $val[$d->item_id]=$d->price;
            }
         if(!empty($val))
-            return view('cart',array('data'=>$data,'val'=>$val))->with('success', 'Remark Deleted Successfully');
+        {
+            session(['cart'=>session('cart')-1]);
+           return view('cart',array('data'=>$data,'val'=>$val))->with('success', 'Remark Deleted Successfully');
+        }
         else
+        {
+            session(['cart'=>session('cart')-1]);
+
             return view('cart',array('data'=>$data))->with('success', 'Remark Deleted Successfully');
+
+        }
     }
+    
 }

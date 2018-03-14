@@ -6,5 +6,5 @@ Remining
 1.Content
 
 problems
-1)Session issue
+1)Session issue(sorted by composer update)
 2)Add to cart error

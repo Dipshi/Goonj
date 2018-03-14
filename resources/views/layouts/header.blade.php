@@ -41,7 +41,7 @@
                         <ul class="nav navbar-nav">
                              @if(!empty(session('email')))
                             <li><a href="{{url ('checkout') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                            <li><a href="{{url ('cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                        <li><a href="{{url ('cart') }}"><i class="fa fa-shopping-cart"></i> Cart<b>({{session('cart')}})</b></a></li>
                             <li><a href="/logout" onclick='document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost";'> <i class="fa fa-sign-out fa-fw"></i> Logout </a></li>
                                 {{-- <li><p>WELCOME {{session('email')}}</p><li> --}}
                              @else 

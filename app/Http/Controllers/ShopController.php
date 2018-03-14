@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\item;
+use App\cart;
+use App\customer;
+
+
 use View;
 
 
@@ -19,6 +23,12 @@ class ShopController extends Controller
     public function returnitems()
     {
         // $item = item::all();
+        // return session('email');
+        $uname=session('email');
+        $uid = collect(DB::select('select cid from customer where email="'.$uname.'"'));
+        $count =collect(DB::select('select * from cart where cid="'.$uid[0]->cid.'"'));
+        session(['cart'=>count($count)]);
+        // return $count;
         $item=collect(DB::select( 'SELECT * FROM item limit 10 '));
 
         return View::make('index')->with('item', $item);   
