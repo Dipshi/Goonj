@@ -126,16 +126,15 @@
 										<div class="single-products">
 											<div class="productinfo text-center">
 												<img style="height:200px" src="{{asset('images/Products/'.$items->images.'')}}" alt="" />
-												
-											<h2>{{$items->price}}</h2>
+												<h2>{{$items->price}}</h2>
 												<p>{{$items->item_name}}</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+												<a href="{{url('product-details', [$items->item_id]) }}" class="btn btn-default add-to-cart"><i class="fa "></i>See Details</a>
 											</div>
-											<div class="product-overlay">
+											<div class="product-overlay productinfo text-center">
 												<div class="overlay-content">
 													<h2>{{$items->price}}</h2>
 													<p><a href="{{url('product-details', [$items->item_id]) }}" style="color:white">{{$items->item_name}}</a></p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+													<a href="{{url('product-details', [$items->item_id]) }}"class="btn btn-default add-to-cart"><i class="fa fa-shopping"></i>See details</a>
 												</div>
 											</div>
 										</div>

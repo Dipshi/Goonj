@@ -118,7 +118,6 @@ class CartController extends Controller
         else
         {
             session(['cart'=>session('cart')-1]);
-
             return view('cart',array('data'=>$data))->with('success', 'Remark Deleted Successfully');
 
         }

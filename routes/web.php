@@ -16,7 +16,7 @@
 // });
  //Route::group(['prefix'=>'eshopper'], function() {
  Route::get('/','ShopController@returnitems' );//returning items for first page display
- 
+//  Route::get('/')
 Route::get('/product-details/{id}', 'ProductDetails@show');//review and show
 
 //  Route::get('/product-details','ProductDetails@reviews' );
