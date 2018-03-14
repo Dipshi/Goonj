@@ -12,8 +12,8 @@
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
-							<td class="image">Item</td>
 							<td class="description"></td>
+							<td class="image">Item</td>
 							<td class="price">Price</td>
 							<td class="quantity">Quantity</td>
 							<td class="total">Total</td>
@@ -30,34 +30,38 @@
 									<p class="cart_total_price"></p>
 								</td>
 								<td class="cart_description">
-									<h4><a href="">{{$d['item_name']}}</a></h4>
-									{{-- <p>Web ID: {{$d[0]->item_id}}</p> --}}
+									<h4><a href="">{{$d->item_name}}</a></h4>
+									<p>Web ID: {{$d->item_id}}</p>
 								</td>
 								<td class="cart_price">
-									{{-- <p>Rs. {{$d[0]->price}}</p> --}}
+									<p>Rs. {{$d->price}}</p>
 								</td>
 								<td class="cart_quantity">
 									<div class="cart_quantity_button">
-										<input class="cart_quantity_input" type="text" name="quantity" value="" autocomplete="off" size="2">
+										<input class="cart_quantity_input" type="text" name="quantity" value="{{$d->qty}}" autocomplete="off" size="2" disabled>
 										{{-- <a class="cart_quantity_down" href=""> - </a> --}}
 									</div>
 								</td>
 								<td class="cart_total">
-									<p class="cart_total_price">Rs. 67</p>
+									
+									 <p class="cart_total_price">{{$val[$d->item_id]}}</p>
+									
+									   {{-- <p class="cart_total_price">Please purchase some items</p> --}}
+									
+
 								</td>
 								<td>
-									{{-- <a class="cart_quantity_delete"  href="{{URL('cart/destroy/.$d->item_id')}}" align="center"><i class="fa fa-times"></i></a> --}}
 									<button type="button" class="btn btn-fefault cart" id=" {{$d->item_id}}">
 										<a href="{{url ('cart/destroy/'. $d->item_id) }}" style="color:#ffffff">Delete</a></li>
 									</button>
 								</td>
 							  </tr>
 						            @endforeach
-							@else
+							    @else
 							    <td class="cart_total">
 									<p class="cart_total_price">Nothing to show</p>
 								</td>
-							@endif
+							    @endif
 						@else
 						       <td class="cart_total">
 									<p class="cart_total_price">Nothing to show</p>

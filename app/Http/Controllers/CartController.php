@@ -17,20 +17,16 @@ class CartController extends Controller
     {
         if(!empty(session('email'))){
             $email=session('email');
-            $query=collect(DB::select( 'SELECT cid FROM customer where email= "'.$email.'" limit 1'));
-            $cid=$query[0]->cid;
-            $data=collect(DB::select('SELECT count(i.item_id) as value,i.item_id FROM cart as c,item as i Where i.item_id=c.item_id and cid="'.$cid.'" group by i.item_id'));
-           // $val=$data[0]->value;
-            //dd($data);
+            $data=$this->call();
+           // return $data;
             foreach($data as $d){
-              //  echo ($d->item_id);
-                $my_json=DB::select('SELECT * from item Where item_id="'.$d->item_id.'"');
-             //   $value_project=$dataFinal;
-             $dataFinal= json_decode($my_json, true);
+               if($d->qty!=0)
+                 $val[$d->item_id]=$d->price*$d->qty;
+             else
+                $val[$d->item_id]=$d->price;
            }
-          // dd($dataFinal);
-            if(!empty($dataFinal))
-                return view('cart',array('data'=>$dataFinal));
+            if(!empty($data))
+                return view('cart',array('data'=>$data,'val'=>$val));
             else
                 return view('cart');
         }
@@ -43,10 +39,14 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function call(){
+            $email=session('email');
+            $query=collect(DB::select( 'SELECT cid FROM customer where email= "'.$email.'" limit 1'));
+            $cid=$query[0]->cid;
+            $data=collect(DB::select('SELECT i.item_id,item_name,price,qty FROM cart as c,item as i Where i.item_id=c.item_id and cid="'.$cid.'" order by item_id desc'));
+            return $data;
     }
+   
 
     /**
      * Store a newly created resource in storage.
@@ -102,6 +102,17 @@ class CartController extends Controller
     public function destroy($id)
     {
         $song =  Cart::where('item_id', $id)->delete();
-       return view('cart')->with('success', 'Remark Deleted Successfully');
+        $data=$this->call();
+        //dd($data);
+         foreach($data as $d){
+               if($d->qty!=0)
+                 $val[$d->item_id]=$d->price*$d->qty;
+             else
+                $val[$d->item_id]=$d->price;
+           }
+        if(!empty($val))
+            return view('cart',array('data'=>$data,'val'=>$val))->with('success', 'Remark Deleted Successfully');
+        else
+            return view('cart',array('data'=>$data))->with('success', 'Remark Deleted Successfully');
     }
 }

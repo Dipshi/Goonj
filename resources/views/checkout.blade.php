@@ -12,21 +12,6 @@
 			<div class="step-one">
 				<h2 class="heading">Step1</h2>
 			</div>
-			{{-- <div class="checkout-options">
-				<h3>New User</h3>
-				<p>Checkout options</p>
-				<ul class="nav">
-					<li>
-						<label><input type="checkbox"> Register Account</label>
-					</li>
-					<li>
-						<label><input type="checkbox"> Guest Checkout</label>
-					</li>
-					<li>
-						<a href=""><i class="fa fa-times"></i>Cancel</a>
-					</li>
-				</ul>
-			</div><!--/checkout-options--> --}}
             @if(empty(session('email')))
 				<div class="register-req">
 					<p>Please Login</p>
@@ -39,10 +24,10 @@
 						<div class="bill-to">
 							<p>Bill To</p>
 							<div class="form-one">
-								<form method="POST" action="{{url('checkout/update')}}">
+								<form method="post" action="url('checkout/update')}}">
 									<input type="text" placeholder="Email*" value="{{$data[0]->email}}" disabled>
-									<input type="text" placeholder="First Name *" value="{{$data[0]->first_name}}" disabled>
-									<input type="text" placeholder="Last Name *" value="{{$data[0]->last_name}}" disabled>
+									<input type="text" placeholder="First Name *" name="name" value="{{$data[0]->first_name}}" disabled>
+									<input type="text" placeholder="Last Name *" name="lname" value="{{$data[0]->last_name}}" disabled>
 									<input type="text" placeholder="Address 1 *" name="add">
 									<input type="text" placeholder="Mobile Phone" name="mobile">
 								</form>
@@ -57,7 +42,7 @@
 										<option>UK</option>
 										<option>India</option>
 										<option>Pakistan</option>
-										<option>Ucrane</option>
+										<option>Ukraine</option>
 										<option>Canada</option>
 										<option>Dubai</option>
 									</select>
@@ -68,7 +53,7 @@
 										<option>UK</option>
 										<option>India</option>
 										<option>Pakistan</option>
-										<option>Ucrane</option>
+										<option>Ukraine</option>
 										<option>Canada</option>
 										<option>Dubai</option>
 									</select>
@@ -95,64 +80,25 @@
 			<div class="table-responsive cart_info">
 				<table class="table table-condensed">
 					<thead>
-						<tr class="cart_menu">
-							<td class="image">Item</td>
-							<td class="description"></td>
-							<td class="price">Price</td>
-							<td class="quantity">Quantity</td>
-							<td class="total">Total</td>
-							<td></td>
-						</tr>
+						{{-- <th class="cart_menu" >
+							BILL:
+						</th> --}}
+						{{-- <h1 class="cart_menu" >Bill</h1> --}}
 					</thead>
 					<tbody>
 						<tr>
-							 @if(!empty($data1))
-							    	@foreach($data1 as $d)
-								<tr>
-								<td class="cart_total">
-									<p class="cart_total_price"></p>
-								</td>
-								<td class="cart_description">
-									<h4><a href="">{{$d->item_name}}</a></h4>
-									<p>Web ID: {{$d->item_id}}</p>
-								</td>
-								<td class="cart_price">
-									<p>Rs. {{$d->cost}}</p>
-								</td>
-								<td class="cart_quantity">
-									<div class="cart_quantity_button">
-										<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-										{{-- <a class="cart_quantity_down" href=""> - </a> --}}
-									</div>
-								</td>
-								<td class="cart_total">
-									<p class="cart_total_price">Rs. 67</p>
-								</td>
-								<td>
-									{{-- <a class="cart_quantity_delete"  href="{{URL('cart/destroy/.$d->item_id')}}" align="center"><i class="fa fa-times"></i></a> --}}
-									<button type="button" class="btn btn-fefault cart" id=" {{$d->item_id}}">
-										<a href="{{url ('cart/destroy/'. $d->item_id) }}" style="color:#ffffff">Delete</a></li>
-									</button>
-								</td>
-							  </tr>
-						            @endforeach
-							@else
-							    <td class="cart_total">
-									<p class="cart_total_price">Nothing to show</p>
-								</td>
-							@endif
-						</tr>
+							
 						<tr>
 							<td colspan="4">&nbsp;</td>
 							<td colspan="2">
 								<table class="table table-condensed total-result">
 									<tr>
 										<td>Cart Sub Total</td>
-										<td>$59</td>
+										<td>{{$bill}}</td>
 									</tr>
 									<tr>
 										<td>Exo Tax</td>
-										<td>$2</td>
+										<td>Rs.20</td>
 									</tr>
 									<tr class="shipping-cost">
 										<td>Shipping Cost</td>
@@ -160,7 +106,7 @@
 									</tr>
 									<tr>
 										<td>Total</td>
-										<td><span>$61</span></td>
+										<td><span>Rs.{{$final_bill}}</span></td>
 									</tr>
 								</table>
 							</td>
