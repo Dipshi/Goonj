@@ -52,6 +52,9 @@ class CheckoutController extends Controller
         }
         return $sum;
     }
+    public function showSummary(){
+        
+    }
 //Update method is not working
     public function update(Request $request)
     {

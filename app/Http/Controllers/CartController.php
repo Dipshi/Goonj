@@ -23,10 +23,12 @@ class CartController extends Controller
                if($d->qty!=0)
                  $val[$d->item_id]=$d->price*$d->qty;
              else
-                $val[$d->item_id]=$d->price;
+                 $val[$d->item_id]=$d->price;
            }
+           $bill=$this->show_bill($val,$data);
+            $final_bill=$bill+20;
             if(!empty($data))
-                return view('cart',array('data'=>$data,'val'=>$val));
+                return view('cart',array('data'=>$data,'val'=>$val))->with('bill',$bill)->with('final_bill',$final_bill);
             else
                 return view('cart');
         }
@@ -34,11 +36,7 @@ class CartController extends Controller
           return view('cart');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function call(){
             $email=session('email');
             $query=collect(DB::select('SELECT cid FROM customer where email= "'.$email.'" limit 1'));
@@ -48,15 +46,13 @@ class CartController extends Controller
     }
    
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function show_bill($val,$data)
     {
-        //
+        $sum=0;
+       foreach($data as $d) {
+            $sum=$sum+$val[$d->item_id];
+        }
+        return $sum;
     }
 
     /**
@@ -110,6 +106,8 @@ class CartController extends Controller
              else
                 $val[$d->item_id]=$d->price;
            }
+            $bill=$this->show_bill($val,$data);
+            $final_bill=$bill+20;
         if(!empty($val))
         {
             session(['cart'=>session('cart')-1]);

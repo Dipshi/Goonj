@@ -8,6 +8,7 @@
 				  <li class="active">Shopping Cart</li>
 				</ol>
 			</div>
+				@if(!empty(session('email')))
 			<div class="table-responsive cart_info">
 				<table class="table table-condensed">
 					<thead>
@@ -22,7 +23,7 @@
 					</thead>
 					<tbody>
 						
-						@if(!empty(session('email')))
+					
 							  @if(!empty($data))
 							    	@foreach($data as $d)
 								<tr>
@@ -63,9 +64,11 @@
 								</td>
 							    @endif
 						@else
-						       <td class="cart_total">
-									<p class="cart_total_price">Nothing to show</p>
-								</td>
+						       
+									<div class="register-req">
+										<p>Please Login to enhance your experience.</p>
+									</div><!--/register-req-->
+								
 						@endif
 					 
 					</tbody>
@@ -73,7 +76,7 @@
 			</div>
 		</div>
 	</section> <!--/#cart_items-->
-
+@if(!empty(session('email')))
 	<section id="do_action">
 		<div class="container">
 			<div class="heading">
@@ -84,6 +87,7 @@
 				<div class="col-sm-6">
 					<div class="chose_area">
 						<ul class="user_option">
+							
 							<li>
 								<input type="checkbox">
 								<label>Use Coupon Code</label>
@@ -138,16 +142,17 @@
 				<div class="col-sm-6">
 					<div class="total_area">
 						<ul>
-							<li>Cart Sub Total <span>$59</span></li>
-							<li>Eco Tax <span>$2</span></li>
+							<li>Cart Sub Total <span>{{$bill}}</span></li>
+							<li>Eco Tax <span>Rs.20</span></li>
 							<li>Shipping Cost <span>Free</span></li>
-							<li>Total <span>$61</span></li>
+							<li>Total <span>{{$final_bill}}</span></li>
 						</ul>
 							<a class="btn btn-default update" href="">Update</a>
-							<a class="btn btn-default check_out" href="">Check Out</a>
+							<a class="btn btn-default check_out" href="/checkout">Check Out</a>
 					</div>
 				</div>
 			</div>
+			@endif
 		</div>
 	</section><!--/#do_action-->
     {{-- <script src="js/jquery.js"></script>
