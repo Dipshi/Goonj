@@ -116,15 +116,11 @@
 			</div>
 			<div class="payment-options">
 					<span>
-						<label><input type="checkbox"> Direct Bank Transfer</label>
+						<label><input type="checkbox"> Cash On Delivery</label>
 					</span>
-					<span>
-						<label><input type="checkbox"> Check Payment</label>
-					</span>
-					<span>
-						<label><input type="checkbox"> Paypal</label>
-					</span>
+					<a class="btn btn-primary" href="{{url('send')}}">Notify me</a>
 				</div>
+				
 		</div>
 	</section> <!--/#cart_items-->
 @endif

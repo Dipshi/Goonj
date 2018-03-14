@@ -3,19 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Mail;
 use DB;
-use Illuminate\Support\Facades\Input;
 
-class CheckoutController extends Controller
+class MailController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function send()
     {
-        if(!empty(session('email'))){  
             $email=session('email');
             $data=collect(DB::select( 'SELECT first_name,last_name,email  FROM customer where email="'.$email.'"'));
             $data1=$this->call();
@@ -29,15 +28,17 @@ class CheckoutController extends Controller
                   }
              $bill=$this->show_bill($val);
              $final_bill=$bill+20;
+             Mail::send(['text'=>'mail'],['name','ABC'],function($message){
+             $email=session('email');
+             $message->to($email,'To')->subject('Goonj-Product Purchase');
+             $message->from("",'Goonj');
+        });
             if(!empty($data))
                 return view('checkout',array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill);
             else
-                return view('checkout');
-        }
-        else
-              return view('checkout');
-      }
-    public function call(){
+                return view('checkout');return view('checkout',array('data',$data))->with('success','Message delivered successfully');
+    }
+     public function call(){
             $email=session('email');
             $query=collect(DB::select( 'SELECT cid FROM customer where email= "'.$email.'" limit 1'));
             $cid=$query[0]->cid;
@@ -52,29 +53,6 @@ class CheckoutController extends Controller
         }
         return $sum;
     }
-//Update method is not working
-    public function update(Request $request)
-    {
-           $name = $request->input('add'); 
-           dd($name);    
-        //     $user = new User;
-        //     $user->name = $input['name'];
-        //     $user->email = $input['email'];
-        //    // $user->password = Hash::make($input['password']);
-        //     $user->save();
-            //dd($name);
-             $email=session('email');
-        $data=collect(DB::select( 'SELECT cid  FROM customer where email="'.$email.'"'));
-        $cid=$data[0]->cid;
-        $insert1=DB::table('customer')
-            ->where('cid', $cid)
-            ->update(['address' => $name]);
-            return view('/Login');
-     }
 
-    
-    public function destroy($id)
-    {
-        //
-    }
+   
 }
