@@ -22,12 +22,16 @@ class ShopController extends Controller
 
     public function returnitems()
     {
-        // $item = item::all();
-        // return session('email');
-        $uname=session('email');
-        $uid = collect(DB::select('select cid from customer where email="'.$uname.'"'));
-        $count =collect(DB::select('select * from cart where cid="'.$uid[0]->cid.'"'));
-        session(['cart'=>count($count)]);
+        $item = item::all();
+       
+       
+        if(!empty(session('email')))
+        {
+            $uname=session('email');
+            $uid = collect(DB::select('select cid from customer where email="'.$uname.'"'));
+            $count =collect(DB::select('select * from cart where cid="'.$uid[0]->cid.'"'));
+            session(['cart'=>count($count)]);
+        }
         // return $count;
         $item=collect(DB::select( 'SELECT * FROM item limit 10 '));
 
