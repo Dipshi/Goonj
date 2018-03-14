@@ -119,11 +119,13 @@
 						<label><input type="checkbox"> Cash On Delivery</label>
 					</span>
 					<a class="btn btn-primary" href="{{url('send')}}">Notify me</a>
+					<a class="btn btn-primary" href="{{url('send')}}">Complete Transaction</a>
 				</div>
+				@endif
 				
 		</div>
 	</section> <!--/#cart_items-->
-@endif
+
 	
 
 
