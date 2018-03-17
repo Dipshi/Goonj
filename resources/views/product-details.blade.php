@@ -184,10 +184,10 @@
 								<p>Be the first one to Review </p><br>
 								<p><b>Write Your Review</b></p>
 									
-									<form action="#">
+									<form action="ProductDetails@add_review">
 										<span>
-											<input type="text" placeholder="Your Name"/>
-											<input type="email" placeholder="Email Address"/>
+											<input type="text" name="name"placeholder="Your Name"/>
+											<input type="email" name="{{session('email')}}" placeholder="{{session('email')}}"/>
 										</span>
 										<textarea name="" ></textarea>
 										<b >Rating: </b> <br>
