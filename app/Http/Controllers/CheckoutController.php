@@ -60,24 +60,47 @@ class CheckoutController extends Controller
         return $sum;
     }
    
-//Update method is not working
+
     public function update(Request $request)
     {
-           $name = $request->input('add'); 
-           dd($name);    
-        //     $user = new User;
-        //     $user->name = $input['name'];
-        //     $user->email = $input['email'];
-        //    // $user->password = Hash::make($input['password']);
-        //     $user->save();
-            //dd($name);
-             $email=session('email');
-        $data=collect(DB::select( 'SELECT cid  FROM customer where email="'.$email.'"'));
+        $name = $request->input('add'); 
+        $mobile = $request->input('mobile'); 
+        $zip=$request->input('zip');
+        $country=$request->input('country');
+        $email=session('email');
+        $data=collect(DB::select( 'SELECT *  FROM customer where email="'.$email.'"'));
         $cid=$data[0]->cid;
-        $insert1=DB::table('customer')
-            ->where('cid', $cid)
-            ->update(['address' => $name]);
-            return view('/Login');
+        $data1=$this->call();
+            $i=0;
+                    foreach($data1 as $d){
+                    if($d->qty!=0)
+                        $val[$i]=$d->price*$d->qty;
+                    else
+                        $val[$i]=$d->price;
+                    $i++;
+                  }
+             if(!empty($data)&& !empty($val))
+            {
+                $bill=$this->show_bill($val,$data);
+                $final_bill=$bill+20;
+                if($data[0]->address==null && $data[0]->pincode==0 && $data[0]->mobile_number==0){
+                    $insert1=DB::table('customer')
+                    ->where('cid', $cid)
+                    ->update(['address' => $name,'mobile_number' => $mobile,'pincode' => $zip]);
+                    return view('checkout',array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill);
+                }
+                else{
+                    return view('checkout',array('data'=>$data))->with('bill',$bill);
+                }
+            }
+             else if(empty($val)){
+                $bill=0;
+                $final_bill=0;
+                return view('checkout',array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill);
+            }
+        
+
+            
      }
 
     

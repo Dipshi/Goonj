@@ -24,18 +24,25 @@
 						<div class="bill-to">
 							<p>Bill To</p>
 							<div class="form-one">
-								<form method="post" action="url('checkout/update')}}">
+								{{-- <p>{{$address}}</p> --}}
+								<form method="post" action="{{ action('CheckoutController@update')}}">
+									
 									<input type="text" placeholder="Email*" value="{{$data[0]->email}}" disabled>
 									<input type="text" placeholder="First Name *" name="name" value="{{$data[0]->first_name}}" disabled>
 									<input type="text" placeholder="Last Name *" name="lname" value="{{$data[0]->last_name}}" disabled>
-									<input type="text" placeholder="Address 1 *" name="add">
-									<input type="text" placeholder="Mobile Phone" name="mobile">
-								</form>
-							</div>
-							<div class="form-two">
-								<form>
-									<input type="text" placeholder="Zip / Postal Code *">
-									<select>
+									@if(!isset($data[0]->address) && !isset($data[0]->mobile_number) && !isset($data[0]->pincode))
+										<input type="text" placeholder="Address 1 *" name="add">
+										<input type="text" placeholder="Mobile Phone" name="mobile">
+							{{-- <div class="form-two"> --}}
+								{{-- <form> --}}
+									    <input type="text" placeholder="Zip / Postal Code *" name="zip">
+									@else
+										<input type="text" placeholder="Address 1 *" name="add" value="{{$data[0]->address}}">
+										<input type="text" placeholder="Mobile Phone" name="mobile" value="{{$data[0]->mobile_number}}">
+										<input type="text" placeholder="Zip / Postal Code *" name="zip" value="{{$data[0]->pincode}}">
+									@endif
+									<br><br>
+									<select name="country">
 										<option>-- Country --</option>
 										<option>United States</option>
 										<option>Bangladesh</option>
@@ -46,6 +53,7 @@
 										<option>Canada</option>
 										<option>Dubai</option>
 									</select>
+									<br><br>
 									<select>
 										<option>-- State / Province / Region --</option>
 										<option>United States</option>
@@ -58,7 +66,7 @@
 										<option>Dubai</option>
 									</select>
 									
-								</form>
+							{{-- //	</form> --}}
 							</div>
 						</div>
 					</div>
@@ -68,11 +76,12 @@
 							<textarea name="message"  placeholder="Notes about your order, Special Notes for Delivery" rows="16"></textarea>
 							<label><input type="checkbox"> Shipping to bill address</label><br>
 							<br>
-							<button class="btn btn-primary">Continue</button>
+							<button class="btn btn-primary"href="">Continue</button>
 						</div>	
 					</div>					
 				</div>
 			</div>
+			</form>
 		<div class="second">
 			<div class="review-payment">
 				<h2>Review & Payment</h2>
