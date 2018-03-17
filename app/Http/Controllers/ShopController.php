@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\item;
 use App\cart;
 use App\customer;
+use Illuminate\Pagination\Paginator;
 
 
 use View;
@@ -39,10 +40,9 @@ class ShopController extends Controller
     }  
     public function return_category(Request $request,$category)
     {
-        $items=item::select('*')->where('category',$category)->get();
+        $items=item::select('*')->where('category',$category)->paginate(10);
         // return $items;
         return View::make('shop')->with('items', $items)->with('category',$category);   
-
 
     }    
     public function range(Request $request,$category,$range)
@@ -50,7 +50,7 @@ class ShopController extends Controller
         // $range=split("-",$range);
         $range = explode('-', $range);
 
-        $items=collect(DB::select( 'SELECT * FROM item where category= "'.$category.'" And price between '.$range[0].' AND '.$range[1].''));
+        $items=collect(DB::select( 'SELECT * FROM item where category= "'.$category.'" And price between '.$range[0].' AND '.$range[1].'')->paginate(10));
 
         // $items=item::select('*')->where('category',$category)->get();
         // return $items;
