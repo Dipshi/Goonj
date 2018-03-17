@@ -68,11 +68,12 @@
 							<textarea name="message"  placeholder="Notes about your order, Special Notes for Delivery" rows="16"></textarea>
 							<label><input type="checkbox"> Shipping to bill address</label><br>
 							<br>
-							<a class="btn btn-primary" href="{{url('checkout/update')}}">Continue</a>
+							<button class="btn btn-primary">Continue</button>
 						</div>	
 					</div>					
 				</div>
 			</div>
+		<div class="second">
 			<div class="review-payment">
 				<h2>Review & Payment</h2>
 			</div>
@@ -118,15 +119,27 @@
 					<span>
 						<label><input type="checkbox"> Cash On Delivery</label>
 					</span>
-					<a class="btn btn-primary" href="{{url('send')}}">Notify me</a>
-					<a class="btn btn-primary" href="{{url('send')}}">Complete Transaction</a>
+					     @if($final_bill!=0)
+					        <a class="btn btn-primary" href="{{url('send')}}">Complete Transaction</a>
+					     @else
+							<div class="register-req">
+							  <p>Purchase something inorder to complete transaction</p>
+						    </div><!--/register-req-->
+				         @endif
 				</div>
 				@endif
 				
 		</div>
+	</div>
 	</section> <!--/#cart_items-->
+<script>
+        $("button").click(function() {
+        $('html,body').animate({
+        scrollDown: $(".second").offset().top},
+        'slow');
+});
+</script>
 
-	
 
 
 @stop

@@ -11,8 +11,8 @@
 					<div class="item carousel-inner ">
 							<div class="col-sm-6">
 									<h1><span>Artifacts</span>-SHOPPER</h1>
-									<h2>Free E-Commerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									{{-- <h2>Free E-Commerce Template</h2> --}}
+									<p>Handmade colourful artifacts made from recycled products. </p>
 									{{-- <button type="button" class="btn btn-click" style="background-color:darkcyan">Get it now</button> --}}
 								</div>
 								<div class="col-sm-6">
@@ -23,8 +23,8 @@
 					<div class="item carousel-inner" style="background-color: rgba(244, 244, 244, 0.885);" >
 							<div class="col-sm-6">
 									<h1><span>Toys</span>-SHOPPER</h1>
-									<h2>Free E-Commerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									{{-- <h2>Free E-Commerce Template</h2> --}}
+									<p>Recycled , Attractive and good quality toys ranging from knitted to wooden toys. </p>
 									{{-- <button type="button" class="btn btn-click" style="background-color:darkcyan">Get it now</button> --}}
 								</div>
 								<div class="col-sm-6">
@@ -33,25 +33,25 @@
 								</div>					</div>
 					<div class="item carousel-inner">
 							<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free E-Commerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<h1><span>Bags</span>-SHOPPER</h1>
+									{{-- <h2>Free E-Commerce Template</h2> --}}
+									<p>Cheap,designer and handmade elegant bags. </p>
 									{{-- <button type="button" class="btn btn-click" style="background-color:darkcyan">Get it now</button> --}}
 								</div>
 								<div class="col-sm-6">
-									<img src="{{URL::to('images/home/flower.jpg') }}"  class="girl img-responsive" alt="" />
+									<img src="{{URL::to('images/Products/black_bag.jpg') }}"  class="girl img-responsive" alt="" />
 									{{--  <img src="images/home/pricing.png"  class="pricing" alt="" />  --}}
 								</div>	
 					</div>
 					<div class="item carousel-inner">
 							<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free E-Commerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<h1><span>Mat</span>-SHOPPER</h1>
+									{{-- <h2>Free E-Commerce Template</h2> --}}
+									<p>Want durable mats?<br> Dont worry you are at the right place .Checkout our recycled knitted mats.Enjoy surfing! </p>
 									{{-- <button type="button" class="btn btn-click">Get it now</button> --}}
 								</div>
 								<div class="col-sm-6">
-									<img src="{{URL::to('images/home/socks.jpg') }}"  class="girl img-responsive" alt="" />
+									<img src="{{URL::to('images/Products/red_mat.jpg') }}"  class="girl img-responsive" alt="" />
 									{{--  <img src="images/home/pricing.png"  class="pricing" alt="" />  --}}
 								</div>
 					</div>
@@ -71,7 +71,7 @@
 						<div class="icon"><i class="fa fa-heart"></i>
 						</div>
 
-						<h3><a href="#">We love our customers</a></h3>
+						<h3 ><a href="#" style="color:darkcyan">We love our customers</a></h3>
 						<p>We are known to provide best possible service ever</p>
 					</div>
 				</div>
@@ -81,7 +81,7 @@
 						<div class="icon"><i class="fa fa-tags"></i>
 						</div>
 
-						<h3><a href="#">Best prices</a></h3>
+						<h3><a href="#" style="color:darkcyan">Best prices</a></h3>
 						<p>You can check that the height of the boxes adjust when longer text like this one is used in one of them.</p>
 					</div>
 				</div>
@@ -91,7 +91,7 @@
 						<div class="icon"><i class="fa fa-thumbs-up"></i>
 						</div>
 
-						<h3><a href="#">100% satisfaction guaranteed</a></h3>
+						<h3><a href="#" style="color:darkcyan">100% satisfaction guaranteed</a></h3>
 						<p>Free returns on everything for 3 months.</p>
 					</div>
 				</div>
@@ -109,7 +109,7 @@
 			
 				<div class="col-sm-12 padding-right">
 					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">Features Items</h2>
+						<h2 class="title text-center">Featured Items</h2>
 						@foreach ($item as $item)
 						<div class="col-sm-3" >
 							<div class="product-image-wrapper">

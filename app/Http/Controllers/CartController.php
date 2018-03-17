@@ -25,10 +25,17 @@ class CartController extends Controller
              else
                  $val[$d->item_id]=$d->price;
            }
-           $bill=$this->show_bill($val,$data);
-            $final_bill=$bill+20;
-            if(!empty($data))
+            if(!empty($data)&& !empty($val))
+            {
+                $bill=$this->show_bill($val,$data);
+                $final_bill=$bill+20;
                 return view('cart',array('data'=>$data,'val'=>$val))->with('bill',$bill)->with('final_bill',$final_bill);
+            }
+            else if(empty($val)){
+                $bill=0;
+                $final_bill=0;
+                return view('cart',array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill);
+            }
             else
                 return view('cart');
         }
@@ -106,18 +113,17 @@ class CartController extends Controller
              else
                 $val[$d->item_id]=$d->price;
            }
-            $bill=$this->show_bill($val,$data);
-            $final_bill=$bill+20;
         if(!empty($val))
         {
-            session(['cart'=>session('cart')-1]);
+            $bill=$this->show_bill($val,$data);
+            $final_bill=$bill+20;
+           session(['cart'=>session('cart')-1]);
            return view('cart',array('data'=>$data,'val'=>$val))->with('success', 'Remark Deleted Successfully');
         }
         else
         {
             session(['cart'=>session('cart')-1]);
             return view('cart',array('data'=>$data))->with('success', 'Remark Deleted Successfully');
-
         }
     }
     

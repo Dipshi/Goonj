@@ -31,12 +31,12 @@ class MailController extends Controller
              Mail::send(['text'=>'mail'],['name','ABC'],function($message){
              $email=session('email');
              $message->to($email,'To')->subject('Goonj-Product Purchase');
-             $message->from("",'Goonj');
+             $message->from("2015isha.shetty@ves.ac.in",'Goonj');
         });
             if(!empty($data))
                 return view('checkout',array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill);
             else
-                return view('checkout');return view('checkout',array('data',$data))->with('success','Message delivered successfully');
+                return view('checkout');//return view('checkout',array('data',$data))->with('success','Message delivered successfully');
     }
      public function call(){
             $email=session('email');

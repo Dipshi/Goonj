@@ -27,10 +27,17 @@ class CheckoutController extends Controller
                         $val[$i]=$d->price;
                     $i++;
                   }
-             $bill=$this->show_bill($val);
-             $final_bill=$bill+20;
-            if(!empty($data))
+             if(!empty($data)&& !empty($val))
+            {
+                $bill=$this->show_bill($val,$data);
+                $final_bill=$bill+20;
                 return view('checkout',array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill);
+            }
+            else if(empty($val)){
+                $bill=0;
+                $final_bill=0;
+                return view('checkout',array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill);
+            }
             else
                 return view('checkout');
         }
@@ -52,9 +59,7 @@ class CheckoutController extends Controller
         }
         return $sum;
     }
-    public function showSummary(){
-        
-    }
+   
 //Update method is not working
     public function update(Request $request)
     {
