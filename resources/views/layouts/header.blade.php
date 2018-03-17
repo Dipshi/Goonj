@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="{{url ('eshopper/') }}"><img src="{{URL::to('images/home/logo1.png') }}" alt="" /></a>
+                        <a href="{{url ('/') }}"><img src="{{URL::to('images/home/logo1.png') }}" alt="" /></a>
                     </div>
                 </div>
                 <div class="col-sm-8">
@@ -93,8 +93,10 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="search_box pull-right">
-                        <input type="text" placeholder="Search"/>
+                    <div class="search_box ">
+                        <form action="{{url('/search')}}">
+                        <input type="text" name="searchData" placeholder="Search"/>
+                        </form>
                     </div>
                 </div>
             </div>

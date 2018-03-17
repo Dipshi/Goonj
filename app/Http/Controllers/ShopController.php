@@ -57,5 +57,20 @@ class ShopController extends Controller
         return View::make('shop')->with('items', $items)->with('category',$category);   
 
 
-    }        
+    }      
+    public function search(Request $request){
+        $searchData= $request->searchData;
+  
+        //start query for search
+        $data = DB::table('item')
+        // ->join('cats','cats.id','products.cat_id')
+        ->where('category', 'like', '%' . $searchData . '%')
+        ->get();
+
+        // return view('shop',[
+        //   'data' => $data, 'catByUser' => $searchData
+        // ]);
+        return View::make('shop')->with('items', $data)->with('category',$searchData);   
+
+      }  
 }
