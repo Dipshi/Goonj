@@ -899,9 +899,10 @@ h2.title {
   height: 0;
   position: absolute;
   transition: height 500ms ease 0s ;
-
+  
   width: 100%;
   display: block;
+  
   /* opacity:; */
 }
 
