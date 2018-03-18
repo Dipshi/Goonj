@@ -25,10 +25,12 @@ class ProductDetails extends Controller
         $email=$request->email;
         $review=$request->review;
         $rating=$request->rating;
-        
+        $item_id=$request->item_id;
+        // $input = Input::only('name','email','rating','review');  
         $details=item::select('*')->where('item_id',$item_id)->get();
         $review=review::select('*')->where('item_id',$item_id)->get();
-        return view('product-details')->with('details',$details)->with('review',$review);
+       dd($email);
+        // return view('product-details')->with('details',$details)->with('review',$review);
 
     }
    

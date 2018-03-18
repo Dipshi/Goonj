@@ -184,9 +184,9 @@
 								<p>Be the first one to Review </p><br>
 								<p><b>Write Your Review</b></p>
 									
-									<form action="{{url('/review')}}" method="post">
+									<form action="{{url('/review/'.$details[0]->item_id)}}">
 										<span>
-											<input type="text" name="name"placeholder="Your Name"/>
+											<input type="text" name="name" placeholder="Your Name"/>
 											<input type="email" name="{{session('email')}}" placeholder="{{session('email')}}"/>
 										</span>
 										<textarea name="rating" ></textarea>
