@@ -198,7 +198,7 @@
 										<input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
 										<input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
 										</fieldset>
-										<input type="submit" value="submit">
+										<input type="submit" class="pull-right"value="submit">
 										{{--  Submit  --}}
 										{{--  </button>  --}}
 									</form>
