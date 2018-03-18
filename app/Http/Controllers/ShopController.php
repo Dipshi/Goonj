@@ -41,6 +41,7 @@ class ShopController extends Controller
     public function return_category(Request $request,$category)
     {
         $items=item::select('*')->where('category',$category)->paginate(10);
+        // dd(item::select('*')->where('category',$category)->paginate(10));
         // return $items;
         return View::make('shop')->with('items', $items)->with('category',$category);   
 
@@ -65,7 +66,7 @@ class ShopController extends Controller
         $data = DB::table('item')
         // ->join('cats','cats.id','products.cat_id')
         ->where('category', 'like', '%' . $searchData . '%')
-        ->get();
+        ->paginate(10);
 
         // return view('shop',[
         //   'data' => $data, 'catByUser' => $searchData

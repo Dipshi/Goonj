@@ -184,12 +184,12 @@
 								<p>Be the first one to Review </p><br>
 								<p><b>Write Your Review</b></p>
 									
-									<form action="ProductDetails@add_review">
+									<form action="{{url('/review')}}" method="post">
 										<span>
 											<input type="text" name="name"placeholder="Your Name"/>
 											<input type="email" name="{{session('email')}}" placeholder="{{session('email')}}"/>
 										</span>
-										<textarea name="" ></textarea>
+										<textarea name="rating" ></textarea>
 										<b >Rating: </b> <br>
 										<fieldset class="rating">
 										 <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
@@ -198,9 +198,9 @@
 										<input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
 										<input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
 										</fieldset>
-										<button type="button" class="btn btn-default pull-right">
-										Submit
-										</button>
+										<input type="submit" value="submit">
+										{{--  Submit  --}}
+										{{--  </button>  --}}
 									</form>
 								@endif
 

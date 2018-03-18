@@ -20,9 +20,12 @@ class ProductDetails extends Controller
     }
     public function add_review(Request $request)
     {
+        // dd("$item_id");
         $name=$request->name;
         $email=$request->email;
+        $review=$request->review;
         $rating=$request->rating;
+        
         $details=item::select('*')->where('item_id',$item_id)->get();
         $review=review::select('*')->where('item_id',$item_id)->get();
         return view('product-details')->with('details',$details)->with('review',$review);
