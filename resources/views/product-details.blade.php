@@ -187,7 +187,7 @@
 									<form action="{{url('/review/'.$details[0]->item_id)}}">
 										<span>
 											<input type="text" name="name" placeholder="Your Name"/>
-											<input type="email" name="{{session('email')}}" placeholder="{{session('email')}}"/>
+											<input type="email" name="email" placeholder="{{session('email')}}"/>
 										</span>
 										<textarea name="rating" ></textarea>
 										<b >Rating: </b> <br>

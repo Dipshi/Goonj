@@ -28,19 +28,24 @@ class ProductDetails extends Controller
         
         return $query1;
     }
-    public function add_review(Request $request)
+    public function add_review(Request $request,$id)
     {
         // dd("$item_id");
-        $name=$request->name;
-        $email=$request->email;
-        $review=$request->review;
-        $rating=$request->rating;
-        $item_id=$request->item_id;
+        $name=$request->input('name');
+        $email=$request->input('email');
+       
+        $review=$request->input('review');
+        dd($review);
+        $rating=$request->input('rating');
+        $id1=collect(DB::select('select cid from customer where email="'.$email.'"'));
+        $item_id=$id;
+        dd($id1);
+        $cust=DB::table('cart')->insert(['item_id' => $id,'review' => $review,'cid' => $id1[0]->cid,'rating' => $rating]);
         // $input = Input::only('name','email','rating','review');  
         $details=item::select('*')->where('item_id',$item_id)->get();
         $review=review::select('*')->where('item_id',$item_id)->get();
-       dd($email);
-        // return view('product-details')->with('details',$details)->with('review',$review);
+       //dd($name);
+        return view('product-details')->with('details',$details)->with('review',$review)->with("success","Review added successfully");
 
     }
    
