@@ -20,7 +20,7 @@
 Route::get('/product-details/{id}', 'ProductDetails@show');//review and show
 Route::get('/search','ShopController@search' );
 
-//  Route::get('/product-details','ProductDetails@reviews' );
+ Route::get('/review/{id}','ProductDetails@add_review' );
 //  Route::get('/product-details','ProductDetailsController@product' );
  Route::get('/addToCart/{id}','ProductDetailsController@addToCart' );
  Route::get('/login','LoginController@index' );
