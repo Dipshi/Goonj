@@ -106,7 +106,6 @@ class CartController extends Controller
     {
         $song =  Cart::where('item_id', $id)->delete();
         $data=$this->call();
-        //dd($data);
          foreach($data as $d){
                if($d->qty!=0)
                  $val[$d->item_id]=$d->price*$d->qty;
@@ -117,13 +116,21 @@ class CartController extends Controller
         {
             $bill=$this->show_bill($val,$data);
             $final_bill=$bill+20;
-           session(['cart'=>session('cart')-1]);
-           return view('cart',array('data'=>$data,'val'=>$val))->with('success', 'Remark Deleted Successfully');
+            if(session('cart')>0)
+               session(['cart'=>session('cart')-1]);
+            else
+               session(['cart'=>0]);
+            return view('cart',array('data'=>$data,'val'=>$val))->with('bill',$bill)->with('final_bill',$final_bill)->with('success', 'Remark Deleted Successfully');
         }
         else
         {
-            session(['cart'=>session('cart')-1]);
-            return view('cart',array('data'=>$data))->with('success', 'Remark Deleted Successfully');
+            $bill=0;
+            $final_bill=0;
+            if(session('cart')>0)
+               session(['cart'=>session('cart')-1]);
+            else
+               session(['cart'=>0]);
+            return view('cart',array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill)->with('success', 'Remark Deleted Successfully');
         }
     }
     

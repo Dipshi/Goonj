@@ -39,8 +39,10 @@
 								</td>
 								<td class="cart_quantity">
 									<div class="cart_quantity_button">
+										
 										<input class="cart_quantity_input" type="text" name="quantity" value="{{$d->qty}}" autocomplete="off" size="2" disabled>
 										{{-- <a class="cart_quantity_down" href=""> - </a> --}}
+										
 									</div>
 								</td>
 								<td class="cart_total">
@@ -143,18 +145,17 @@
 					<div class="total_area">
 						<ul>
 							@if(!empty($val))
-							<li>Cart Sub Total <span>{{$bill}}</span></li>
-							<li>Eco Tax <span>Rs.20</span></li>
-							<li>Shipping Cost <span>Free</span></li>
-							<li>Total <span>{{$final_bill}}</span></li>
+								<li>Cart Sub Total <span>{{$bill}}</span></li>
+								<li>Eco Tax <span>Rs.20</span></li>
+								<li>Shipping Cost <span>Free</span></li>
+								<li>Total <span>{{$final_bill}}</span></li>
 							@else
-							<li>Cart Sub Total <span>0</span></li>
-							<li>Eco Tax <span>Rs.20</span></li>
-							<li>Shipping Cost <span>Free</span></li>
-							<li>Total <span>0</span></li>
+								<li>Cart Sub Total <span>0</span></li>
+								<li>Eco Tax <span>Rs.20</span></li>
+								<li>Shipping Cost <span>Free</span></li>
+								<li>Total <span>0</span></li>
 							@endif
 						</ul>
-							<a class="btn btn-default update" href="">Update</a>
 							<a class="btn btn-default check_out" href="/checkout">Check Out</a>
 					</div>
 				</div>

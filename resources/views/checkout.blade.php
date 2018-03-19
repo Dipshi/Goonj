@@ -30,41 +30,20 @@
 									<input type="text" placeholder="Email*" value="{{$data[0]->email}}" disabled>
 									<input type="text" placeholder="First Name *" name="name" value="{{$data[0]->first_name}}" disabled>
 									<input type="text" placeholder="Last Name *" name="lname" value="{{$data[0]->last_name}}" disabled>
-									@if(!isset($data[0]->address) && !isset($data[0]->mobile_number) && !isset($data[0]->pincode))
+									@if(empty($data[0]->address) && empty($data[0]->mobile_number) && empty($data[0]->pincode) && empty($stateVal) && empty($regionVal))
 										<input type="text" placeholder="Address 1 *" name="add">
 										<input type="text" placeholder="Mobile Phone" name="mobile">
-							{{-- <div class="form-two"> --}}
-								{{-- <form> --}}
 									    <input type="text" placeholder="Zip / Postal Code *" name="zip">
 									@else
 										<input type="text" placeholder="Address 1 *" name="add" value="{{$data[0]->address}}">
 										<input type="text" placeholder="Mobile Phone" name="mobile" value="{{$data[0]->mobile_number}}">
 										<input type="text" placeholder="Zip / Postal Code *" name="zip" value="{{$data[0]->pincode}}">
+										<input type="text" placeholder="Region *" name="add" value="{{$stateVal}}" disabled/>
+										<input type="text" placeholder="State *" name="add" value="{{$regionVal}}" disabled/>
+										<br><br>
 									@endif
-									<br><br>
-									<select name="country">
-										<option>-- Country --</option>
-										<option>United States</option>
-										<option>Bangladesh</option>
-										<option>UK</option>
-										<option>India</option>
-										<option>Pakistan</option>
-										<option>Ukraine</option>
-										<option>Canada</option>
-										<option>Dubai</option>
-									</select>
-									<br><br>
-									<select>
-										<option>-- State / Province / Region --</option>
-										<option>United States</option>
-										<option>Bangladesh</option>
-										<option>UK</option>
-										<option>India</option>
-										<option>Pakistan</option>
-										<option>Ukraine</option>
-										<option>Canada</option>
-										<option>Dubai</option>
-									</select>
+									
+									
 									
 							{{-- //	</form> --}}
 							</div>
