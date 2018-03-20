@@ -164,7 +164,7 @@
 								@if(!count($review)==0)
 							
 								<div class="col-sm-12">
-										@foreach($review as $review)
+									@foreach($review as $review)
 									<ul>
 									<li><a style="font-size: 10px" ><i class="fa fa-user"></i>{{$review->name}}</a></li>
 										{{--  <li><a href=""><i class="fa fa-clock-o"></i>12:41 PM</a></li>  --}}
@@ -173,8 +173,7 @@
 									<p style="font-size: 13px">{{$review->review}}</p>
 									<hr>
 									@endforeach
-								
-								</div>
+									</div>
 								@else
 								<p>No Customer has reviewed yet</p><br>
 								@endif
