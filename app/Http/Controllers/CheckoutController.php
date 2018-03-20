@@ -17,20 +17,32 @@ class CheckoutController extends Controller
     {
         if(!empty(session('email'))){  
             $email=session('email');
-            $data=collect(DB::select( 'SELECT first_name,last_name,email  FROM customer where email="'.$email.'"'));
+            $data=collect(DB::select( 'SELECT *  FROM customer where email="'.$email.'"'));
             $data1=$this->call();
             $i=0;
                     foreach($data1 as $d){
-                    if($d->qty!=0)
                         $val[$i]=$d->price*$d->qty;
-                    else
-                        $val[$i]=$d->price;
                     $i++;
-                  }
-             $bill=$this->show_bill($val);
-             $final_bill=$bill+20;
-            if(!empty($data))
+                    }
+             if(!empty($data)&& !empty($val))
+            {
+                $bill=$this->show_bill($val,$data);
+                $final_bill=$bill+20;
+                if($data[0]->address!=null && $data[0]->pincode!=0 && $data[0]->mobile_number!=0){
+                  $state=collect(DB::select('select regionName,stateName from region as r , state as s where r.state_id=s.state_id and r.pin_code="'.$data[0]->pincode.'"'));
+                return view('checkout',array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill)->with('stateVal',$state[0]->stateName)->with('regionVal',$state[0]->regionName);
+                }
+               return view('checkout',array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill);
+            }
+             else if(empty($val)){
+                $bill=0;
+                $final_bill=0;
+                if($data[0]->address!=null && $data[0]->pincode!=0 && $data[0]->mobile_number!=0){
+                  $state=collect(DB::select('select regionName,stateName from region as r , state as s where r.state_id=s.state_id and r.pin_code="'.$data[0]->pincode.'"'));
+                return view('checkout',array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill)->with('stateVal',$state[0]->stateName)->with('regionVal',$state[0]->regionName);
+                }
                 return view('checkout',array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill);
+            }
             else
                 return view('checkout');
         }
@@ -52,29 +64,52 @@ class CheckoutController extends Controller
         }
         return $sum;
     }
-    public function showSummary(){
-        
-    }
-//Update method is not working
+    
+
     public function update(Request $request)
     {
-           $name = $request->input('add'); 
-           dd($name);    
-        //     $user = new User;
-        //     $user->name = $input['name'];
-        //     $user->email = $input['email'];
-        //    // $user->password = Hash::make($input['password']);
-        //     $user->save();
-            //dd($name);
-             $email=session('email');
-        $data=collect(DB::select( 'SELECT cid  FROM customer where email="'.$email.'"'));
+        $name = $request->input('add'); 
+        $mobile = $request->input('mobile'); 
+        $zip=$request->input('zip');
+        $country=$request->input('country');
+        $email=session('email');
+        $data=collect(DB::select( 'SELECT *  FROM customer where email="'.$email.'"'));
         $cid=$data[0]->cid;
-        $insert1=DB::table('customer')
-            ->where('cid', $cid)
-            ->update(['address' => $name]);
-            return view('/Login');
+        $data1=$this->call();
+         $i=0;
+                    foreach($data1 as $d){
+                        $val[$i]=$d->price*$d->qty;
+                    $i++;
+                  }
+        if($data[0]->address==null && $data[0]->pincode==0 && $data[0]->mobile_number==0){
+                    $insert1=DB::table('customer')
+                    ->where('cid', $cid)
+                    ->update(['address' => $name,'mobile_number' => $mobile,'pincode' => $zip]);
+        }
+         if(!empty($data)&& !empty($val))
+            {
+                $bill=$this->show_bill($val,$data);
+                $final_bill=$bill+20;            
+                 if($data[0]->address!=null && $data[0]->pincode!=0 && $data[0]->mobile_number!=0){
+                  $state=collect(DB::select('select regionName,stateName from region as r , state as s where r.state_id=s.state_id and r.pin_code="'.$data[0]->pincode.'"'));
+                return view('checkout',array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill)->with('stateVal',$state[0]->stateName)->with('regionVal',$state[0]->regionName);
+                }
+                 return view('checkout',array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill) ;//;->with('stateVal',$stateVal)->with('regionVal',$regionVal);
+            }
+             else if(empty($val)){
+                $bill=0;
+                $final_bill=0;
+                if($data[0]->address!=null && $data[0]->pincode!=0 && $data[0]->mobile_number!=0){
+                  $state=collect(DB::select('select regionName,stateName from region as r , state as s where r.state_id=s.state_id and r.pin_code="'.$data[0]->pincode.'"'));
+                  $stateVal=$state[0]->stateName;
+                  $regionVal=$state[0]->regionName;
+                return view('checkout',array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill)->with('stateVal',$stateVal)->with('regionVal',$state[0]->regionName);
+                }
+                return view('checkout',array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill);//->with('stateVal',$stateVal)->with('regionVal',$regionVal);
+             }
      }
-
+   //  public function state_display($zip){
+     
     
     public function destroy($id)
     {

@@ -1,7 +1,7 @@
 #hot h2 {
   text-transform: uppercase;
   font-size: 36px;
-  color: #4fbfa8;
+  color:darkcyan;
   font-weight: 100;
   text-align: center;
 }
@@ -29,7 +29,7 @@
 }
 #hot .product-slider .owl-controls .owl-page.active span,
 #hot .product-slider .owl-controls.clickable .owl-page:hover span {
-  background: #4fbfa8;
+  background:darkcyan;
 }
 #advantages {
   text-align: center;
@@ -59,9 +59,14 @@
   font-weight: 300;
   text-transform: uppercase;
   z-index: 2;
+  color:darkcyan;
 }
 #advantages .box h3 a:hover {
   text-decoration: none;
+}
+#advantages .box h3 a{
+  text-decoration: none;
+  color:darkcyan;
 }
 #advantages .box p {
   position: relative;

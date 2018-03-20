@@ -24,41 +24,28 @@
 						<div class="bill-to">
 							<p>Bill To</p>
 							<div class="form-one">
-								<form method="post" action="url('checkout/update')}}">
+								{{-- <p>{{$address}}</p> --}}
+								<form method="post" action="{{ action('CheckoutController@update')}}">
+									
 									<input type="text" placeholder="Email*" value="{{$data[0]->email}}" disabled>
 									<input type="text" placeholder="First Name *" name="name" value="{{$data[0]->first_name}}" disabled>
 									<input type="text" placeholder="Last Name *" name="lname" value="{{$data[0]->last_name}}" disabled>
-									<input type="text" placeholder="Address 1 *" name="add">
-									<input type="text" placeholder="Mobile Phone" name="mobile">
-								</form>
-							</div>
-							<div class="form-two">
-								<form>
-									<input type="text" placeholder="Zip / Postal Code *">
-									<select>
-										<option>-- Country --</option>
-										<option>United States</option>
-										<option>Bangladesh</option>
-										<option>UK</option>
-										<option>India</option>
-										<option>Pakistan</option>
-										<option>Ukraine</option>
-										<option>Canada</option>
-										<option>Dubai</option>
-									</select>
-									<select>
-										<option>-- State / Province / Region --</option>
-										<option>United States</option>
-										<option>Bangladesh</option>
-										<option>UK</option>
-										<option>India</option>
-										<option>Pakistan</option>
-										<option>Ukraine</option>
-										<option>Canada</option>
-										<option>Dubai</option>
-									</select>
+									@if(empty($data[0]->address) && empty($data[0]->mobile_number) && empty($data[0]->pincode) && empty($stateVal) && empty($regionVal))
+										<input type="text" placeholder="Address 1 *" name="add">
+										<input type="text" placeholder="Mobile Phone" name="mobile">
+									    <input type="text" placeholder="Zip / Postal Code *" name="zip">
+									@else
+										<input type="text" placeholder="Address 1 *" name="add" value="{{$data[0]->address}}">
+										<input type="text" placeholder="Mobile Phone" name="mobile" value="{{$data[0]->mobile_number}}">
+										<input type="text" placeholder="Zip / Postal Code *" name="zip" value="{{$data[0]->pincode}}">
+										<input type="text" placeholder="Region *" name="add" value="{{$stateVal}}" disabled/>
+										<input type="text" placeholder="State *" name="add" value="{{$regionVal}}" disabled/>
+										<br><br>
+									@endif
 									
-								</form>
+									
+									
+							{{-- //	</form> --}}
 							</div>
 						</div>
 					</div>
@@ -68,11 +55,13 @@
 							<textarea name="message"  placeholder="Notes about your order, Special Notes for Delivery" rows="16"></textarea>
 							<label><input type="checkbox"> Shipping to bill address</label><br>
 							<br>
-							<a class="btn btn-primary" href="{{url('checkout/update')}}">Continue</a>
+							<button class="btn btn-primary"href="">Continue</button>
 						</div>	
 					</div>					
 				</div>
 			</div>
+			</form>
+		<div class="second">
 			<div class="review-payment">
 				<h2>Review & Payment</h2>
 			</div>
@@ -118,15 +107,27 @@
 					<span>
 						<label><input type="checkbox"> Cash On Delivery</label>
 					</span>
-					<a class="btn btn-primary" href="{{url('send')}}">Notify me</a>
-					<a class="btn btn-primary" href="{{url('send')}}">Complete Transaction</a>
+					     @if($final_bill!=0)
+					        <a class="btn btn-primary" href="{{url('send')}}">Complete Transaction</a>
+					     @else
+							<div class="register-req">
+							  <p>Purchase something inorder to complete transaction</p>
+						    </div><!--/register-req-->
+				         @endif
 				</div>
 				@endif
 				
 		</div>
+	</div>
 	</section> <!--/#cart_items-->
+<script>
+        $("button").click(function() {
+        $('html,body').animate({
+        scrollDown: $(".second").offset().top},
+        'slow');
+});
+</script>
 
-	
 
 
 @stop

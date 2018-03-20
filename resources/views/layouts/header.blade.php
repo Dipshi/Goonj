@@ -20,14 +20,9 @@
     <link href="{{URL::to('css/owl.theme.css') }}" rel="stylesheet">
 
     <link href="{{URL::to('css/owl.transition.css') }}" rel="stylesheet">
-
-
-
-
- 
-</head><!--/head-->
+    </head><!--/head-->
 <body>
-    {{-- @include('layouts.validation'); --}}
+    @include('layouts.validation');
     <div class="header-middle"><!--header-middle-->
         <div class="container">
             <div class="row">

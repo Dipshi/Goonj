@@ -28,7 +28,7 @@ Route::get('/search','ShopController@search' );
  Route::get('/cart','CartController@index' );
  Route::get('/cart/destroy/{id}','CartController@destroy' );
  Route::get('/checkout','CheckoutController@index' );
- Route::get('/checkout/update','CheckoutController@update' );
+ Route::post('/checkout/update','CheckoutController@update' );
  Route::get('/send','MailController@send' );
  Route::get('/contact-us', function () {
      return view('contact-us');
