@@ -51,10 +51,10 @@ class ShopController extends Controller
         // $range=split("-",$range);
         $range = explode('-', $range);
 
-        $items=collect(DB::select( 'SELECT * FROM item where category= "'.$category.'" And price between '.$range[0].' AND '.$range[1].'')->paginate(10));
+        // $items=collect(DB::select( 'SELECT * FROM item where category= "'.$category.'" And price between '.$range[0].' AND '.$range[1].''))->paginate(10);
+        $items=item::select('*')->where('category',$category)->whereBetween('price',array($range[0],$range[1]))->paginate(10);
 
-        // $items=item::select('*')->where('category',$category)->get();
-        // return $items;
+      
         return View::make('shop')->with('items', $items)->with('category',$category);   
 
 

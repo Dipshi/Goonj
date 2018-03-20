@@ -20,8 +20,8 @@
 Route::get('/product-details/{id}', 'ProductDetails@show');//review and show
 Route::get('/search','ShopController@search' );
 
- Route::get('/review/{id}','ProductDetails@add_review' );
-//  Route::get('/product-details','ProductDetailsController@product' );
+//  Route::get('/review/{id}','ProductDetails@add_review' );
+ Route::post('/review/{id}','ProductDetails@add_review');
  Route::get('/addToCart/{id}','ProductDetailsController@addToCart' );
  Route::get('/login','LoginController@index' );
  Route::get('/checkout','CheckoutController@index' );
@@ -39,7 +39,10 @@ Route::get('/search','ShopController@search' );
  Route::get('/shop/{name}','ShopController@return_category' );
  Route::get('/shop/{name}/{range}', 'ShopController@range');//review and show
 
- 
+ Route::get("/review", function()
+{
+   return View::make("review");
+});
  Route::get('auth/google', 'Auth\LoginController@redirectToProvider');
  Route::get('auth/google/callback', 'LoginController1@handleProviderCallback');
  Route::get('/logout','SessionController@logout' );

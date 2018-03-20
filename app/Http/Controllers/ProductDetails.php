@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+// use App\Http\Controllers\Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\item;
 use App\review;
-
+use App\customer;
+use DB;
 class ProductDetails extends Controller
 {
    
@@ -13,24 +14,34 @@ class ProductDetails extends Controller
     {
         $details=item::select('*')->where('item_id',$item_id)->get();
         $review=review::select('*')->where('item_id',$item_id)->get();
-
-        // $item = DB::table('item')->get();
-        // return $details;
+        if(!empty(session('item_id')))
+        {
+            session(['item_id'=>$item_id]);
+        }
+        else
+        {
+            session()->forget('item_id');
+            session(['item_id'=>$item_id]);
+        }
+       
         return view('product-details')->with('details',$details)->with('review',$review);
     }
-    public function add_review(Request $request)
+    //adding review
+    public function add_review(Request $request,$item_id)
     {
         // dd("$item_id");
-        $name=$request->name;
+        $name=$request->username;
         $email=$request->email;
-        $review=$request->review;
+        $reviews=$request->review;
         $rating=$request->rating;
-        $item_id=$request->item_id;
-        // $input = Input::only('name','email','rating','review');  
+        $cid=collect(DB::select('Select cid from customer where email="'.$email.'"')) ;
+        $cust=DB::table('review')->insert(['item_id' => $item_id,'review' => $reviews,'rating' => $rating,'cid' => $cid[0]->cid,'name'=>$name,'date'=>date('Y-M-D')]);
+        $rat=DB::select('Select avg(rating) as avg from review where item_id="'.$item_id.'"');
+        $add=DB::update('Update item set rating='.$rat[0]->avg.' where item_id="'.$item_id.'"');
         $details=item::select('*')->where('item_id',$item_id)->get();
         $review=review::select('*')->where('item_id',$item_id)->get();
-       dd($email);
-        // return view('product-details')->with('details',$details)->with('review',$review);
+    
+        return view('product-details')->with('details',$details)->with('review',$review);
 
     }
    

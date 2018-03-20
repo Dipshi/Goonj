@@ -41,6 +41,7 @@ class LoginController1 extends Controller
              $cust=DB::table('customer')->insert(['first_name' => $first,'last_name' => $last,'cid' => $firstchar,'email' => $userEmail]);
              if($cust==true){
                  session(['email' => $userEmail]);
+                 session(['username'=>$userName]);
                  return redirect('/')->with('success','Login Successfull!');
                  }
              else{
@@ -50,6 +51,7 @@ class LoginController1 extends Controller
         }
         else{
              session(['email' => $userEmail]);
+             session(['username'=>$userName]);
              return redirect('/')->with('success','Login Successfull!');
        }
     }
