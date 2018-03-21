@@ -26,7 +26,7 @@
 							<div class="form-one">
 								{{-- <p>{{$address}}</p> --}}
 								<form method="post" action="{{ action('CheckoutController@update')}}">
-									
+									  {{ csrf_field() }}
 									<input type="text" placeholder="Email*" value="{{$data[0]->email}}" disabled>
 									<input type="text" placeholder="First Name *" name="name" value="{{$data[0]->first_name}}" disabled>
 									<input type="text" placeholder="Last Name *" name="lname" value="{{$data[0]->last_name}}" disabled>

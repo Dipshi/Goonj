@@ -80,37 +80,6 @@
 							<img src="{{asset('images/product-details/'.$details[0]->images)}}" alt="" />
 								{{--  <h3>ZOOM</h3>  --}}
 							</div>
-							{{--  <div id="similar-product" class="carousel slide" data-ride="carousel">
-								
-								  <!-- Wrapper for slides -->
-								    {{-- <div class="carousel-inner">
-										<div class="item active">
-												<a href=""><img src="{{asset('images/product_details/'.$details[0]->images)}}" alt=""></a>
-												<a href=""><img src="{{asset('images/product_details/'.$details[0]->images)}}" alt=""></a>
-												<a href=""><img src="{{asset('images/product_details/'.$details[0]->images)}}" alt=""></a>
-										</div>
-										<div class="item">
-										  <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-										  <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-										  <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
-										</div>
-										<div class="item">
-										  <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-										  <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-										  <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
-										</div>
-										
-									</div> --}}
-
-								  <!-- Controls -->
-								  {{--  <a class="left item-control" href="#similar-product" data-slide="prev">
-									<i class="fa fa-angle-left"></i>
-								  </a>
-								  <a class="right item-control" href="#similar-product" data-slide="next">
-									<i class="fa fa-angle-right"></i>
-								  </a>
-							</div>  --}} 
-
 						</div>
 						<div class="col-sm-7">
 							<div class="product-information"><!--/product-information-->
@@ -120,12 +89,15 @@
 								<img src="images/product-details/{{$details[0]->images}}" alt="" />
 								<span>
 								<span>Rs. {{$details[0]->price}}</span>
+								<br>
 									<label>Quantity:</label>
-									<input type="text" value="1" />
-									<button type="button" class="btn btn-fefault cart" id=" {{$details[0]->item_id}}">
-											<a href="{{url ('/addToCart/'. $details[0]->item_id) }}" style="color:#ffffff"><i class="fa fa-shopping-cart" style="color:#ffffff"></i>Add to Cart</a></li>
-									</button>
+									<form  action="{{url ('/addToCart/'. $details[0]->item_id) }}" method="post"> 
+										 {{ csrf_field() }}
+									<input type="text" value="1" name="val"  id="cart"/><br>
+									<button class="btn btn-primary "href=""><i class="fa fa-shopping-cart" style="color:#ffffff"></i>Add to Cart</li></button>
+									</form>
 								</span>
+								<br>
 								<p><b>Availability:</b>
 								@if($details[0]->is_stock==0)
 								Not in Stock
@@ -179,7 +151,8 @@
 								<p>No Customer has reviewed yet</p><br>
 								@endif
 								{{--  <form action="{{url('/review/'.$details[0]->item_id)}}" method="">  --}}
-								<input type="submit" value="Write your review" class="" id="reviewbtn" onclick="load_main_content()"><br><br><br>
+								<input type="submit" value="Write  review" class="" id="reviewbtn" onclick="load_main_content()" class="btn btn-info btn-lg"><br><br><br>
+							     	 
 								<div id="form-content">
 								</div>
 														

@@ -22,7 +22,7 @@ Route::get('/search','ShopController@search' );
 
 //  Route::get('/review/{id}','ProductDetails@add_review' );
  Route::post('/review/{id}','ProductDetails@add_review');
- Route::get('/addToCart/{id}','ProductDetailsController@addToCart' );
+ Route::post('/addToCart/{id}','ProductDetailsController@addToCart' );
  Route::get('/login','LoginController@index' );
  Route::get('/checkout','CheckoutController@index' );
  Route::get('/cart','CartController@index' );
