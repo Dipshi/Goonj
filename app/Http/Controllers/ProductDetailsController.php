@@ -34,7 +34,7 @@ class ProductDetailsController extends Controller
         //To check if the product is newly added or is already added
         if($query1->count()==0 ){
             //To check if the product is available
-            if( $stock==1 && $query12[0]->quantity>$qty){
+            if( $stock==1 && $query12[0]->quantity>=$item_no_val){
                $cust=DB::table('cart')->insert(['cid' => $cid,'item_id' => $id,'qty'=>$item_no_val]);
                session(['cart'=>session('cart')+1]);
             }

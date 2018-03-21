@@ -20,14 +20,14 @@ class MailController extends Controller
              Mail::send(['text'=>'mail'],['name','ABC'],function($message){
              $email=session('email');
              $message->to($email,'To')->subject('Goonj-Product Purchase');
-             $message->from("2015isha.shetty@ves.ac.in",'Goonj');
+             $message->from("",'Goonj');
         });
         $trans=$this->addorder();
             if($trans==true){
               
                 return redirect('/')->with('success','Transaction completed!');
             }
-                //,array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill);
+               
             else
                 return redirect()->back()->with('error','Something went wrong!!! Transaction not completed');      
             
