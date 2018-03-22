@@ -91,11 +91,16 @@
 								<span>Rs. {{$details[0]->price}}</span>
 								<br>
 									<label>Quantity:</label>
+								@if(session('email'))
 									<form  action="{{url ('/addToCart/'. $details[0]->item_id) }}" method="post"> 
 										 {{ csrf_field() }}
 									<input type="text" value="1" name="val"  id="cart"/><br>
 									<button class="btn btn-primary "href=""><i class="fa fa-shopping-cart" style="color:#ffffff"></i>Add to Cart</li></button>
-									</form>
+								</form>
+								@else
+								    <input type="text" value="1" name="val"  id="cart"/><br>
+									<button class="btn btn-primary "href=""><i class="fa fa-shopping-cart" style="color:#ffffff"></i>Add to Cart</li></button>
+								@endif
 								</span>
 								<br>
 								<p><b>Availability:</b>
