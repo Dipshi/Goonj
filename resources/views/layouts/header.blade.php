@@ -7,6 +7,9 @@
     <meta name="author" content="">
     <title>Home | E-Shopper</title>
     <link href="{{ URL::to('css/bootstrap.min.css') }}" rel="stylesheet">
+    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --}}
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> --}}
     <link href="{{URL::to('css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/prettyPhoto.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/price-range.css') }}" rel="stylesheet">
@@ -20,6 +23,7 @@
     <link href="{{URL::to('css/owl.theme.css') }}" rel="stylesheet">
 
     <link href="{{URL::to('css/owl.transition.css') }}" rel="stylesheet">
+    <script>
     </head><!--/head-->
 <body>
     @include('layouts.validation');
