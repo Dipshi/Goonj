@@ -30,9 +30,9 @@ Route::get('/search','ShopController@search' );
  Route::get('/checkout','CheckoutController@index' );
  Route::post('/checkout/update','CheckoutController@update' );
  Route::get('/send','MailController@send' );
- Route::get('/contact-us', function () {
-     return view('contact-us');
- });
+ Route::get('/contact-us','ContactUsController@add');
+ Route::post('/contactus','ContactUsController@index');
+     
  Route::get('/tp', function () {//trial page
     return view('index_productdisplay');
 });

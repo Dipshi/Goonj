@@ -26,7 +26,7 @@
     <script>
     </head><!--/head-->
 <body>
-    @include('layouts.validation');
+    @include('layouts.validation')
     <div class="header-middle"><!--header-middle-->
         <div class="container">
             <div class="row">
