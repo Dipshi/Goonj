@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2018 at 03:05 PM
+-- Generation Time: Mar 25, 2018 at 04:57 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.1.13
 
@@ -39,7 +39,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`cid`, `item_id`, `qty`) VALUES
-('cu101', 'i_102', 5);
+('cu101', 'i_102', 3);
 
 -- --------------------------------------------------------
 
@@ -90,7 +90,7 @@ CREATE TABLE `item` (
 
 INSERT INTO `item` (`item_name`, `item_id`, `category`, `description`, `images`, `price`, `is_stock`, `quantity`, `rating`) VALUES
 ('Leather bag', 'i_101', 'bags', 'This bag is ideal for carrying things.It can be used for carrying files to office as well as your personal belongings.Made from leather(recycled leather).', 'leather_bag.jpg', 600, 1, 6, 4),
-('Brown bag', 'i_102', 'bags', 'High grade raw material,brushed with advanced technologies of embroideries matches trends of today\'s generation and styling.', 'brown_handbag.jpg', 300, 1, 6, 0),
+('Brown bag', 'i_102', 'bags', 'High grade raw material,brushed with advanced technologies of embroideries matches trends of today\'s generation and styling.', 'brown_handbag.jpg', 300, 1, 3, 0),
 ('Floor Mat', 'i_103', 'mats', 'This mat has been hand woven on a floor loom, tightly packed with cotton/nylon material.It is finished in an end warp then fringed in same warping with thread ,making it tough ,strong and durable.', 'floor_mat.jpg', 100, 1, 6, 5),
 ('Black Handbag', 'i_104', 'bags', 'Backed up by a team of experts having rich industry experience.This bag is handcrafted and good for daily use.', 'black_bag.jpg', 150, 0, 1, 0),
 ('Woollen Doll', 'i_105', 'toys', 'Good quality handmade knitted doll for children below 5 yrs of age.', 'chick.jpg', 400, 0, 0, 0),
@@ -121,7 +121,9 @@ INSERT INTO `orders` (`oid`, `item_id`, `cid`, `qty`) VALUES
 (9, 'i_103', 'cu101', 3),
 (10, 'i_103', 'cu101', 2),
 (11, 'i_101', 'cu101', 1),
-(12, 'i_106', 'cu101', 1);
+(12, 'i_106', 'cu101', 1),
+(13, 'i_102', 'cu101', 5),
+(14, 'i_102', 'cu101', 1);
 
 -- --------------------------------------------------------
 
@@ -246,7 +248,7 @@ ALTER TABLE `state`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `oid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `oid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

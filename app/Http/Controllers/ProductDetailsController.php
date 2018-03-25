@@ -42,7 +42,7 @@ class ProductDetailsController extends Controller
         }
         else{
         $qty=$query1[0]->qty;
-            if($qty+$item_no_val < 5 && $query12[0]->quantity>$qty)
+            if($qty+$item_no_val < 5 && $query12[0]->quantity>=$qty)
                 $update1=DB::table('cart')
                         ->where('item_id', $id)
                         ->update(['qty' => $item_no_val+$qty]);
