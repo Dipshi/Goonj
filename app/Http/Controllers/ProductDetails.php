@@ -52,8 +52,8 @@ class ProductDetails extends Controller
     {
         $query=collect(DB::select('Select category from item where item_id="'.$item_id.'"'));
         $cat=$query[0]->category;
-        $query1=collect(DB::select('Select item_name,item_id,price,images from item where category="'.$cat.'" and is_stock=1 and item_id!="'.$item_id.'"'));
-        $i=0;
+        $query1=collect(DB::select('Select item_name,item_id,price,images from item where category="'.$cat.'" and is_stock=1 and item_id!="'.$item_id.'" order by rating desc'));
+        
         
         return $query1;
     }

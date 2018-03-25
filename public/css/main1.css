@@ -42,6 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn:focus{
   outline: none;
   box-shadow: none;
+  background-color: darkcyan;
 }
 
 .navbar-toggle {
@@ -599,7 +600,7 @@ ul.sub-menu {
   color: #B4B1AB;
   font-family: abel;
   font-size: 48px;
-  margin-top: 115px;
+  margin-top: 50px;
 }
 
 .item h1 span {
@@ -2544,4 +2545,8 @@ h2.title {
   color: darkcyan;
 }
 
-
+.carousel-inner p
+{
+  font-size: 24px;
+  font-family: 'Times New Roman', Times, serif;
+}

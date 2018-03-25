@@ -13,7 +13,7 @@
 									<h1><span>Artifacts</span>-SHOPPER</h1>
 									{{-- <h2>Free E-Commerce Template</h2> --}}
 									<p>Handmade colourful artifacts made from recycled products. </p>
-									{{-- <button type="button" class="btn btn-click" style="background-color:darkcyan">Get it now</button> --}}
+									<a type="button" class="btn btn-primary add-to-cart" href="{{url('#')}}" style="">Get it now</a>
 								</div>
 								<div class="col-sm-6">
 									<img src="{{URL::to('images/home/flower.jpg') }}" class="girl img-responsive" alt="" />
@@ -25,7 +25,7 @@
 									<h1><span>Toys</span>-SHOPPER</h1>
 									{{-- <h2>Free E-Commerce Template</h2> --}}
 									<p>Recycled , Attractive and good quality toys ranging from knitted to wooden toys. </p>
-									{{-- <button type="button" class="btn btn-click" style="background-color:darkcyan">Get it now</button> --}}
+									<a type="button" class="btn btn-primary" href="{{url('shop/toys')}}" style="background-color:darkcyan">Get it now</a>
 								</div>
 								<div class="col-sm-6">
 									<img src="{{URL::to('images/home/toy.jpg') }}"  class="girl img-responsive" alt="" />
@@ -36,7 +36,7 @@
 									<h1><span>Bags</span>-SHOPPER</h1>
 									{{-- <h2>Free E-Commerce Template</h2> --}}
 									<p>Cheap,designer and handmade elegant bags. </p>
-									{{-- <button type="button" class="btn btn-click" style="background-color:darkcyan">Get it now</button> --}}
+									<a type="button" class="btn btn-primary" href="{{url('shop/bags')}}" style="background-color:darkcyan">Get it now</a>
 								</div>
 								<div class="col-sm-6">
 									<img src="{{URL::to('images/Products/black_bag.jpg') }}"  class="girl img-responsive" alt="" />
@@ -48,7 +48,7 @@
 									<h1><span>Mat</span>-SHOPPER</h1>
 									{{-- <h2>Free E-Commerce Template</h2> --}}
 									<p>Want durable mats?<br> Dont worry you are at the right place .Checkout our recycled knitted mats.Enjoy surfing! </p>
-									{{-- <button type="button" class="btn btn-click">Get it now</button> --}}
+									<a type="button" class="btn btn-primary" href="{{url('shop/mats')}}" style="background-color:darkcyan">Get it now</a>
 								</div>
 								<div class="col-sm-6">
 									<img src="{{URL::to('images/Products/red_mat.jpg') }}"  class="girl img-responsive" alt="" />

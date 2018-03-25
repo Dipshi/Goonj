@@ -18,7 +18,7 @@
  Route::get('/','ShopController@returnitems' );//returning items for first page display
 //  Route::get('/')
 Route::get('/product-details/{id}', 'ProductDetails@show');//review and show
-Route::get('/search','ShopController@search' );
+Route::get('/search','ShopController@search' );//search functionality
 
 //  Route::get('/review/{id}','ProductDetails@add_review' );
  Route::post('/review/{id}','ProductDetails@add_review');

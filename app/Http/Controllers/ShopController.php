@@ -65,7 +65,7 @@ class ShopController extends Controller
         //start query for search
         $data = DB::table('item')
         // ->join('cats','cats.id','products.cat_id')
-        ->where('category', 'like', '%' . $searchData . '%')
+        ->where('item_name', 'like', '%' . $searchData . '%')
         ->paginate(10);
 
         // return view('shop',[
