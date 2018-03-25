@@ -107,33 +107,36 @@ class CartController extends Controller
     public function destroy($id)
     {
         $song =  Cart::where('item_id', $id)->delete();
-        $data=$this->call();
-         foreach($data as $d){
-               if($d->qty!=0)
-                 $val[$d->item_id]=$d->price*$d->qty;
-             else
-                $val[$d->item_id]=$d->price;
-           }
+     //   $data=$this->call();
+        //  foreach($data as $d){
+        //        if($d->qty!=0)
+        //          $val[$d->item_id]=$d->price*$d->qty;
+        //      else
+        //         $val[$d->item_id]=$d->price;
+        //    }
         if(!empty($val))
         {
-            $bill=$this->show_bill($val,$data);
-            $final_bill=$bill+20;
+            //$bill=$this->show_bill($val,$data);
+            //$final_bill=$bill+20;
             if(session('cart')>0)
                session(['cart'=>session('cart')-1]);
             else
                session(['cart'=>0]);
-            return view('cart',array('data'=>$data,'val'=>$val))->with('bill',$bill)->with('final_bill',$final_bill)->with('success', 'Remark Deleted Successfully');
+            //return view('cart',array('data'=>$data,'val'=>$val))->with('bill',$bill)->with('final_bill',$final_bill)->with('success', 'Remark Deleted Successfully');
+            return redirect()->action('CartController@index');
         }
         else
         {
-            $bill=0;
-            $final_bill=0;
+            //$bill=0;
+            //$final_bill=0;
             if(session('cart')>0)
                session(['cart'=>session('cart')-1]);
             else
                session(['cart'=>0]);
-            return view('cart',array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill)->with('success', 'Remark Deleted Successfully');
+            return redirect()->action('CartController@index');
+            
         }
+        
     }
     
 }

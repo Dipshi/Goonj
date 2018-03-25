@@ -48,10 +48,11 @@ class ProductDetailsController extends Controller
                         ->update(['qty' => $item_no_val+$qty]);
         }
         $data= $this->show_cart($id,$cid);
-        $details=item::select('*')->where('item_id',$id)->get();
-        $review=review::select('*')->where('item_id',$id)->get();
+      //  $details=item::select('*')->where('item_id',$id)->get();
+        //$review=review::select('*')->where('item_id',$id)->get();
        
-        return view('product-details')->with('success','Added successfully to cart')->with('details',$details)->with('review',$review);;// array ( 'data' => $data));
+       // return view('product-details')->with('success','Added successfully to cart')->with('details',$details)->with('review',$review);;// array ( 'data' => $data));
+        return redirect()->action('ProductDetails@show', ['id' => $id]);
         }
     }
     public function show_cart()
