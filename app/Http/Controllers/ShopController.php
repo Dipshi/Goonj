@@ -34,7 +34,7 @@ class ShopController extends Controller
             session(['cart'=>count($count)]);
         }
         // return $count;
-        $item=collect(DB::select( 'SELECT * FROM item limit 10 '));
+        $item=collect(DB::select( 'SELECT * FROM item order by rating desc limit 10 '));
 
         return View::make('index')->with('item', $item);   
     }  
@@ -74,4 +74,10 @@ class ShopController extends Controller
         return View::make('shop')->with('items', $data)->with('category',$searchData);   
 
       }  
+      public function orders()
+      {
+          $uid=collect(DB::select('Select cid from customer where email="'.session('email').'"'));
+          $order=collect(DB::select('Select * from orders where cid="'.$uid[0]->cid.'"'));
+          return View::make('orders')->with('order',$order);
+      }
 }

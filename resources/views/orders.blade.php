@@ -2,13 +2,12 @@
 @section('body')
 	<section id="cart_items">
 		<div class="container">
-				<div class="">
-						<ol class="breadcrumb">
-						  <li><a href="{{url ('/')}}">Home</a></li>
-						  
-						  <li class="active">Cart</li>
-						</ol>
-					</div><!--/breadcrums-->
+			<div class="breadcrumbs">
+				<ol class="breadcrumb">
+				  <li><a href="#">Home</a></li>
+				  <li class="active">Shopping Cart</li>
+				</ol>
+			</div>
 				@if(!empty(session('email')))
 			<div class="table-responsive cart_info">
 				<table class="table table-condensed">
@@ -23,16 +22,17 @@
 						</tr>
 					</thead>
 					<tbody>
-											
-							  @if(!empty($data) && !empty($val))
-							    	@foreach($data as $d)
+						
+					
+							  @if(!empty($order))
+							    	@foreach($order as $d)
 								<tr>
 								<td class="cart_total">
 									<p class="cart_total_price"></p>
 								</td>
 								<td class="cart_description">
 									<h4><a href="">{{$d->item_name}}</a></h4>
-									<p>Web ID: {{$d->item_id}}</p>
+									<p>Web ID: {{$d->oid}}</p>
 								</td>
 								<td class="cart_price">
 									<p>Rs. {{$d->price}}</p>
@@ -85,66 +85,10 @@
 				<h3>What would you like to do next?</h3>
 				<p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
 			</div>
-			<div class="row">
-				<div class="col-sm-6">
-					<div class="chose_area">
-						<ul class="user_option">
-							
-							<li>
-								<input type="checkbox">
-								<label>Use Coupon Code</label>
-							</li>
-							<li>
-								<input type="checkbox">
-								<label>Use Gift Voucher</label>
-							</li>
-							<li>
-								<input type="checkbox">
-								<label>Estimate Shipping & Taxes</label>
-							</li>
-						</ul>
-						<ul class="user_info">
-							<li class="single_field">
-								<label>Country:</label>
-								<select>
-									<option>United States</option>
-									<option>Bangladesh</option>
-									<option>UK</option>
-									<option>India</option>
-									<option>Pakistan</option>
-									<option>Ucrane</option>
-									<option>Canada</option>
-									<option>Dubai</option>
-								</select>
-								
-							</li>
-							<li class="single_field">
-								<label>Region / State:</label>
-								<select>
-									<option>Select</option>
-									<option>Dhaka</option>
-									<option>London</option>
-									<option>Dillih</option>
-									<option>Lahore</option>
-									<option>Alaska</option>
-									<option>Canada</option>
-									<option>Dubai</option>
-								</select>
-							
-							</li>
-							<li class="single_field zip-field">
-								<label>Zip Code:</label>
-								<input type="text">
-							</li>
-						</ul>
-						<a class="btn btn-default update" href="">Get Quotes</a>
-						<a class="btn btn-default check_out" href="">Continue</a>
-					</div>
-				</div>
-				<div class="col-sm-6">
+							<div class="col-sm-6">
 					<div class="total_area">
 						<ul>
-							@if(!empty($val))
+							@if(!empty($order))
 								<li>Cart Sub Total <span>{{$bill}}</span></li>
 								<li>Eco Tax <span>Rs.20</span></li>
 								<li>Shipping Cost <span>Free</span></li>

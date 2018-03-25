@@ -2,9 +2,11 @@
 @section('body')
 	<section id="cart_items">
 		<div class="container">
-			<div class="breadcrumb">
+			<div class="">
 				<ol class="breadcrumb">
 				  <li><a href="{{url ('/')}}">Home</a></li>
+				  <li><a href="{{url ('cart')}}">Cart</a></li>
+
 				  <li class="active">Check out</li>
 				</ol>
 			</div><!--/breadcrums-->
@@ -35,9 +37,9 @@
 										<input type="text" placeholder="Mobile Phone" name="mobile">
 									    <input type="text" placeholder="Zip / Postal Code *" name="zip">
 									@else
-										<input type="text" placeholder="Address 1 *" name="add" value="{{$data[0]->address}}">
-										<input type="text" placeholder="Mobile Phone" name="mobile" value="{{$data[0]->mobile_number}}">
-										<input type="text" placeholder="Zip / Postal Code *" name="zip" value="{{$data[0]->pincode}}">
+										<input type="text" placeholder="Address 1 *" name="add" value="{{$data[0]->address}}" required/>
+										<input type="text" placeholder="Mobile Phone" name="mobile" value="{{$data[0]->mobile_number}}" required/>
+										<input type="text" placeholder="Zip / Postal Code *" name="zip" value="{{$data[0]->pincode}}" required/>
 										<input type="text" placeholder="Region *" name="add" value="{{$stateVal}}" disabled/>
 										<input type="text" placeholder="State *" name="add" value="{{$regionVal}}" disabled/>
 										<br><br>
