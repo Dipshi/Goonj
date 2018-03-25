@@ -1,19 +1,38 @@
 @extends('layouts.header')
 @section('body')
-<div class="container">
+<div  id="contact-page" class="container">
+    <div class="bg">
+        <h2 class="title text-center">Contact <strong>Us</strong></h2>    			    				    				
+    </div>    	
     <div class="row">
-        <div class="col-md-6">
-            <div id="form-content">
-                <form   method="post" name="sub"> 
-                {{ csrf_field() }}
-                <input type="text" value="1" name="val"/><br><br>
-                <label> Enter your comments</label>
-                <textarea  name="text" name="text" /></textarea><br>
-                <input type="submit" value="Submit"/>
-                </form>
+        {{--  <div class="row">  	  --}}
+            <div class="col-sm-6">
+                <div class="contact-form">
+                    <h2 class="title text-center">Get In Touch</h2>
+                    <div class="status alert alert-success" style="display: none"></div>
+                    <form id="main-contact-form" class="contact-form row" name="contact-form" method="post" action="">
+                        {{ csrf_field() }}
+                        <div class="form-group col-md-6">
+                            <input type="text" name="name" class="form-control" required="required" placeholder="Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="email" name="email" class="form-control" required="required" placeholder="Email">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <input type="text" name="subject" class="form-control" required="required" placeholder="Subject">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your Message Here"></textarea>
+                        </div>                        
+                        <div class="form-group col-md-12">
+                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
+        <div class="col-md-6">
         <div id="googleMap" style="height:400px;" class="w3-grayscale-max"></div>
+        </div>
     </div>
 </div>
 <br>
