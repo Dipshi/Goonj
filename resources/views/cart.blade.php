@@ -32,7 +32,7 @@
 								</td>
 								<td class="cart_description">
 									<h4><a href="">{{$d->item_name}}</a></h4>
-									<p>Web ID: {{$d->item_id}}</p>
+									<p>Product ID: {{$d->item_id}}</p>
 								</td>
 								<td class="cart_price">
 									<p>Rs. {{$d->price}}</p>

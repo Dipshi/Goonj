@@ -8,8 +8,9 @@
     <title>Home | E-Shopper</title>
     <link href="{{ URL::to('css/bootstrap.min.css') }}" rel="stylesheet">
     {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --}}
-    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> --}}
+    <script src="{!!url('https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')!!}"></script>
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  --}}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="{{URL::to('css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/prettyPhoto.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/price-range.css') }}" rel="stylesheet">
@@ -26,7 +27,7 @@
     <script>
     </head><!--/head-->
 <body>
-    @include('layouts.validation')
+     @include('layouts.validation')
     <div class="header-middle"><!--header-middle-->
         <div class="container">
             <div class="row">
@@ -41,10 +42,9 @@
                              @if(!empty(session('email')))
                             <li><a href="{{url ('checkout') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                         <li><a href="{{url ('cart') }}"><i class="fa fa-shopping-cart"></i> Cart
-                            @if(!empty(session('email')))
                             <b>
                             ({{session('cart')}})</b>
-                            @endif
+                            
                         </a></li>
                         <li><a href="{{url ('orders') }}"><i class="fa fa-user"></i> My Orders</a></li>
 
