@@ -1,20 +1,22 @@
 @extends('layouts.header')
 @section('body')
-<div class="row">
-    <div class="col-md-6">
-        <div id="form-content">
-<form   method="post" name="sub"> 
-{{ csrf_field() }}
-<input type="text" value="1" name="val"/><br><br>
-<label> Enter your comments</label>
-<textarea  name="text" name="text" /></textarea><br>
-<input type="submit" value="Submit"/>
-</form>
-          </div>
-      </div>
-      <div id="googleMap" style="height:400px;" class="w3-grayscale-max"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div id="form-content">
+                <form   method="post" name="sub"> 
+                {{ csrf_field() }}
+                <input type="text" value="1" name="val"/><br><br>
+                <label> Enter your comments</label>
+                <textarea  name="text" name="text" /></textarea><br>
+                <input type="submit" value="Submit"/>
+                </form>
+            </div>
+        </div>
+        <div id="googleMap" style="height:400px;" class="w3-grayscale-max"></div>
+    </div>
 </div>
-
+<br>
 <script>
 function myMap() {
   myCenter=new google.maps.LatLng(19.0328, 72.8964);
