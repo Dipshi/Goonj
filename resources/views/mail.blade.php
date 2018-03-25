@@ -1,2 +1,3 @@
-Your product is ready to be delievered.Your bill payment amount is  
-and mode of payment is Cash On Delievery.
+Your product is ready to be delievered.
+Bill payment amount : Rs.{{session('bill')}}.
+Mode of payment : Cash On Delievery.
