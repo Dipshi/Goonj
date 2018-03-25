@@ -2,12 +2,13 @@
 @section('body')
 	<section id="cart_items">
 		<div class="container">
-			<div class="breadcrumbs">
-				<ol class="breadcrumb">
-				  <li><a href="#">Home</a></li>
-				  <li class="active">Shopping Cart</li>
-				</ol>
-			</div>
+                <div class="">
+                    <ol class="breadcrumb">
+                        <li><a href="{{url ('/')}}">Home</a></li>
+                        
+                        <li class="active">My Orders</li>
+                    </ol>
+                </div>
 				@if(!empty(session('email')))
 			<div class="table-responsive cart_info">
 				<table class="table table-condensed">
@@ -22,63 +23,58 @@
 						</tr>
 					</thead>
 					<tbody>
-						
-					
-							  @if(!empty($order))
-							    	@foreach($order as $d)
-								<tr>
-								<td class="cart_total">
-									<p class="cart_total_price"></p>
-								</td>
-								<td class="cart_description">
-									<h4><a href="">{{$d->item_name}}</a></h4>
-									<p>Web ID: {{$d->oid}}</p>
-								</td>
-								<td class="cart_price">
-									<p>Rs. {{$d->price}}</p>
-								</td>
-								<td class="cart_quantity">
-									<div class="cart_quantity_button">
-										
-										<input class="cart_quantity_input" type="text" name="quantity" value="{{$d->qty}}" autocomplete="off" size="2" disabled>
-										{{-- <a class="cart_quantity_down" href=""> - </a> --}}
-										
-									</div>
-								</td>
-								<td class="cart_total">
-									
-									 <p class="cart_total_price">{{$val[$d->item_id]}}</p>
-									
-									   {{-- <p class="cart_total_price">Please purchase some items</p> --}}
-									
-
-								</td>
-								<td>
-									<button type="button" class="btn btn-fefault cart" id=" {{$d->item_id}}">
-										<a href="{{url ('cart/destroy/'. $d->item_id) }}" style="color:#ffffff">Delete</a></li>
-									</button>
-								</td>
-							  </tr>
-						            @endforeach
-							    @else
-							    <td class="cart_total">
-									<p class="cart_total_price">Nothing to show</p>
-								</td>
-							    @endif
-						@else
-						       
-									<div class="register-req">
-										<p>Please Login to enhance your experience.</p>
-									</div><!--/register-req-->
-								
+                        @if(!empty($order))
+                        @foreach($order as $d)
+                        <tr>
+                        <td class="cart_product">
+                            <a href=""><img src="../images/Products/$d->images" alt=""></a>
+                        </td>
+        
+                        <td class="cart_description">
+                            <h4><a href="{{url('orderdescription', [$d->item_id]) }}">{{$d->item_name}}</a></h4>
+                            <p>Order ID: {{$d->oid}}</p>
+                        </td>
+                        <td class="cart_price">
+                            <p>Rs. {{$d->price}}</p>
+                        </td>
+                        <td class="cart_quantity">
+                            <div class="cart_quantity_button">
+                                
+                                <input class="cart_quantity_input" type="text" name="quantity" value="{{$d->qty}}" autocomplete="off" size="2" disabled>
+                                {{-- <a class="cart_quantity_down" href=""> - </a> --}}
+                                
+                            </div>
+                        </td>
+                        <td class="cart_total">
+                            <p class="cart_total_price">Rs.{{$d->totalcost}}</p>
+                            {{-- <p class="cart_total_price">Please purchase some items</p> --}}
+                        </td>
+                        {{--  <td>
+                            <button type="button" class="btn btn-fefault cart" id=" {{$d->item_id}}">
+                                <a href="{{url ('cart/destroy/'. $d->item_id) }}" style="color:#ffffff">Delete</a></li>
+                            </button>
+                        </td>  --}}
+                        </tr>
+                            @endforeach
+                        @else
+                        <td class="cart_total">
+                            <p class="cart_total_price">You have no orders to show</p>
+                        </td>
+                        @endif
+			    		@else
+                
+                        <div class="register-req">
+                            <p>Please Login .</p>
+                        </div><!--/register-req-->
+                    
 						@endif
 					 
 					</tbody>
 				</table>
 			</div>
 		</div>
-	</section> <!--/#cart_items-->
-@if(!empty(session('email')))
+	</section> <!--cart_items-->
+{{--  @if(!empty(session('email')))
 	<section id="do_action">
 		<div class="container">
 			<div class="heading">
@@ -104,9 +100,9 @@
 					</div>
 				</div>
 			</div>
-			@endif
+			@endif  --}}
 		</div>
-	</section><!--/#do_action-->
+	</section><!--/do_action-->
     {{-- <script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.scrollUp.min.js"></script>

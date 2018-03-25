@@ -3,12 +3,12 @@
 	<section id="cart_items">
 		<div class="container">
 				<div class="">
-						<ol class="breadcrumb">
-						  <li><a href="{{url ('/')}}">Home</a></li>
-						  
-						  <li class="active">Cart</li>
-						</ol>
-					</div><!--/breadcrums-->
+					<ol class="breadcrumb">
+						<li><a href="{{url ('/')}}">Home</a></li>
+						
+						<li class="active">Cart</li>
+					</ol>
+				</div><!--/breadcrums-->
 				@if(!empty(session('email')))
 			<div class="table-responsive cart_info">
 				<table class="table table-condensed">
