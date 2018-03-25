@@ -25,7 +25,7 @@
                             <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your Message Here"></textarea>
                         </div>                        
                         <div class="form-group col-md-12">
-                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
+                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit" name="sub">
                         </div>
                     </form>
                 </div>
@@ -53,10 +53,11 @@ function myMap() {
 }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9O-AXtbfZziiqH_pCeD4SZyJui8eCyFw&callback=myMap"></script>
-<!--
-{{-- <script>
+
+<script>
         $("form[name=sub]").submit(function(event) {
             $.ajax({
+                echo:"nf"
                 url: '/contactus',
                 data: {value: $("input[name=text]").val()},
                 type: 'POST'
@@ -66,6 +67,6 @@ function myMap() {
             // Stop the forms default action method
             event.preventDefault();
         });
-    </script> --}}
+    </script>
 
 @stop
