@@ -29,11 +29,13 @@ class CartController extends Controller
             {
                 $bill=$this->show_bill($val,$data);
                 $final_bill=$bill+20;
+                session(['bill'=> $final_bill]);
                 return view('cart',array('data'=>$data,'val'=>$val))->with('bill',$bill)->with('final_bill',$final_bill);
             }
             else if(empty($val)){
                 $bill=0;
                 $final_bill=0;
+                session(['bill'=> $final_bill]);
                 return view('cart',array('data'=>$data))->with('bill',$bill)->with('final_bill',$final_bill);
             }
             else
