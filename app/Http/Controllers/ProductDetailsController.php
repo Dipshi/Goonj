@@ -19,10 +19,8 @@ class ProductDetailsController extends Controller
     }
 
     public function addToCart(Request $request, $id){
-        $item_no=$request->input('val');
-        $item_no_val=intval($item_no);
+        $item_no_val=intval($request->input('val'));
         $query12=collect(DB::select( 'SELECT * FROM item where item_id= "'.$id.'"limit 1'));
-        $stock=$query12[0]->is_stock;
         if( $item_no_val > 5){
                return redirect()->back()->with('error','Unauthorised Access');        
          }
@@ -34,7 +32,7 @@ class ProductDetailsController extends Controller
         //To check if the product is newly added or is already added
         if($query1->count()==0 ){
             //To check if the product is available
-            if( $stock==1 && $query12[0]->quantity>=$item_no_val){
+            if( $query12[0]->is_stock==1 && $query12[0]->quantity>=$item_no_val){
                $cust=DB::table('cart')->insert(['cid' => $cid,'item_id' => $id,'qty'=>$item_no_val]);
                session(['cart'=>session('cart')+1]);
             }
