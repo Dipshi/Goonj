@@ -25,9 +25,10 @@
 
     <link href="{{URL::to('css/owl.transition.css') }}" rel="stylesheet">
     <script>
-    </head><!--/head-->
+    </head>
 <body>
-     @include('layouts.validation')
+    @include('layouts.validation_msgs')
+
     <div class="header-middle"><!--header-middle-->
         <div class="container">
             <div class="row">
@@ -63,7 +64,7 @@
         </div>
     </div><!--/header-middle-->
 
-    <div class="header-bottom"><!--header-bottom-->
+    <div class="header-bottom">{{--header-bottom--}}
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
@@ -103,10 +104,10 @@
                 </div>
             </div>
         </div>
-    </div><!--/header-bottom-->
-</header><!--/header-->
-{{-- main body --}}
+    </div>
+
 @yield('body')
+
 {{-- Footer --}}
 <footer id="footer"><!--Footer-->
     <div class="footer-widget">
@@ -184,7 +185,7 @@
         </div>
     </div>
     
-</footer><!--/Footer-->
+</footer>{{--/Footer--}}
 
 
 
