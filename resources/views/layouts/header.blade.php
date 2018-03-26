@@ -24,7 +24,7 @@
     <link href="{{URL::to('css/owl.theme.css') }}" rel="stylesheet">
 
     <link href="{{URL::to('css/owl.transition.css') }}" rel="stylesheet">
-    <script>
+    <script></script>
     </head>
 <body>
     @include('layouts.validation_msgs')
@@ -179,8 +179,8 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
-                <p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
-                <p class="pull-right">Designed by <span></p>
+                <p class="pull-left">Copyright © Vesit. All rights reserved.</p>
+                <p class="pull-right">Designed by VESIT<span></p>
             </div>
         </div>
     </div>
@@ -195,15 +195,7 @@
     <link href="{{URL::to('css/style1.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/owl.carousel.css') }}" rel="stylesheet">
     <link href="{{URL::to('css/owl.theme.css') }}" rel="stylesheet">
-
     <link href="{{URL::to('css/owl.transition.css') }}" rel="stylesheet">
-
-
-
-  </head><!--/head-->
-<body>
-    @yield('nav')
-</body>
 </html>
 <script src="{{URL::to('js/jquery.js') }}"></script>
 <script src="{{URL::to('js/bootstrap.min.js') }}"></script>
@@ -220,5 +212,6 @@
 {{--  <script src="{{URL::to('js/bootstrap-hover-dropdown.js') }}"></script>  --}}
 <script src="{{URL::to('js/owl.carousel.min.js') }}"></script>
 <script src="{{URL::to('js/front.js') }}"></script>
-<script>
+{{-- <script src="{{URL::to('js/ajax.js') }}"></script> --}}
+
     
