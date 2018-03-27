@@ -1776,6 +1776,10 @@ h2.title {
 /*************************
 *******checkout CSS******
 **************************/
+.butpostion{
+  position:relative;
+  margin-top:400%;
+}
 
 .step-one {
   margin-bottom: -10px
