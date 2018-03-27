@@ -50,7 +50,7 @@ class CartController extends Controller
             $email=session('email');
             $query=collect(DB::select('SELECT cid FROM customer where email= "'.$email.'" limit 1'));
             $cid=$query[0]->cid;
-            $data=collect(DB::select('SELECT i.item_id,item_name,price,qty FROM cart as c,item as i Where i.item_id=c.item_id and cid="'.$cid.'" order by item_id desc'));
+            $data=collect(DB::select('SELECT i.item_id,item_name,price,qty FROM cart as c,item as i Where i.item_id=c.item_id and cid="'.$cid.'" order by timestamp desc'));
             return $data;
     }
    
