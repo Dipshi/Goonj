@@ -8,3 +8,8 @@ Remining
 problems
 1)Session issue(sorted by composer update)
 2)Add to cart error
+
+
+mODIFIED Today
+1) Validation for add to cart vwithout login 
+2) REview css sorted 

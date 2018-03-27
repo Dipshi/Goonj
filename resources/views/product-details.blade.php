@@ -91,16 +91,11 @@
 								<span>Rs. {{$details[0]->price}}</span>
 								<br>
 									<label>Quantity:</label>
-								@if(session('email'))
 									<form  action="{{url ('/addToCart/'. $details[0]->item_id) }}" method="post"> 
 										 {{ csrf_field() }}
 									<input type="text" value="1" name="val"  id="cart"/><br>
 									<button class="btn btn-primary "href=""><i class="fa fa-shopping-cart" style="color:#ffffff"></i>Add to Cart</li></button>
 								</form>
-								@else
-								    <input type="text" value="1" name="val"  id="cart"/><br>
-									<button class="btn btn-primary "href=""><i class="fa fa-shopping-cart" style="color:#ffffff"></i>Add to Cart</li></button>
-								@endif
 								</span>
 								<br>
 								<p><b>Availability:</b>
@@ -129,142 +124,54 @@
 							</ul>
 						</div>
 						<div class="tab-content">
+							{{--  Product description  --}}
 							<div class="tab-pane fade active in" id="details" style="margin-left:5px" >
 								<p>{{$details[0]->description}}</p>
 							</div>
-							
+							{{--  Ngo description  --}}
 							<div class="tab-pane fade" id="companyprofile" >
 								<div class="col-sm-3">
 								</div>	
 							</div>
-							<div class="tab-pane fade " id="reviews" >
+							{{--  reviews  --}}
+						 	<div class="tab-pane fade " id="reviews" >
 								@if(!count($review)==0)
-							
 								<div class="col-sm-12">
 									@foreach($review as $review)
-									<ul>
-									<li><a style="font-size: 10px" ><i class="fa fa-user"></i>{{$review->name}}</a></li>
-										{{--  <li><a href=""><i class="fa fa-clock-o"></i>12:41 PM</a></li>  --}}
-									<li><a style="font-size: 10px" ><i class="fa fa-calendar-o"></i>{{$review->date}}</a></li>
-									</ul>
-									<p style="font-size: 13px">{{$review->review}}</p>
-									<hr>
+										<ul>
+										<li><a style="font-size: 10px" ><i class="fa fa-user"></i>{{$review->name}}</a></li>
+											{{--  <li><a href=""><i class="fa fa-clock-o"></i>12:41 PM</a></li>  --}}
+										<li><a style="font-size: 10px" ><i class="fa fa-calendar-o"></i>{{$review->date}}</a></li>
+										<p style="font-size: 13px">{{$review->review}}</p>
+										</ul>
+										<hr>
 									@endforeach
-									</div>
+								</div>
 								@else
 								<p>No Customer has reviewed yet</p><br>
 								@endif
 								{{--  <form action="{{url('/review/'.$details[0]->item_id)}}" method="">  --}}
-								<input type="submit" value="Write  review" class="" id="reviewbtn" onclick="load_main_content()" class="btn btn-info btn-lg"><br><br><br>
-							     	 
+								<input type="submit" value="Write  review" id="reviewbtn" onclick="load_main_content()" class="btn btn-primary btn-sm"><br><br><br>
 								<div id="form-content">
 								</div>
-														
+											
+							</div>
 							<script type="text/javascript">
 								function load_main_content()
 								{
 									$('#form-content').load('/review');
 								}
 							</script>
-						{{--  @stop  --}}
-							</div>
-							
-						</div>
-					</div><!--/category-tab-->
-					
-					<div class="recommended_items"><!--recommended_items-->
-						<h2 class="title text-center">recommended items</h2>
 						
-						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-							<div class="carousel-inner">
-								<div class="item active">	
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="../images/home/recommend1.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="../images/home/recommend2.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="../images/home/recommend3.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">	
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="../images/home/recommend1.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="../images/home/recommend2.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="../images/home/recommend3.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							 <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-								<i class="fa fa-angle-left"></i>
-							  </a>
-							  <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-								<i class="fa fa-angle-right"></i>
-							  </a>			
 						</div>
-					</div><!--/recommended_items-->
-					
+					</div>{{--/category-tab--}}
+									
 				</div>
 			</div>
+			<div class="col-sm-12">{{--recommended_items--}}
+					@include('recommended')
+				</div>
+
 		</div>
 	</section>
 	

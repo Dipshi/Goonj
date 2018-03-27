@@ -21,7 +21,7 @@
 </form>
 @else
 {{--  login message   --}}
-<div class="register-req">
+<div class="register-req error">
 	<p>Please Login</p>
 </div><!--/register-req-->
 @endif

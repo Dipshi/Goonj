@@ -6,7 +6,6 @@
     @endforeach
 @endif
 
-
 @if(session('success'))
     <div class="alert alert-success alert-dismissible text-center animated fadeInDown" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>

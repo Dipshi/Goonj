@@ -35,7 +35,7 @@ class ProductDetails extends Controller
         $reviews=$request->review;
         $rating=$request->rating;
         $cid=collect(DB::select('Select cid from customer where email="'.$email.'"')) ;
-        $cust=DB::table('review')->insert(['item_id' => $item_id,'review' => $reviews,'rating' => $rating,'cid' => $cid[0]->cid,'name'=>$name]);
+        $cust=DB::table('review')->insert(['item_id' => $item_id,'review' => $reviews,'rating' => $rating,'cid' => $cid[0]->cid,'name'=>$name,'date'=>date('Y-M-D')]);
         $rat=DB::select('Select avg(rating) as avg from review where item_id="'.$item_id.'"');
         $add=DB::update('Update item set rating='.$rat[0]->avg.' where item_id="'.$item_id.'"');
         $details=item::select('*')->where('item_id',$item_id)->get();

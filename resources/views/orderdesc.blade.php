@@ -5,7 +5,7 @@
 				<div class="">
 					<ol class="breadcrumb">
 						<li><a href="{{url ('/')}}">Home</a></li>
-                        <li><a href="{{url('order')}}">My orders</a></li>
+                        <li><a href="{{url('/orders')}}">My orders</a></li>
                         <li class="active">Order Details</li>
                       
 					</ol>
