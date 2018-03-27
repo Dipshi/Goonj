@@ -62,22 +62,18 @@ function myMap() {
           loginForm.submit(function(e){
               e.preventDefault();
               var formData = loginForm.serialize();
-
+            // alert($formData);
               /*alert(formData);*/
 
                  $.ajax({
-                     url:'{{url('/contactus')}}',
+                     url:'{{url('/send')}}',
                      type:'get',
                      data:formData,
                      success:function(data){
                          alert("hello"); 	//for redirecting instead of alert try below code
 
                         
-                    },
-                     error: function (data) {
-                         /*console.log(data);*/
-                         alert("h");
-                     }
+                    }
                  });
              });
 

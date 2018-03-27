@@ -20,7 +20,8 @@ class ContactUsController extends Controller
     {
         // dd("hello");
         echo "hello";
-        return view('contact');
+
+        // return view('contact');
     }
 
     /**
