@@ -128,12 +128,10 @@
 							<div class="tab-pane fade active in" id="details" style="margin-left:5px" >
 								<p>{{$details[0]->description}}</p>
 							</div>
-							{{--  Ngo description  --}}
 							<div class="tab-pane fade" id="companyprofile" >
 								<div class="col-sm-3">
 								</div>	
 							</div>
-							{{--  reviews  --}}
 						 	<div class="tab-pane fade " id="reviews" >
 								@if(!count($review)==0)
 								<div class="col-sm-12">
@@ -146,6 +144,7 @@
 										</ul>
 										<hr>
 									@endforeach
+									
 								</div>
 								@else
 								<p>No Customer has reviewed yet</p><br>
