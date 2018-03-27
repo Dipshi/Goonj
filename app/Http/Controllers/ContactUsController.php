@@ -16,9 +16,11 @@ class ContactUsController extends Controller
          return view('Contact');
      }
 
-    public function index()
+    public function index(Request $request)
     {
-        dd("hello");
+        // dd("hello");
+        echo "hello";
+        return view('contact');
     }
 
     /**

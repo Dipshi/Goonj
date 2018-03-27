@@ -4,7 +4,7 @@
 <form  action="{{url('/review/'.session('item_id'))}}" method="post" id="review-form">
     {{ csrf_field() }}
 <span>
-<input type="text" value="" name="username">
+<input type="text" value="{{session('name')}}" name="username">
     <input type="email" value="{{session('email')}}" name="email" placeholder="{{session('email')}}"/>
 </span>
 <textarea  name="review"  placeholder="Add Review" value="" required></textarea>

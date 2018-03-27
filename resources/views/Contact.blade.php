@@ -10,7 +10,7 @@
                 <div class="contact-form">
                     <h2 class="title text-center">Get In Touch</h2>
                     <div class="status alert alert-success" style="display: none"></div>
-                    <form id="main-contact-form" class="contact-form row"  method="post" >
+                    <form id="main-contact-form" class="contact-form row"  method="get" >
                         {{ csrf_field() }}
                         <div class="form-group col-md-6">
                             <input type="text" name="name" class="form-control" required="required" placeholder="Name">
@@ -66,15 +66,14 @@ function myMap() {
               /*alert(formData);*/
 
                  $.ajax({
-                     url:'/contactus',
-                     type:'post',
+                     url:'{{url('/contactus')}}',
+                     type:'get',
                      data:formData,
                      success:function(data){
-                         /alert("hello"); 	//for redirecting instead of alert try below code
+                         alert("hello"); 	//for redirecting instead of alert try below code
 
                         
-                         
-                     },
+                    },
                      error: function (data) {
                          /*console.log(data);*/
                          alert("h");
