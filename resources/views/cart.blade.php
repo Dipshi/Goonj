@@ -5,7 +5,7 @@
 				<div class="">
 					<ol class="breadcrumb">
 						<li><a href="{{url ('/')}}">Home</a></li>
-						
+					    <li><a href="{{url ('/product-details/{$id}')}}">Home</a></li>
 						<li class="active">Cart</li>
 					</ol>
 				</div><!--/breadcrums-->

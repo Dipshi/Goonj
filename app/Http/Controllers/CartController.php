@@ -50,7 +50,7 @@ class CartController extends Controller
             $email=session('email');
             $query=collect(DB::select('SELECT cid FROM customer where email= "'.$email.'" limit 1'));
             $cid=$query[0]->cid;
-            $data=collect(DB::select('SELECT i.item_id,item_name,price,qty FROM cart as c,item as i Where i.item_id=c.item_id and cid="'.$cid.'" order by item_id desc'));
+            $data=collect(DB::select('SELECT i.item_id,item_name,price,qty FROM cart as c,item as i Where i.item_id=c.item_id and cid="'.$cid.'" order by timestamp desc'));
             return $data;
     }
    
@@ -107,42 +107,11 @@ class CartController extends Controller
     public function destroy($id)
     {
         $song =  Cart::where('item_id', $id)->delete();
-     //   $data=$this->call();
-        //  foreach($data as $d){
-        //        if($d->qty!=0)
-        //          $val[$d->item_id]=$d->price*$d->qty;
-        //      else
-        //         $val[$d->item_id]=$d->price;
-        //    }
-        if(!empty($val))
-        {
-            //$bill=$this->show_bill($val,$data);
-            //$final_bill=$bill+20;
             if(session('cart')>0)
                session(['cart'=>session('cart')-1]);
             else
                session(['cart'=>0]);
-            //return view('cart',array('data'=>$data,'val'=>$val))->with('bill',$bill)->with('final_bill',$final_bill)->with('success', 'Remark Deleted Successfully');
-            return redirect()->action('CartController@index');
-        }
-        else
-        {
-            //$bill=0;
-            //$final_bill=0;
-            if(session('cart')>0)
-            {
-                $count=session('cart')-1;
-                session(['cart'=>$count]);
-
-            }
-            else
-               {
-                   session(['cart'=>0]);
-               }
-            return redirect()->action('CartController@index');
-            
-        }
-        
+         return redirect()->action('CartController@index');
     }
     
 }
