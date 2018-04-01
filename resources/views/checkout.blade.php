@@ -22,7 +22,7 @@
 			<div class="shopper-informations">
 				<div class="row">
 					
-					<div class="col-sm-5 clearfix">
+					<div class="col-md-12 clearfix">
 						<div class="bill-to">
 							<p>Bill To</p>
 							<div class="form-one">
@@ -51,7 +51,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-4">
+					{{-- <div class="col-sm-4">
 						<div class="order-message">
 							<p>Shipping Order</p>
 							<textarea name="message"  placeholder="Notes about your order, Special Notes for Delivery" rows="16"></textarea>
@@ -59,7 +59,7 @@
 							<br>
 							<button class="btn btn-primary"href="">Continue</button>
 						</div>	
-					</div>					
+					</div>					 --}}
 				</div>
 			</div>
 			</form>
@@ -88,12 +88,17 @@
 										<td>{{$bill}}</td>
 									</tr>
 									<tr>
-										<td>Exo Tax</td>
+										<td>Tax</td>
 										<td>Rs.20</td>
 									</tr>
 									<tr class="shipping-cost">
 										<td>Shipping Cost</td>
-										<td>Free</td>										
+										@if($bill >=500)
+										<td>Rs.0</td>
+										@else
+										<td>Rs.50</td>
+										@endif
+										
 									</tr>
 									<tr>
 										<td>Total</td>

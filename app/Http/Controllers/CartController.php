@@ -130,9 +130,15 @@ class CartController extends Controller
             //$bill=0;
             //$final_bill=0;
             if(session('cart')>0)
-               session(['cart'=>session('cart')-1]);
+            {
+                $count=session('cart')-1;
+                session(['cart'=>$count]);
+
+            }
             else
-               session(['cart'=>0]);
+               {
+                   session(['cart'=>0]);
+               }
             return redirect()->action('CartController@index');
             
         }

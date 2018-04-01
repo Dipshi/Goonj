@@ -27,6 +27,12 @@ class CheckoutController extends Controller
              if(!empty($data)&& !empty($val))
             {
                 $bill=$this->show_bill($val,$data);
+                if($bill<=500)//free shipping only to purchases above 500
+                {
+                    $final_bill=$bill+50+20;
+
+                }
+                else
                 $final_bill=$bill+20;
                 if($data[0]->address!=null && $data[0]->pincode!=0 && $data[0]->mobile_number!=0){
                   $state=collect(DB::select('select regionName,stateName from region as r , state as s where r.state_id=s.state_id and r.pin_code="'.$data[0]->pincode.'"'));

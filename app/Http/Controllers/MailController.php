@@ -20,7 +20,7 @@ class MailController extends Controller
              Mail::send(['text'=>'mail'],['name','ABC'],function($message){
              $email=session('email');
              $message->to($email,'To')->subject('Goonj-Product Purchase');
-             $message->from("2015isha.shetty@ves.ac.in",'Goonj');
+             $message->from("sharmauser80@gmail.com",'Goonj');
         });
         $trans=$this->addorder();
             if($trans==true){

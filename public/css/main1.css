@@ -258,15 +258,15 @@ a#scrollUp i{
   border: medium none;
   color: #B2B2B2;
   font-family: 'roboto';
-  font-size: 12px;
-  font-weight: 300;
+  font-size: 14px;
+  font-weight:400;
   height: 35px;
   outline: medium none;
-  padding-left: 10px;
-  width: 155px;
+  padding-left: 20px;
+  width: 100%;
   background-image: url(../images/home/searchicon.png);
   background-repeat: no-repeat;
-  background-position: 130px;
+  background-position:535px;
 }
 
 

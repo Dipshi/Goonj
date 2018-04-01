@@ -18,7 +18,25 @@
 .searchform input{
 	width: 160px;
 }
+/* .search_box input
+{
+	background: #F0F0E9;
+	border: medium none;
+	color: #B2B2B2;
+	font-family: 'roboto';
+	font-size: 12px;
+	font-weight:300;
+	height: 35px;
+	outline: medium none;
+	padding-left:10px;
+	width: 108%;
+	
+	background-image:url(../images/home/searchicon.png);
+	background-repeat: no-repeat;
+	background-position: 130px;
 
+
+} */
 .product-information span span{
 	width: 100%;
 }
