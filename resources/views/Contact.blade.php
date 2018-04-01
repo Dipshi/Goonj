@@ -10,7 +10,7 @@
                 <div class="contact-form">
                     <h2 class="title text-center">Get In Touch</h2>
                     <div class="status alert alert-success" style="display: none"></div>
-                    <form id="main-contact-form" class="contact-form row"  method="get" >
+                    <form id="main-contact-form" class="contact-form row"  method="POST" >
                         {{ csrf_field() }}
                         <div class="form-group col-md-6">
                             <input type="text" name="name" class="form-control" required="required" placeholder="Name">
@@ -54,7 +54,7 @@ function myMap() {
 }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9O-AXtbfZziiqH_pCeD4SZyJui8eCyFw&callback=myMap"></script> --}}
-<script type="text/javascript">
+{{-- <script type="text/javascript">
 
      $(document).ready(function() {
        $("#submit").click(function() {   //button id
@@ -79,7 +79,38 @@ function myMap() {
 
      /*alert('Successfully Loaded');*/
          });                 
-     });</script>
+     });</script> --}}
 
+<script>
+    $(document).ready(function(){
+        $('#submit').on('ifClicked', function(event){
+            name = $(this).data('username');
+            email = $(this).data('email');
+            subject= $(this).data('subject');
+            message= $(this).data('message');
+
+            $.ajax({
+                type: 'POST',
+                url: "{{ url('contactus')}}",
+                data: {
+                    // '_token': $('input[name=_token]').val(),
+                    'name': name,
+                    'email':email,
+                    'subject':subject,
+                    'message':message
+                },
+                success: function(data) {
+                    alert('hello');
+                },
+                error: function(data)
+                {
+                    alert('hello error');
+                },
+            });
+        });
+       
+    });
+
+</script>
 
 @stop

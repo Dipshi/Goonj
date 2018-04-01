@@ -29,6 +29,7 @@ class ReviewController extends Controller
         //dd($query1);
         // $item = DB::table('item')->get();
         // return $details;
+            // return response()->json($post);
         return view('product-details')->with('details',$details)->with('review',$review)->with('query1',$query1)->with("success","Review added successfully");
     }
     public function display()

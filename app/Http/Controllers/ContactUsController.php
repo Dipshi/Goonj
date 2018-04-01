@@ -18,8 +18,8 @@ class ContactUsController extends Controller
 
     public function index(Request $request)
     {
-        // dd("hello");
-        echo "hello";
+        dd("hello");
+        // echo "hello";
 
         // return view('contact');
     }
