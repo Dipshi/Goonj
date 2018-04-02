@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
+use Mail;
 class ContactUsController extends Controller
 {
     /**
@@ -18,10 +20,21 @@ class ContactUsController extends Controller
 
     public function index(Request $request)
     {
-        dd("hello");
-        // echo "hello";
-
-        // return view('contact');
+        Mail::send(['text'=>'mail'],
+            [
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'message' => $request->get('message')
+        ], function($message)
+        {
+            $message->from($request->get('email'));
+            $message->to('sharmauser80@gmail.com')->subject('Contact form');
+        });
+        $response = [
+            'status' => 'success',
+            'msg' => 'Mail sent successfully',
+        ];
+        return response()->json([$response], 200);
     }
 
     /**

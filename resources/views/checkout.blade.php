@@ -125,13 +125,13 @@
 				@endif
 				
 		</div>
-			<div class="shopper-informations" id="sec" style="position:relative;margin-top:5%;padding:10px">
+			{{-- <div class="shopper-informations" id="sec" style="position:relative;margin-top:5%;padding:10px">
 				<div class="row">
 					<div class="col-sm-5 clearfix">
 						<div class="bill-to">
 							<p>Bill To</p>
 							<div class="form-one">
-								{{-- <p>{{$address}}</p> --}}
+								{{-- <p>{{$address}}</p> 
 								<form method="post" action="{{ action('CheckoutController@update')}}">
 									  {{ csrf_field() }}
 									<input type="text" placeholder="Email*" value="{{$data[0]->email}}" disabled>
@@ -165,7 +165,7 @@
 					</div>	
 					</form>				
 				</div>
-			</div>
+			</div> --}}
 	</div>
 	</section> <!--/#cart_items-->
 

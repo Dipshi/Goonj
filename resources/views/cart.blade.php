@@ -81,7 +81,7 @@
 @if(!empty(session('email')))
 	<section id="do_action">
 		<div class="container">
-			<div class="heading">
+			{{-- <div class="heading">
 				<h3>What would you like to do next?</h3>
 				<p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
 			</div>
@@ -140,8 +140,8 @@
 						<a class="btn btn-default update" href="">Get Quotes</a>
 						<a class="btn btn-default check_out" href="">Continue</a>
 					</div>
-				</div>
-				<div class="col-sm-6">
+				</div> --}}
+				<div class="col-sm-12">
 					<div class="total_area">
 						<ul>
 							@if(!empty($val))

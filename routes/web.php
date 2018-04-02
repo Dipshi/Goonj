@@ -31,7 +31,11 @@ Route::get('/search','ShopController@search' );//search functionality
  Route::post('/checkout/update','CheckoutController@update' );
  Route::get('/send','MailController@send' );
  Route::get('/contact-us','ContactUsController@add');
- Route::post('/contactus','ContactUsController@index');
+ Route::get('/contactus','ContactUsController@index');
+Route::post('/contactus', [
+    'as' => 'contactus.post',
+    'uses' => 'ContactUsController@index'
+     ]);
  Route::get('/orders','OrderController@orders' );
  Route::get('/orderdescription/{name}','OrderController@ordersdesc' );
 
