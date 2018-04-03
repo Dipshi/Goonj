@@ -26,7 +26,7 @@
 					<div class="total_area">
                         <ul>
                         {{--  @if(!empty($val))  --}}
-                            <li>Name <span>{{session('name')}}</span></li>
+                            <li>Name <span>{{session('username')}}</span></li>
                             {{--  <li>Eco Tax <span>Rs.20</span></li>  --}}
                             <li>Shipping Address <span>{{$order[0]->address}}</span></li>
                             <li><b>Payment</b> <span>Cash on Delivery<span></li>
@@ -62,7 +62,7 @@
                             <div class="col-sm-3">
                                 <h3>{{$order[0]->item_name}}</h3>
                                 <h3>RS. {{$order[0]->price}}</h3>
-                                <input type="submit" value="Write  review" class="" id="reviewbtn" onclick="load_main_content()" class="btn btn-info btn-lg"><br><br><br>
+                                {{-- <input type="submit" value="Write  review" class="" id="reviewbtn" onclick="load_main_content()" class="btn btn-info btn-lg"><br><br><br> --}}
                             </div>
                             <div class="col-sm-6">
 			     	 

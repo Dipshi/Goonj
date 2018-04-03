@@ -20,13 +20,13 @@
 				</div><!--/register-req-->
             @else
 			<div class="shopper-informations">
-				<div class="row">
+				 {{-- <div class="row"> --}}
 					
-					<div class="col-md-12 clearfix">
+				{{--	<div class="col-md-12 clearfix">
 						<div class="bill-to">
 							<p>Bill To</p>
 							<div class="form-one">
-								{{-- <p>{{$address}}</p> --}}
+								{{-- <p>{{$address}}</p>
 								<form method="post" action="{{ action('CheckoutController@update')}}">
 									  {{ csrf_field() }}
 									<input type="text" placeholder="Email*" value="{{$data[0]->email}}" disabled>
@@ -47,10 +47,10 @@
 									
 									
 									
-							{{-- //	</form> --}}
+							{{-- //	</form> 
 							</div>
 						</div>
-					</div>
+					</div> --}}
 					{{-- <div class="col-sm-4">
 						<div class="order-message">
 							<p>Shipping Order</p>
@@ -60,9 +60,9 @@
 							<button class="btn btn-primary"href="">Continue</button>
 						</div>	
 					</div>					 --}}
-				</div>
-			</div>
-			</form>
+				{{-- </div> --}}
+			{{-- </div> --}}
+			{{-- </form> --}}
 		<div class="second">
 			<div class="review-payment">
 				<h2>Review & Payment</h2>
@@ -85,7 +85,7 @@
 								<table class="table table-condensed total-result">
 									<tr>
 										<td>Cart Sub Total</td>
-										<td>{{$bill}}</td>
+										<td>Rs.{{$bill}}</td>
 									</tr>
 									<tr>
 										<td>Tax</td>
@@ -125,13 +125,13 @@
 				@endif
 				
 		</div>
-			{{-- <div class="shopper-informations" id="sec" style="position:relative;margin-top:5%;padding:10px">
+			<div class="shopper-informations" id="sec" style="position:relative;margin-top:5%;padding:10px">
 				<div class="row">
 					<div class="col-sm-5 clearfix">
 						<div class="bill-to">
 							<p>Bill To</p>
 							<div class="form-one">
-								{{-- <p>{{$address}}</p> 
+								{{-- <p>{{$address}}</p> --}}
 								<form method="post" action="{{ action('CheckoutController@update')}}">
 									  {{ csrf_field() }}
 									<input type="text" placeholder="Email*" value="{{$data[0]->email}}" disabled>
@@ -165,7 +165,7 @@
 					</div>	
 					</form>				
 				</div>
-			</div> --}}
+			</div>
 	</div>
 	</section> <!--/#cart_items-->
 

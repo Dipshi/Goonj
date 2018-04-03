@@ -167,9 +167,9 @@
 									
 				</div>
 			</div>
-			<div class="col-sm-12">{{--recommended_items--}}
+			{{-- <div class="col-sm-12">{{--recommended_items
 					@include('recommended')
-				</div>
+				</div> --}}
 
 		</div>
 	</section>

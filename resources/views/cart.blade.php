@@ -5,7 +5,7 @@
 				<div class="">
 					<ol class="breadcrumb">
 						<li><a href="{{url ('/')}}">Home</a></li>
-					    <li><a href="{{url ('/product-details/{$id}')}}">Home</a></li>
+					    {{-- <li><a href="{{url ('/product-details/{$id}')}}">Home</a></li> --}}
 						<li class="active">Cart</li>
 					</ol>
 				</div><!--/breadcrums-->
@@ -47,7 +47,7 @@
 								</td>
 								<td class="cart_total">
 									
-									 <p class="cart_total_price">{{$val[$d->item_id]}}</p>
+									 <p class="cart_total_price">Rs.{{$val[$d->item_id]}}</p>
 									
 									   {{-- <p class="cart_total_price">Please purchase some items</p> --}}
 									
@@ -145,10 +145,10 @@
 					<div class="total_area">
 						<ul>
 							@if(!empty($val))
-								<li>Cart Sub Total <span>{{$bill}}</span></li>
+								<li>Cart Sub Total <span>Rs.{{$bill}}</span></li>
 								<li>Eco Tax <span>Rs.20</span></li>
 								<li>Shipping Cost <span>Free</span></li>
-								<li>Total <span>{{$final_bill}}</span></li>
+								<li>Total <span>Rs.{{$final_bill}}</span></li>
 							@else
 								<li>Cart Sub Total <span>0</span></li>
 								<li>Eco Tax <span>Rs.20</span></li>

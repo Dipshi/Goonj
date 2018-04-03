@@ -23,6 +23,7 @@ class ProductDetailsController extends Controller
         {
             $item_no_val=intval($request->input('val'));
             $query12=collect(DB::select( 'SELECT * FROM item where item_id= "'.$id.'"limit 1'));
+            
             if( $item_no_val > 5){
                    return redirect()->back()->with('error','Unauthorised Access');        
              }
@@ -31,7 +32,9 @@ class ProductDetailsController extends Controller
                 $email=session('email');
                 $query=collect(DB::select( 'SELECT cid FROM customer where email= "'.$email.'" limit 1'));
                 $cid=$query[0]->cid;
+            
                 $query1=collect(DB::select( 'SELECT qty FROM cart where item_id= "'.$id.'" limit 1'));
+                
                 //To check if the product is newly added or is already added
                 if($query1->count()==0 )
                 {
@@ -62,7 +65,7 @@ class ProductDetailsController extends Controller
 
         }
         else{
-        $qty=$query1[0]->qty;
+        $qty=$query12[0]->qty;
             if($qty+$item_no_val <5 && $query12[0]->quantity>=$qty)
                 $update1=DB::table('cart')
                         ->where('item_id', $id)
